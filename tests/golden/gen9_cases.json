@@ -1,0 +1,9584 @@
+[
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      69,
+      70,
+      70,
+      72,
+      72,
+      73,
+      75,
+      75,
+      76,
+      76,
+      78,
+      78,
+      79,
+      79,
+      81,
+      82
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      55,
+      55,
+      57,
+      57,
+      58,
+      58,
+      60,
+      60,
+      60,
+      61,
+      61,
+      63,
+      63,
+      64,
+      64,
+      66
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      55,
+      55,
+      56,
+      57,
+      57,
+      58,
+      59,
+      59,
+      60,
+      61,
+      61,
+      62,
+      63,
+      63,
+      64,
+      65
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      56,
+      57,
+      58,
+      58,
+      59,
+      60,
+      60,
+      61,
+      62,
+      62,
+      63,
+      64,
+      64,
+      65,
+      66,
+      67
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      38,
+      38,
+      39,
+      39,
+      40,
+      40,
+      40,
+      41,
+      41,
+      42,
+      42,
+      43,
+      43,
+      44,
+      44,
+      45
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100,
+      100,
+      102,
+      102,
+      104,
+      106
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      84,
+      86,
+      86,
+      88,
+      88,
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      57,
+      57,
+      58,
+      58,
+      60,
+      60,
+      60,
+      61,
+      61,
+      63,
+      63,
+      64,
+      64,
+      66,
+      66,
+      67
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      46,
+      46,
+      48,
+      48,
+      48,
+      49,
+      49,
+      51,
+      51,
+      51,
+      52,
+      52,
+      52,
+      54,
+      54,
+      55
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      45,
+      46,
+      46,
+      47,
+      48,
+      48,
+      49,
+      49,
+      50,
+      50,
+      51,
+      51,
+      52,
+      52,
+      53,
+      54
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      56,
+      57,
+      58,
+      58,
+      59,
+      60,
+      60,
+      61,
+      62,
+      62,
+      63,
+      64,
+      64,
+      65,
+      66,
+      67
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      38,
+      38,
+      39,
+      39,
+      40,
+      40,
+      40,
+      41,
+      41,
+      42,
+      42,
+      43,
+      43,
+      44,
+      44,
+      45
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100,
+      100,
+      102,
+      102,
+      104,
+      106
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      84,
+      86,
+      86,
+      88,
+      88,
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      114,
+      115,
+      117,
+      118,
+      120,
+      121,
+      121,
+      123,
+      124,
+      126,
+      127,
+      129,
+      130,
+      132,
+      133,
+      135
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      93,
+      93,
+      94,
+      96,
+      96,
+      97,
+      99,
+      100,
+      100,
+      102,
+      103,
+      105,
+      105,
+      106,
+      108,
+      109
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      45,
+      46,
+      46,
+      47,
+      48,
+      48,
+      49,
+      49,
+      50,
+      50,
+      51,
+      51,
+      52,
+      52,
+      53,
+      54
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      32,
+      32,
+      33,
+      33,
+      33,
+      34,
+      34,
+      34,
+      35,
+      35,
+      36,
+      36,
+      36,
+      37,
+      37,
+      38
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      22,
+      22,
+      22,
+      22,
+      23,
+      23,
+      23,
+      23,
+      24,
+      24,
+      24,
+      24,
+      25,
+      25,
+      25,
+      26
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      12,
+      12,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      15
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      48,
+      48,
+      50,
+      50,
+      50,
+      52,
+      52,
+      52,
+      52,
+      54,
+      54,
+      54,
+      56,
+      56,
+      56,
+      58
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      144,
+      146,
+      146,
+      150,
+      150,
+      152,
+      152,
+      156,
+      158,
+      158,
+      162,
+      162,
+      164,
+      164,
+      168,
+      170
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      36,
+      36,
+      36,
+      37,
+      37,
+      38,
+      38,
+      39,
+      39,
+      39,
+      40,
+      40,
+      41,
+      41,
+      42,
+      42
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      34,
+      35,
+      35,
+      36,
+      36,
+      36,
+      37,
+      37,
+      38,
+      38,
+      38,
+      39,
+      39,
+      40,
+      40,
+      41
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      23,
+      24,
+      24,
+      24,
+      24,
+      25,
+      25,
+      25,
+      26,
+      26,
+      26,
+      26,
+      27,
+      27,
+      27,
+      28
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      56,
+      56,
+      56,
+      58,
+      58,
+      58,
+      60,
+      60,
+      60,
+      62,
+      62,
+      62,
+      64,
+      64,
+      64,
+      66
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      104,
+      104,
+      104,
+      108,
+      108,
+      108,
+      112,
+      112,
+      112,
+      116,
+      116,
+      116,
+      120,
+      120,
+      120,
+      124
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      76,
+      76,
+      78,
+      78,
+      79,
+      81,
+      81,
+      82,
+      82,
+      84,
+      85,
+      85,
+      87,
+      87,
+      88,
+      90
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      60,
+      61,
+      61,
+      63,
+      63,
+      64,
+      64,
+      66,
+      66,
+      67,
+      67,
+      69,
+      69,
+      70,
+      70,
+      72
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      60,
+      61,
+      61,
+      62,
+      63,
+      63,
+      64,
+      65,
+      66,
+      66,
+      67,
+      68,
+      68,
+      69,
+      70,
+      71
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      56,
+      57,
+      58,
+      58,
+      59,
+      60,
+      60,
+      61,
+      62,
+      62,
+      63,
+      64,
+      64,
+      65,
+      66,
+      67
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      38,
+      38,
+      39,
+      39,
+      40,
+      40,
+      40,
+      41,
+      41,
+      42,
+      42,
+      43,
+      43,
+      44,
+      44,
+      45
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100,
+      100,
+      102,
+      102,
+      104,
+      106
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      84,
+      86,
+      86,
+      88,
+      88,
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      63,
+      64,
+      64,
+      66,
+      66,
+      67,
+      67,
+      69,
+      69,
+      70,
+      70,
+      72,
+      72,
+      73,
+      73,
+      75
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      51,
+      51,
+      51,
+      52,
+      52,
+      54,
+      54,
+      54,
+      55,
+      55,
+      57,
+      57,
+      57,
+      58,
+      58,
+      60
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      50,
+      50,
+      51,
+      51,
+      52,
+      53,
+      53,
+      54,
+      54,
+      55,
+      56,
+      56,
+      57,
+      57,
+      58,
+      59
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      56,
+      57,
+      58,
+      58,
+      59,
+      60,
+      60,
+      61,
+      62,
+      62,
+      63,
+      64,
+      64,
+      65,
+      66,
+      67
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      38,
+      38,
+      39,
+      39,
+      40,
+      40,
+      40,
+      41,
+      41,
+      42,
+      42,
+      43,
+      43,
+      44,
+      44,
+      45
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100,
+      100,
+      102,
+      102,
+      104,
+      106
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      84,
+      86,
+      86,
+      88,
+      88,
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      126,
+      127,
+      129,
+      130,
+      132,
+      133,
+      135,
+      136,
+      138,
+      139,
+      141,
+      142,
+      144,
+      145,
+      147,
+      148
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      102,
+      102,
+      103,
+      105,
+      106,
+      108,
+      108,
+      109,
+      111,
+      112,
+      114,
+      114,
+      115,
+      117,
+      118,
+      120
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      50,
+      51,
+      51,
+      52,
+      52,
+      53,
+      54,
+      54,
+      55,
+      55,
+      56,
+      57,
+      57,
+      58,
+      58,
+      59
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      32,
+      32,
+      33,
+      33,
+      33,
+      34,
+      34,
+      34,
+      35,
+      35,
+      36,
+      36,
+      36,
+      37,
+      37,
+      38
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      22,
+      22,
+      22,
+      22,
+      23,
+      23,
+      23,
+      23,
+      24,
+      24,
+      24,
+      24,
+      25,
+      25,
+      25,
+      26
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      12,
+      12,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      15
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      48,
+      48,
+      50,
+      50,
+      50,
+      52,
+      52,
+      52,
+      52,
+      54,
+      54,
+      54,
+      56,
+      56,
+      56,
+      58
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      158,
+      162,
+      162,
+      164,
+      168,
+      168,
+      170,
+      170,
+      174,
+      176,
+      176,
+      180,
+      182,
+      182,
+      186,
+      188
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      39,
+      39,
+      40,
+      40,
+      41,
+      41,
+      42,
+      42,
+      43,
+      43,
+      44,
+      44,
+      45,
+      45,
+      46,
+      46
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      34,
+      35,
+      35,
+      36,
+      36,
+      36,
+      37,
+      37,
+      38,
+      38,
+      38,
+      39,
+      39,
+      40,
+      40,
+      41
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      23,
+      24,
+      24,
+      24,
+      24,
+      25,
+      25,
+      25,
+      26,
+      26,
+      26,
+      26,
+      27,
+      27,
+      27,
+      28
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      56,
+      56,
+      56,
+      58,
+      58,
+      58,
+      60,
+      60,
+      60,
+      62,
+      62,
+      62,
+      64,
+      64,
+      64,
+      66
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      104,
+      104,
+      104,
+      108,
+      108,
+      108,
+      112,
+      112,
+      112,
+      116,
+      116,
+      116,
+      120,
+      120,
+      120,
+      124
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      18,
+      18,
+      19,
+      19,
+      19,
+      19,
+      20,
+      20,
+      20,
+      20,
+      20,
+      21,
+      21,
+      21,
+      21,
+      22
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      15,
+      15,
+      15,
+      15,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      17,
+      17,
+      17,
+      17,
+      17,
+      18
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      22,
+      23,
+      23,
+      23,
+      24,
+      24,
+      24,
+      24,
+      25,
+      25,
+      25,
+      25,
+      26,
+      26,
+      26,
+      27
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      187,
+      190,
+      192,
+      195,
+      196,
+      199,
+      201,
+      204,
+      205,
+      208,
+      210,
+      213,
+      214,
+      217,
+      219,
+      222
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      126,
+      127,
+      129,
+      130,
+      132,
+      133,
+      135,
+      136,
+      138,
+      139,
+      141,
+      142,
+      144,
+      145,
+      147,
+      148
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      200,
+      202,
+      204,
+      206,
+      210,
+      212,
+      214,
+      216,
+      218,
+      220,
+      224,
+      226,
+      228,
+      230,
+      232,
+      236
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      190,
+      192,
+      194,
+      196,
+      198,
+      200,
+      202,
+      206,
+      208,
+      210,
+      212,
+      214,
+      216,
+      218,
+      220,
+      224
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      17,
+      17,
+      17,
+      17,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      19
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      12,
+      12,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      15
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      18,
+      18,
+      19,
+      19,
+      19,
+      19,
+      20,
+      20,
+      20,
+      20,
+      20,
+      21,
+      21,
+      21,
+      21,
+      22
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      187,
+      190,
+      192,
+      195,
+      196,
+      199,
+      201,
+      204,
+      205,
+      208,
+      210,
+      213,
+      214,
+      217,
+      219,
+      222
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      126,
+      127,
+      129,
+      130,
+      132,
+      133,
+      135,
+      136,
+      138,
+      139,
+      141,
+      142,
+      144,
+      145,
+      147,
+      148
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      200,
+      202,
+      204,
+      206,
+      210,
+      212,
+      214,
+      216,
+      218,
+      220,
+      224,
+      226,
+      228,
+      230,
+      232,
+      236
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      190,
+      192,
+      194,
+      196,
+      198,
+      200,
+      202,
+      206,
+      208,
+      210,
+      212,
+      214,
+      216,
+      218,
+      220,
+      224
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      31,
+      31,
+      32,
+      32,
+      32,
+      33,
+      33,
+      34,
+      34,
+      34,
+      35,
+      35,
+      35,
+      36,
+      36,
+      37
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      25,
+      25,
+      26,
+      26,
+      26,
+      27,
+      27,
+      27,
+      27,
+      28,
+      28,
+      28,
+      29,
+      29,
+      29,
+      30
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      18,
+      18,
+      19,
+      19,
+      19,
+      19,
+      20,
+      20,
+      20,
+      20,
+      20,
+      21,
+      21,
+      21,
+      21,
+      22
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      105,
+      106,
+      108,
+      109,
+      109,
+      111,
+      112,
+      114,
+      115,
+      117,
+      117,
+      118,
+      120,
+      121,
+      123,
+      124
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      70,
+      72,
+      72,
+      73,
+      73,
+      75,
+      75,
+      76,
+      78,
+      78,
+      79,
+      79,
+      81,
+      81,
+      82,
+      84
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      28,
+      28,
+      28,
+      29,
+      29,
+      29,
+      30,
+      30,
+      30,
+      31,
+      31,
+      31,
+      32,
+      32,
+      32,
+      33
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      104,
+      106,
+      106,
+      108,
+      110,
+      110,
+      112,
+      114,
+      114,
+      116,
+      116,
+      118,
+      120,
+      120,
+      122,
+      124
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      40,
+      40,
+      40,
+      42,
+      42,
+      42,
+      42,
+      44,
+      44,
+      44,
+      44,
+      46,
+      46,
+      46,
+      46,
+      48
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      14,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      17,
+      17,
+      17
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      115,
+      117,
+      118,
+      120,
+      120,
+      121,
+      123,
+      124,
+      126,
+      127,
+      129,
+      130,
+      132,
+      133,
+      135,
+      136
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      76,
+      78,
+      79,
+      79,
+      81,
+      81,
+      82,
+      84,
+      84,
+      85,
+      85,
+      87,
+      88,
+      88,
+      90,
+      91
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      122,
+      122,
+      124,
+      126,
+      128,
+      128,
+      130,
+      132,
+      132,
+      134,
+      136,
+      138,
+      138,
+      140,
+      142,
+      144
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      228,
+      232,
+      236,
+      236,
+      240,
+      244,
+      244,
+      248,
+      252,
+      252,
+      256,
+      260,
+      260,
+      264,
+      268,
+      272
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      34,
+      35,
+      35,
+      36,
+      36,
+      36,
+      37,
+      37,
+      38,
+      38,
+      38,
+      39,
+      39,
+      40,
+      40,
+      41
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      28,
+      28,
+      28,
+      29,
+      29,
+      29,
+      30,
+      30,
+      30,
+      31,
+      31,
+      31,
+      32,
+      32,
+      32,
+      33
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      61,
+      63,
+      63,
+      64,
+      64,
+      66,
+      66,
+      67,
+      67,
+      69,
+      69,
+      70,
+      70,
+      72,
+      72,
+      73
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      107,
+      108,
+      109,
+      110,
+      112,
+      113,
+      114,
+      115,
+      117,
+      118,
+      119,
+      120,
+      122,
+      123,
+      124,
+      126
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      71,
+      72,
+      73,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      254,
+      258,
+      260,
+      264,
+      266,
+      270,
+      272,
+      276,
+      278,
+      282,
+      284,
+      288,
+      290,
+      294,
+      296,
+      300
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      160,
+      162,
+      164,
+      166,
+      168,
+      170,
+      172,
+      174,
+      176,
+      178,
+      180,
+      182,
+      184,
+      186,
+      188,
+      190
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      28,
+      29,
+      29,
+      29,
+      30,
+      30,
+      30,
+      31,
+      31,
+      31,
+      32,
+      32,
+      32,
+      33,
+      33,
+      34
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      22,
+      23,
+      23,
+      23,
+      24,
+      24,
+      24,
+      24,
+      25,
+      25,
+      25,
+      25,
+      26,
+      26,
+      26,
+      27
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      51,
+      51,
+      51,
+      52,
+      52,
+      54,
+      54,
+      54,
+      55,
+      55,
+      57,
+      57,
+      57,
+      58,
+      58,
+      60
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      107,
+      108,
+      109,
+      110,
+      112,
+      113,
+      114,
+      115,
+      117,
+      118,
+      119,
+      120,
+      122,
+      123,
+      124,
+      126
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      71,
+      72,
+      73,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      254,
+      258,
+      260,
+      264,
+      266,
+      270,
+      272,
+      276,
+      278,
+      282,
+      284,
+      288,
+      290,
+      294,
+      296,
+      300
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 252,
+        "atk": 0,
+        "def": 124,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      160,
+      162,
+      164,
+      166,
+      168,
+      170,
+      172,
+      174,
+      176,
+      178,
+      180,
+      182,
+      184,
+      186,
+      188,
+      190
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      57,
+      58,
+      59,
+      59,
+      60,
+      61,
+      61,
+      62,
+      63,
+      63,
+      64,
+      65,
+      65,
+      66,
+      67,
+      68
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      45,
+      46,
+      46,
+      47,
+      48,
+      48,
+      49,
+      49,
+      50,
+      50,
+      51,
+      51,
+      52,
+      52,
+      53,
+      54
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      51,
+      51,
+      52,
+      53,
+      54,
+      54,
+      54,
+      55,
+      56,
+      57,
+      57,
+      57,
+      58,
+      59,
+      60,
+      60
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      59,
+      60,
+      60,
+      61,
+      62,
+      63,
+      63,
+      64,
+      65,
+      65,
+      66,
+      67,
+      67,
+      68,
+      69,
+      70
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      39,
+      40,
+      40,
+      41,
+      41,
+      42,
+      42,
+      43,
+      43,
+      44,
+      44,
+      45,
+      45,
+      46,
+      46,
+      47
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      35,
+      36,
+      36,
+      36,
+      36,
+      37,
+      37,
+      38,
+      39,
+      39,
+      39,
+      39,
+      40,
+      40,
+      41,
+      42
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100,
+      100,
+      102,
+      102,
+      104,
+      106
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      72,
+      72,
+      74,
+      74,
+      76,
+      76,
+      78,
+      78,
+      78,
+      80,
+      80,
+      82,
+      82,
+      84,
+      84,
+      86
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Close Combat",
+    "rolls": [
+      39,
+      40,
+      40,
+      41,
+      42,
+      42,
+      42,
+      42,
+      43,
+      44,
+      44,
+      45,
+      45,
+      45,
+      46,
+      47
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      65,
+      66,
+      66,
+      67,
+      68,
+      69,
+      70,
+      70,
+      71,
+      72,
+      73,
+      73,
+      74,
+      75,
+      76,
+      77
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      44,
+      44,
+      45,
+      45,
+      46,
+      46,
+      47,
+      47,
+      48,
+      48,
+      49,
+      49,
+      50,
+      50,
+      51,
+      52
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Moonblast",
+    "rolls": [
+      152,
+      156,
+      158,
+      158,
+      162,
+      162,
+      164,
+      168,
+      168,
+      170,
+      170,
+      174,
+      176,
+      176,
+      180,
+      182
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      196,
+      196,
+      200,
+      204,
+      204,
+      208,
+      208,
+      212,
+      212,
+      216,
+      220,
+      220,
+      224,
+      224,
+      228,
+      232
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Choice Band"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      102,
+      103,
+      105,
+      106,
+      108,
+      108,
+      109,
+      111,
+      112,
+      114,
+      114,
+      115,
+      117,
+      118,
+      120,
+      121
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Life Orb"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      90,
+      91,
+      91,
+      94,
+      94,
+      95,
+      97,
+      97,
+      99,
+      99,
+      101,
+      101,
+      103,
+      103,
+      105,
+      107
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Life Orb"
+    },
+    "defender": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      234,
+      237,
+      237,
+      242,
+      244,
+      244,
+      250,
+      252,
+      257,
+      257,
+      260,
+      265,
+      265,
+      268,
+      273,
+      276
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Expert Belt"
+    },
+    "defender": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      216,
+      218,
+      218,
+      223,
+      226,
+      226,
+      230,
+      233,
+      238,
+      238,
+      240,
+      245,
+      245,
+      247,
+      252,
+      254
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Expert Belt"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      69,
+      70,
+      70,
+      72,
+      72,
+      73,
+      75,
+      75,
+      76,
+      76,
+      78,
+      78,
+      79,
+      79,
+      81,
+      82
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Soft Sand"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      82,
+      82,
+      84,
+      85,
+      85,
+      87,
+      88,
+      88,
+      90,
+      91,
+      91,
+      93,
+      94,
+      94,
+      96,
+      97
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Muscle Band"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      76,
+      76,
+      78,
+      78,
+      79,
+      81,
+      81,
+      82,
+      82,
+      84,
+      85,
+      85,
+      87,
+      87,
+      88,
+      90
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Choice Specs"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      280,
+      285,
+      288,
+      291,
+      294,
+      297,
+      301,
+      304,
+      307,
+      310,
+      313,
+      318,
+      321,
+      324,
+      327,
+      331
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Wise Glasses"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      138,
+      139,
+      141,
+      142,
+      145,
+      147,
+      148,
+      150,
+      151,
+      153,
+      154,
+      156,
+      157,
+      159,
+      160,
+      163
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Assault Vest"
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      127,
+      129,
+      130,
+      132,
+      133,
+      135,
+      136,
+      138,
+      139,
+      141,
+      142,
+      144,
+      145,
+      147,
+      148,
+      150
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Silk Scarf"
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Extreme Speed",
+    "rolls": [
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      136,
+      138,
+      139,
+      142,
+      144,
+      145,
+      147,
+      148,
+      150,
+      151,
+      153,
+      154,
+      156,
+      157,
+      159,
+      162
+    ],
+    "attacker_boosts": {
+      "atk": 2
+    }
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      46,
+      46,
+      48,
+      48,
+      48,
+      49,
+      49,
+      51,
+      51,
+      51,
+      52,
+      52,
+      52,
+      54,
+      54,
+      55
+    ],
+    "attacker_boosts": {
+      "atk": -1
+    }
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      46,
+      46,
+      48,
+      48,
+      48,
+      49,
+      49,
+      51,
+      51,
+      51,
+      52,
+      52,
+      52,
+      54,
+      54,
+      55
+    ],
+    "defender_boosts": {
+      "def": 1
+    }
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      427,
+      432,
+      438,
+      442,
+      448,
+      453,
+      457,
+      463,
+      468,
+      472,
+      478,
+      483,
+      487,
+      493,
+      498,
+      504
+    ],
+    "attacker_boosts": {
+      "spa": 1
+    },
+    "defender_boosts": {
+      "spd": -1
+    }
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      103,
+      105,
+      106,
+      108,
+      108,
+      109,
+      111,
+      112,
+      114,
+      115,
+      115,
+      117,
+      118,
+      120,
+      121,
+      123
+    ],
+    "is_crit": true
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      103,
+      105,
+      106,
+      108,
+      108,
+      109,
+      111,
+      112,
+      114,
+      115,
+      115,
+      117,
+      118,
+      120,
+      121,
+      123
+    ],
+    "defender_boosts": {
+      "def": 2
+    },
+    "is_crit": true
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      103,
+      105,
+      106,
+      108,
+      108,
+      109,
+      111,
+      112,
+      114,
+      115,
+      115,
+      117,
+      118,
+      120,
+      121,
+      123
+    ],
+    "attacker_boosts": {
+      "atk": -2
+    },
+    "is_crit": true
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Life Orb"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      133,
+      134,
+      136,
+      138,
+      140,
+      140,
+      142,
+      144,
+      146,
+      148,
+      148,
+      149,
+      152,
+      153,
+      156,
+      157
+    ],
+    "attacker_boosts": {
+      "atk": 1
+    }
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Flamethrower",
+    "rolls": [
+      178,
+      180,
+      182,
+      184,
+      186,
+      188,
+      190,
+      192,
+      194,
+      196,
+      198,
+      200,
+      202,
+      204,
+      206,
+      210
+    ],
+    "field": {
+      "weather": "sun"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Flamethrower",
+    "rolls": [
+      58,
+      60,
+      60,
+      60,
+      62,
+      62,
+      62,
+      64,
+      64,
+      64,
+      66,
+      66,
+      66,
+      68,
+      68,
+      70
+    ],
+    "field": {
+      "weather": "rain"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Azumarill",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Surf",
+    "rolls": [
+      158,
+      162,
+      162,
+      164,
+      168,
+      168,
+      170,
+      170,
+      174,
+      176,
+      176,
+      180,
+      182,
+      182,
+      186,
+      188
+    ],
+    "field": {
+      "weather": "rain"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Azumarill",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Surf",
+    "rolls": [
+      50,
+      54,
+      54,
+      54,
+      54,
+      54,
+      56,
+      56,
+      56,
+      56,
+      56,
+      60,
+      60,
+      60,
+      60,
+      62
+    ],
+    "field": {
+      "weather": "sun"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      25,
+      26,
+      26,
+      27,
+      27,
+      27,
+      27,
+      27,
+      28,
+      28,
+      28,
+      29,
+      29,
+      30,
+      30,
+      30
+    ],
+    "field": {
+      "weather": "sand"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      158,
+      162,
+      162,
+      164,
+      168,
+      168,
+      170,
+      170,
+      174,
+      176,
+      176,
+      180,
+      182,
+      182,
+      186,
+      188
+    ],
+    "field": {
+      "weather": "sand"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Azumarill",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Thunderbolt",
+    "rolls": [
+      180,
+      182,
+      184,
+      186,
+      188,
+      190,
+      192,
+      194,
+      196,
+      198,
+      200,
+      202,
+      204,
+      206,
+      208,
+      212
+    ],
+    "field": {
+      "terrain": "electric"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Azumarill",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Thunderbolt",
+    "rolls": [
+      114,
+      116,
+      118,
+      118,
+      120,
+      122,
+      122,
+      124,
+      126,
+      126,
+      128,
+      130,
+      130,
+      132,
+      134,
+      136
+    ],
+    "field": {
+      "terrain": "electric"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      34,
+      36,
+      36,
+      36,
+      36,
+      37,
+      37,
+      37,
+      39,
+      39,
+      39,
+      39,
+      40,
+      40,
+      40,
+      42
+    ],
+    "field": {
+      "terrain": "grassy"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      28,
+      28,
+      30,
+      30,
+      30,
+      30,
+      30,
+      31,
+      31,
+      31,
+      31,
+      33,
+      33,
+      33,
+      33,
+      34
+    ],
+    "field": {
+      "terrain": "misty"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Psyshock",
+    "rolls": [
+      150,
+      152,
+      154,
+      156,
+      158,
+      160,
+      160,
+      162,
+      164,
+      166,
+      168,
+      170,
+      172,
+      174,
+      176,
+      178
+    ],
+    "field": {
+      "terrain": "psychic"
+    }
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      34,
+      35,
+      35,
+      36,
+      36,
+      36,
+      37,
+      37,
+      38,
+      38,
+      39,
+      39,
+      39,
+      39,
+      40,
+      41
+    ],
+    "field": {
+      "reflect": true
+    }
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      93,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      102,
+      102,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      111
+    ],
+    "field": {
+      "light_screen": true
+    }
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      34,
+      35,
+      35,
+      36,
+      36,
+      36,
+      37,
+      37,
+      38,
+      38,
+      39,
+      39,
+      39,
+      39,
+      40,
+      41
+    ],
+    "field": {
+      "aurora_veil": true
+    }
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      103,
+      105,
+      106,
+      108,
+      108,
+      109,
+      111,
+      112,
+      114,
+      115,
+      115,
+      117,
+      118,
+      120,
+      121,
+      123
+    ],
+    "is_crit": true,
+    "field": {
+      "reflect": true
+    }
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      51,
+      52,
+      52,
+      54,
+      54,
+      54,
+      55,
+      55,
+      57,
+      57,
+      57,
+      58,
+      58,
+      60,
+      60,
+      61
+    ],
+    "spread": true
+  },
+  {
+    "attacker": {
+      "species": "Azumarill",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Surf",
+    "rolls": [
+      128,
+      128,
+      132,
+      132,
+      134,
+      134,
+      138,
+      138,
+      140,
+      140,
+      144,
+      144,
+      146,
+      146,
+      150,
+      152
+    ],
+    "spread": true
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "tera_type": "Ground"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      100,
+      100,
+      102,
+      102,
+      104,
+      104,
+      106,
+      106,
+      108,
+      110
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      },
+      "tera_type": "Steel"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      250,
+      254,
+      256,
+      260,
+      262,
+      266,
+      268,
+      272,
+      274,
+      278,
+      280,
+      284,
+      286,
+      290,
+      292,
+      296
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      },
+      "tera_type": "Fire"
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Flamethrower",
+    "rolls": [
+      150,
+      150,
+      152,
+      152,
+      156,
+      158,
+      158,
+      162,
+      162,
+      164,
+      168,
+      168,
+      170,
+      170,
+      174,
+      176
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "tera_type": "Steel"
+    },
+    "move": "Earthquake",
+    "rolls": [
+      180,
+      182,
+      182,
+      186,
+      188,
+      188,
+      192,
+      194,
+      198,
+      198,
+      200,
+      204,
+      204,
+      206,
+      210,
+      212
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "tera_type": "Flying"
+    },
+    "move": "Earthquake",
+    "rolls": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "tera_type": "Fairy"
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      76,
+      78,
+      79,
+      79,
+      81,
+      81,
+      82,
+      84,
+      84,
+      85,
+      85,
+      87,
+      88,
+      88,
+      90,
+      91
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Azumarill",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Huge Power"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Play Rough",
+    "rolls": [
+      152,
+      152,
+      156,
+      156,
+      158,
+      162,
+      162,
+      164,
+      164,
+      168,
+      170,
+      170,
+      174,
+      174,
+      176,
+      180
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Guts",
+      "status": "brn"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      102,
+      103,
+      105,
+      106,
+      108,
+      108,
+      109,
+      111,
+      112,
+      114,
+      114,
+      115,
+      117,
+      118,
+      120,
+      121
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "status": "brn"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Facade",
+    "rolls": [
+      72,
+      73,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Technician"
+    },
+    "defender": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Bullet Punch",
+    "rolls": [
+      64,
+      64,
+      66,
+      66,
+      66,
+      68,
+      68,
+      68,
+      70,
+      70,
+      72,
+      72,
+      72,
+      74,
+      74,
+      76
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Adaptability"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      100,
+      100,
+      102,
+      102,
+      104,
+      104,
+      106,
+      106,
+      108,
+      110
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Thick Fat"
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      60,
+      60,
+      62,
+      62,
+      64,
+      64,
+      64,
+      66,
+      66,
+      66,
+      68,
+      68,
+      68,
+      70,
+      70,
+      72
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Fur Coat"
+    },
+    "move": "Earthquake",
+    "rolls": [
+      34,
+      36,
+      36,
+      36,
+      36,
+      37,
+      37,
+      37,
+      39,
+      39,
+      39,
+      39,
+      40,
+      40,
+      40,
+      42
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Dragonite",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Multiscale"
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      72,
+      73,
+      73,
+      75,
+      75,
+      76,
+      76,
+      78,
+      79,
+      79,
+      81,
+      81,
+      82,
+      82,
+      84,
+      85
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Filter"
+    },
+    "move": "Ice Beam",
+    "rolls": [
+      168,
+      168,
+      171,
+      174,
+      174,
+      177,
+      180,
+      180,
+      183,
+      186,
+      186,
+      189,
+      192,
+      192,
+      195,
+      198
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Tinted Lens"
+    },
+    "defender": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Shadow Ball",
+    "rolls": [
+      76,
+      78,
+      78,
+      78,
+      80,
+      80,
+      82,
+      84,
+      84,
+      84,
+      84,
+      86,
+      88,
+      88,
+      90,
+      90
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Ice Scales"
+    },
+    "move": "Make It Rain",
+    "rolls": [
+      69,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      75,
+      76,
+      77,
+      78,
+      78,
+      79,
+      80,
+      81
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Marvel Scale",
+      "status": "brn"
+    },
+    "move": "Earthquake",
+    "rolls": [
+      46,
+      46,
+      48,
+      48,
+      48,
+      49,
+      49,
+      51,
+      51,
+      51,
+      52,
+      52,
+      52,
+      54,
+      54,
+      55
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Levitate"
+    },
+    "move": "Earthquake",
+    "rolls": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Azumarill",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Water Absorb"
+    },
+    "move": "Surf",
+    "rolls": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Flash Fire"
+    },
+    "move": "Flamethrower",
+    "rolls": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Tough Claws"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Dragon Claw",
+    "rolls": [
+      72,
+      73,
+      73,
+      75,
+      75,
+      76,
+      76,
+      78,
+      79,
+      79,
+      81,
+      81,
+      82,
+      82,
+      84,
+      85
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Tough Claws"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Earthquake",
+    "rolls": [
+      69,
+      70,
+      70,
+      72,
+      72,
+      73,
+      75,
+      75,
+      76,
+      76,
+      78,
+      78,
+      79,
+      79,
+      81,
+      82
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Iron Fist"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Punch",
+    "rolls": [
+      82,
+      84,
+      84,
+      86,
+      86,
+      88,
+      88,
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Punching Glove"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Ice Punch",
+    "rolls": [
+      78,
+      78,
+      80,
+      80,
+      80,
+      82,
+      82,
+      84,
+      84,
+      86,
+      86,
+      88,
+      88,
+      90,
+      90,
+      92
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "item": "Punching Glove"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Fluffy"
+    },
+    "move": "Ice Punch",
+    "rolls": [
+      78,
+      78,
+      80,
+      80,
+      80,
+      82,
+      82,
+      84,
+      84,
+      86,
+      86,
+      88,
+      88,
+      90,
+      90,
+      92
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Fluffy"
+    },
+    "move": "Close Combat",
+    "rolls": [
+      27,
+      27,
+      28,
+      28,
+      28,
+      29,
+      29,
+      29,
+      30,
+      30,
+      30,
+      31,
+      31,
+      31,
+      32,
+      32
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Fluffy"
+    },
+    "move": "Flamethrower",
+    "rolls": [
+      236,
+      240,
+      240,
+      244,
+      248,
+      252,
+      252,
+      256,
+      260,
+      260,
+      264,
+      268,
+      268,
+      272,
+      276,
+      280
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Punk Rock"
+    },
+    "move": "Hyper Voice",
+    "rolls": [
+      29,
+      30,
+      30,
+      30,
+      31,
+      31,
+      31,
+      32,
+      32,
+      32,
+      33,
+      33,
+      33,
+      34,
+      34,
+      35
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Punk Rock"
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Hyper Voice",
+    "rolls": [
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Strong Jaw"
+    },
+    "defender": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Crunch",
+    "rolls": [
+      240,
+      242,
+      246,
+      248,
+      252,
+      254,
+      258,
+      260,
+      264,
+      266,
+      270,
+      272,
+      276,
+      278,
+      282,
+      284
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Sharpness"
+    },
+    "defender": {
+      "species": "Azumarill",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Leaf Blade",
+    "rolls": [
+      186,
+      188,
+      190,
+      192,
+      194,
+      198,
+      200,
+      202,
+      204,
+      206,
+      208,
+      210,
+      212,
+      214,
+      216,
+      220
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Cloyster",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Icicle Spear",
+    "rolls": [
+      30,
+      30,
+      30,
+      30,
+      30,
+      30,
+      30,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      36
+    ],
+    "hits": 3
+  },
+  {
+    "attacker": {
+      "species": "Cloyster",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Icicle Spear",
+    "rolls": [
+      30,
+      30,
+      30,
+      30,
+      30,
+      30,
+      30,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      36
+    ],
+    "hits": 5
+  },
+  {
+    "attacker": {
+      "species": "Cloyster",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Rock Blast",
+    "rolls": [
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      8
+    ],
+    "hits": 2
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Bonemerang",
+    "rolls": [
+      34,
+      36,
+      36,
+      36,
+      36,
+      37,
+      37,
+      37,
+      39,
+      39,
+      39,
+      39,
+      40,
+      40,
+      40,
+      42
+    ],
+    "hits": 2
+  },
+  {
+    "attacker": {
+      "species": "Azumarill",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Huge Power"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Triple Dive",
+    "rolls": [
+      50,
+      54,
+      54,
+      54,
+      54,
+      54,
+      56,
+      56,
+      56,
+      56,
+      56,
+      60,
+      60,
+      60,
+      60,
+      62
+    ],
+    "hits": 3
+  },
+  {
+    "attacker": {
+      "species": "Cloyster",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "ability": "Technician"
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Icicle Spear",
+    "rolls": [
+      42,
+      42,
+      42,
+      42,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      48,
+      48,
+      48,
+      48,
+      48,
+      50
+    ],
+    "hits": 3
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Grass Knot",
+    "rolls": [
+      180,
+      182,
+      184,
+      186,
+      188,
+      190,
+      192,
+      194,
+      196,
+      198,
+      200,
+      202,
+      204,
+      206,
+      208,
+      212
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Grass Knot",
+    "rolls": [
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Cloyster",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Low Kick",
+    "rolls": [
+      70,
+      72,
+      72,
+      72,
+      74,
+      74,
+      76,
+      76,
+      78,
+      78,
+      78,
+      80,
+      80,
+      82,
+      82,
+      84
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Low Kick",
+    "rolls": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Heavy Slam",
+    "rolls": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      107,
+      108,
+      109,
+      110,
+      111,
+      113,
+      114,
+      115,
+      116,
+      117,
+      119
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 0,
+        "atk": 252,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Garchomp",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Heavy Slam",
+    "rolls": [
+      40,
+      41,
+      41,
+      42,
+      42,
+      43,
+      43,
+      44,
+      44,
+      45,
+      45,
+      46,
+      46,
+      47,
+      47,
+      48
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Corviknight",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Eruption",
+    "rolls": [
+      174,
+      176,
+      178,
+      180,
+      182,
+      184,
+      186,
+      188,
+      190,
+      192,
+      194,
+      196,
+      198,
+      200,
+      202,
+      206
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Corviknight",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Eruption",
+    "rolls": [
+      86,
+      86,
+      88,
+      88,
+      90,
+      90,
+      92,
+      92,
+      94,
+      94,
+      96,
+      96,
+      98,
+      98,
+      100,
+      102
+    ],
+    "attacker_hp_fraction": 0.5
+  },
+  {
+    "attacker": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Modest",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Corviknight",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Eruption",
+    "rolls": [
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      22
+    ],
+    "attacker_hp_fraction": 0.1
+  },
+  {
+    "attacker": {
+      "species": "Corviknight",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 252,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Body Press",
+    "rolls": [
+      160,
+      164,
+      164,
+      168,
+      168,
+      172,
+      172,
+      176,
+      176,
+      180,
+      180,
+      184,
+      184,
+      188,
+      188,
+      192
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Corviknight",
+      "level": 50,
+      "nature": "Impish",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 252,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Tyranitar",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Body Press",
+    "rolls": [
+      320,
+      324,
+      328,
+      332,
+      336,
+      340,
+      344,
+      348,
+      352,
+      356,
+      360,
+      364,
+      368,
+      372,
+      376,
+      380
+    ],
+    "attacker_boosts": {
+      "def": 2
+    }
+  },
+  {
+    "attacker": {
+      "species": "Iron Valiant",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 252,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Calm",
+      "evs": {
+        "hp": 244,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 156,
+        "spe": 0
+      }
+    },
+    "move": "Psyshock",
+    "rolls": [
+      116,
+      118,
+      120,
+      120,
+      122,
+      124,
+      124,
+      126,
+      128,
+      128,
+      130,
+      132,
+      132,
+      134,
+      136,
+      138
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Seismic Toss",
+    "rolls": [
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Gholdengo",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Seismic Toss",
+    "rolls": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "attacker": {
+      "species": "Amoonguss",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "defender": {
+      "species": "Great Tusk",
+      "level": 50,
+      "nature": "Serious",
+      "evs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    "move": "Night Shade",
+    "rolls": [
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50
+    ]
+  }
+]

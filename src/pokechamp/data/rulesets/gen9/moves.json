@@ -1,0 +1,271 @@
+{
+ "Earthquake": {
+  "type": "ground",
+  "category": "Physical",
+  "base_power": 100,
+  "accuracy": 100,
+  "spread": true
+ },
+ "Headlong Rush": {
+  "type": "ground",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "flags": [
+   "contact"
+  ]
+ },
+ "Dragon Claw": {
+  "type": "dragon",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "flags": [
+   "contact"
+  ]
+ },
+ "Close Combat": {
+  "type": "fighting",
+  "category": "Physical",
+  "base_power": 120,
+  "accuracy": 100,
+  "flags": [
+   "contact"
+  ]
+ },
+ "Extreme Speed": {
+  "type": "normal",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "priority": 2,
+  "flags": [
+   "contact"
+  ]
+ },
+ "Play Rough": {
+  "type": "fairy",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 90,
+  "flags": [
+   "contact"
+  ]
+ },
+ "Body Press": {
+  "type": "fighting",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "flags": [
+   "contact"
+  ]
+ },
+ "Facade": {
+  "type": "normal",
+  "category": "Physical",
+  "base_power": 70,
+  "accuracy": 100,
+  "flags": [
+   "contact"
+  ]
+ },
+ "Bullet Punch": {
+  "type": "steel",
+  "category": "Physical",
+  "base_power": 40,
+  "accuracy": 100,
+  "priority": 1,
+  "flags": [
+   "contact",
+   "punch"
+  ]
+ },
+ "Ice Punch": {
+  "type": "ice",
+  "category": "Physical",
+  "base_power": 75,
+  "accuracy": 100,
+  "flags": [
+   "contact",
+   "punch"
+  ]
+ },
+ "Crunch": {
+  "type": "dark",
+  "category": "Physical",
+  "base_power": 80,
+  "accuracy": 100,
+  "flags": [
+   "contact",
+   "bite"
+  ]
+ },
+ "Leaf Blade": {
+  "type": "grass",
+  "category": "Physical",
+  "base_power": 90,
+  "accuracy": 100,
+  "flags": [
+   "contact",
+   "slicing"
+  ]
+ },
+ "Seismic Toss": {
+  "type": "fighting",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "flags": [
+   "contact"
+  ]
+ },
+ "Icicle Spear": {
+  "type": "ice",
+  "category": "Physical",
+  "base_power": 25,
+  "accuracy": 100,
+  "multihit": [
+   2,
+   5
+  ]
+ },
+ "Rock Blast": {
+  "type": "rock",
+  "category": "Physical",
+  "base_power": 25,
+  "accuracy": 90,
+  "flags": [
+   "bullet"
+  ],
+  "multihit": [
+   2,
+   5
+  ]
+ },
+ "Bonemerang": {
+  "type": "ground",
+  "category": "Physical",
+  "base_power": 50,
+  "accuracy": 90,
+  "multihit": 2
+ },
+ "Triple Dive": {
+  "type": "water",
+  "category": "Physical",
+  "base_power": 30,
+  "accuracy": 95,
+  "flags": [
+   "contact"
+  ],
+  "multihit": 3
+ },
+ "Make It Rain": {
+  "type": "steel",
+  "category": "Special",
+  "base_power": 120,
+  "accuracy": 100,
+  "spread": true
+ },
+ "Shadow Ball": {
+  "type": "ghost",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100,
+  "flags": [
+   "bullet"
+  ]
+ },
+ "Moonblast": {
+  "type": "fairy",
+  "category": "Special",
+  "base_power": 95,
+  "accuracy": 100
+ },
+ "Ice Beam": {
+  "type": "ice",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100
+ },
+ "Flamethrower": {
+  "type": "fire",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100
+ },
+ "Surf": {
+  "type": "water",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "spread": true
+ },
+ "Thunderbolt": {
+  "type": "electric",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100
+ },
+ "Hyper Voice": {
+  "type": "normal",
+  "category": "Special",
+  "base_power": 90,
+  "accuracy": 100,
+  "spread": true,
+  "flags": [
+   "sound"
+  ]
+ },
+ "Psyshock": {
+  "type": "psychic",
+  "category": "Special",
+  "base_power": 80,
+  "accuracy": 100
+ },
+ "Night Shade": {
+  "type": "ghost",
+  "category": "Special",
+  "base_power": 0,
+  "accuracy": 100
+ },
+ "Spore": {
+  "type": "grass",
+  "category": "Status",
+  "base_power": 0,
+  "accuracy": 100,
+  "flags": [
+   "powder"
+  ]
+ },
+ "Grass Knot": {
+  "type": "grass",
+  "category": "Special",
+  "base_power": 0,
+  "accuracy": 100
+ },
+ "Low Kick": {
+  "type": "fighting",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "flags": [
+   "contact"
+  ]
+ },
+ "Heavy Slam": {
+  "type": "steel",
+  "category": "Physical",
+  "base_power": 0,
+  "accuracy": 100,
+  "flags": [
+   "contact"
+  ]
+ },
+ "Eruption": {
+  "type": "fire",
+  "category": "Special",
+  "base_power": 150,
+  "accuracy": 100
+ }
+}
