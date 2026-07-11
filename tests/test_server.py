@@ -70,6 +70,20 @@ def test_damage_tool_resolves_species_names(app):
     assert out["damage"][1] > 0
 
 
+def test_damage_tool_applies_weather(app):
+    calm = server.damage(
+        {"species": "Politoed", "moves": ["Surf"], "nature": "Modest",
+         "evs": {"spa": 252}},
+        TTAR, "Surf",
+    )
+    rain = server.damage(
+        {"species": "Politoed", "moves": ["Surf"], "nature": "Modest",
+         "evs": {"spa": 252}},
+        TTAR, "Surf", weather="rain",
+    )
+    assert rain["damage"][1] > calm["damage"][1]  # 1.5x water in rain
+
+
 def test_team_tools(app):
     v = server.save_team("ladder", [CHOMP, AZU, GHOLD])
     assert v == {"name": "ladder", "version": 0}

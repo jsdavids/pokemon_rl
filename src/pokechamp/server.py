@@ -18,7 +18,7 @@ from fastmcp import FastMCP
 
 from pokechamp.damage import calc_damage as _calc
 from pokechamp.recommender import recommend as _recommend
-from pokechamp.schemas import PokemonSet, stat_table
+from pokechamp.schemas import FieldState, PokemonSet, stat_table
 from pokechamp.session import (
     OpponentScout,
     TeamStore,
@@ -128,6 +128,8 @@ def damage(
     move: str,
     is_crit: bool = False,
     spread: bool = False,
+    weather: str | None = None,
+    terrain: str | None = None,
     attacker_boosts: dict | None = None,
     defender_boosts: dict | None = None,
 ) -> dict:
@@ -135,12 +137,15 @@ def damage(
     names (builds are looked up from the battle, stored teams, or
     scouting; unknown ones assume neutral stats) or full build objects
     {species, moves?, level?, nature?, evs?, ivs?, item?, ability?,
-    status?} for hypotheticals. Returns damage range, % of defender HP,
-    and KO chance."""
+    status?} for hypotheticals. weather (sun/rain/sand/snow) and terrain
+    (electric/grassy/psychic/misty) apply their damage effects. Returns
+    damage range, % of defender HP, and KO chance."""
     notes: list[str] = []
+    field = FieldState(weather=weather, terrain=terrain)
     res = _calc(
         _resolve_build(attacker, notes), _resolve_build(defender, notes),
         move,
+        field=field,
         is_crit=is_crit, spread=spread,
         attacker_boosts=attacker_boosts, defender_boosts=defender_boosts,
         ruleset=RULESET,

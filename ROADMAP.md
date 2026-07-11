@@ -292,11 +292,20 @@ cross-check, not a rollout path.
       resolution + descriptions worked); damage exposed as 1/6 for the
       same fabricate-two-build-dicts reason -> now also accepts species
       names (battle/store/scout MAP-build/neutral-with-note resolution);
-      lead_assist stuck at 1/4 through three runs — escalate to a
-      routing-prompt few-shot or grammar-constrained decoding at the
-      real bake-off; residual misses are casual phrasings ("Queue
-      popped...") and multi-step asks (save-a-team-delta), the honest
-      4B tax. In-battle hot path stayed 14/15-15/15 across all runs
+      lead_assist stuck at 1/4 through three runs; residual misses are
+      casual phrasings ("Queue popped...") and multi-step asks
+      (save-a-team-delta), the honest 4B tax. In-battle hot path stayed
+      14/15-15/15 across all runs. Run 4 (damage fix + routing-prompt
+      few-shot): 72% again but composition shifted — damage 1/6 -> 4/6
+      (species-name fix validated; also exposed + fixed a missing
+      weather/terrain param on the damage tool), while the few-shot was
+      MEASURED NET NEGATIVE: lead_assist fell to 0/4 (the list_teams
+      anchor survived a literal "NEVER list_teams" example) and the
+      longer prompt caused diffuse no-call stalls elsewhere (-3). Few-
+      shot reverted with a NOTE in assistant.py; at 4B, routing fixes
+      belong in schemas/descriptions, or grammar-constrained decoding.
+      Expected clean-config accuracy ~75-77%; definitive numbers on the
+      16GB machine
 - [ ] Model bake-off on the target machine (16GB GPU):
       pokechamp-routing-eval vs qwen3:14b / gpt-oss:20b / qwen3:30b-a3b;
       escalate to llama.cpp grammar-constrained decoding if routing

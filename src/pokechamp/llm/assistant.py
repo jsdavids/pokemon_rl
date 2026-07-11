@@ -43,6 +43,11 @@ lead advice, and in-battle move recommendations. Rules:
 - Answer concisely: give the recommendation or number first, then one
   sentence of reasoning.
 """
+# NOTE: a tool-choice few-shot block was tried here and measured NET
+# NEGATIVE at 4B (run 4 of the routing eval): it failed to fix the
+# lead_assist->list_teams anchor and the longer prompt caused diffuse
+# no-tool-call stalls under the generation cap. Routing fixes belong in
+# tool schemas/descriptions or grammar constraints, not prompt examples.
 
 Completer = Callable[[list[dict], list[dict]], dict]
 
