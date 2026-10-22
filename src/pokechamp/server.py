@@ -17,8 +17,12 @@ from pathlib import Path
 from fastmcp import FastMCP
 
 from pokechamp.damage import calc_damage as _calc
+from pokechamp.data import load_ruleset
+from pokechamp.data.loader import canonical_species
+from pokechamp.estimator.spreads import load_spread_candidates
 from pokechamp.recommender import recommend as _recommend
 from pokechamp.schemas import FieldState, PokemonSet, stat_table
+from pokechamp.stats import SP_MAX_PER_STAT, SP_MAX_TOTAL, evs_to_sp, sp_to_ev
 from pokechamp.session import (
     OpponentScout,
     TeamStore,
@@ -29,6 +33,8 @@ from pokechamp.session.battle import BattleSession
 from pokechamp.sim.battle import Action
 
 RULESET = "champions"
+# the newest regulation in the scraped ruleset: item legality + usage priors
+REGULATION = sorted(load_ruleset(RULESET).regulations)[-1]
 
 mcp = FastMCP("pokechamp")
 
@@ -40,7 +46,11 @@ class AppState:
             base / "teams.json" if base else None, ruleset=RULESET
         )
         self.scout = OpponentScout(
-            base / "scouting.json" if base else None, ruleset=RULESET
+            base / "scouting.json" if base else None, ruleset=RULESET,
+            regulation=REGULATION,
+            # ladder spread hypotheses: best estimator in the held-out
+            # simulation (stat MAE 5.3 vs 7.0 with the EV templates)
+            spreads=load_spread_candidates(ruleset=RULESET),
         )
         self.battle: BattleSession | None = None
 
@@ -55,9 +65,32 @@ def init(data_dir: str | Path | None = None) -> AppState:
     return STATE
 
 
-def parse_set(d: dict) -> PokemonSet:
-    """A build from tool input; missing EV/IV keys are filled in."""
+def _looks_like_stat_points(spread: dict) -> bool:
+    """An 'evs' dict that's really Champions Stat Points: every value fits
+    the 0-32 SP range and the total fits 66. No real EV spread looks like
+    that (32 EVs is +4 stat), and Champions players think in SP."""
+    vals = [v for v in spread.values() if isinstance(v, (int, float))]
+    return (
+        bool(vals) and sum(vals) > 0
+        and all(0 <= v <= SP_MAX_PER_STAT for v in vals)
+        and sum(vals) <= SP_MAX_TOTAL
+    )
+
+
+def parse_set(d: dict, notes: list[str] | None = None) -> PokemonSet:
+    """A build from tool input; missing EV/IV keys are filled in. Spreads
+    come as `stat_points` (Champions' unit) or `evs`; an `evs` dict that
+    is clearly Stat Points is converted (and noted)."""
     d = dict(d)
+    if "species" in d:
+        d["species"] = canonical_species(d["species"], RULESET)
+    sp = d.pop("stat_points", None) or d.pop("sp", None)
+    if sp is None and _looks_like_stat_points(d.get("evs") or {}):
+        sp = d.pop("evs")
+        if notes is not None:
+            notes.append(f"{d.get('species')}: read the spread as stat points")
+    if sp is not None:
+        d["evs"] = {k: sp_to_ev(int(v)) for k, v in sp.items()}
     d["evs"] = {**stat_table(), **d.get("evs", {})}
     d["ivs"] = {**stat_table(31), **d.get("ivs", {})}
     return PokemonSet(**d)
@@ -99,8 +132,8 @@ def _resolve_build(spec: dict | str, notes: list[str]) -> PokemonSet:
     teams, a scouted opponent's most likely build, or (last resort) a
     neutral default — always answerable, with the assumption noted."""
     if isinstance(spec, dict):
-        return parse_set(spec)
-    name = str(spec).lower()
+        return parse_set(spec, notes)
+    name = canonical_species(str(spec), RULESET).lower()
     if STATE.battle is not None:
         for p in STATE.battle.my_team:
             if p.species.lower() == name:
@@ -136,8 +169,9 @@ def damage(
     """Exact damage of one move. attacker/defender can be just species
     names (builds are looked up from the battle, stored teams, or
     scouting; unknown ones assume neutral stats) or full build objects
-    {species, moves?, level?, nature?, evs?, ivs?, item?, ability?,
-    status?} for hypotheticals. weather (sun/rain/sand/snow) and terrain
+    {species, moves?, level?, nature?, stat_points?, item?, ability?,
+    status?} for hypotheticals (stat_points: Champions SP per stat,
+    0-32 each, 66 total; e.g. {"atk": 32, "spe": 32, "hp": 2}). weather (sun/rain/sand/snow) and terrain
     (electric/grassy/psychic/misty) apply their damage effects. Returns
     damage range, % of defender HP, and KO chance."""
     notes: list[str] = []
@@ -162,25 +196,70 @@ def damage(
 
 # ------------------------------------------------------------------ teams ---
 
+def _default_team_name() -> str:
+    """The team to assume when the user doesn't name one: their only
+    team, else the most recently saved one."""
+    names = STATE.store.names()
+    if not names:
+        raise ValueError("no teams saved yet — save_team first")
+    if len(names) == 1:
+        return names[0]
+    return max(
+        names, key=lambda n: STATE.store.versions(n)[-1]["saved_at"]
+    )
+
+
+def _default_opponent() -> str:
+    """The opponent to assume when the user doesn't name one: the live
+    battle's, else the only scouted one."""
+    if STATE.battle is not None:
+        return STATE.battle.opponent
+    opps = STATE.scout.opponents()
+    if len(opps) == 1:
+        return opps[0]
+    if not opps:
+        raise ValueError("no opponent known — ask who they're facing")
+    raise ValueError(
+        f"several opponents scouted ({', '.join(opps)}) — say which one"
+    )
+
+
 @mcp.tool
 def save_team(name: str, team: list[dict]) -> dict:
-    """Store a team build (1-6 Pokemon) under a name. Every save adds a
-    new version; the build is validated against the Champions ruleset and
-    rejected with a list of problems if illegal."""
-    version = STATE.store.save(name, [parse_set(d) for d in team])
-    return {"name": name, "version": version}
+    """Store MY OWN team build (1-6 Pokemon) under a name — never an
+    opponent's Pokemon (recording what an opponent has is `scout`).
+    Every save adds a new version; the build is validated against the
+    Champions ruleset and rejected with a list of problems if illegal.
+    Each Pokemon: {species, moves, nature?, stat_points?, item?, ability?}
+    with stat_points as in-game (0-32 per stat, 66 total)."""
+    notes: list[str] = []
+    version = STATE.store.save(name, [parse_set(d, notes) for d in team])
+    out = {"name": name, "version": version}
+    if notes:
+        out["notes"] = notes
+    return out
+
+
+def _set_view(pset: PokemonSet) -> dict:
+    """A stored build as the user thinks of it: Stat Points alongside the
+    EVs the engine stores."""
+    d = set_to_dict(pset)
+    d["stat_points"] = evs_to_sp(pset.evs)
+    return d
 
 
 @mcp.tool
 def get_team(name: str, version: int | None = None) -> dict:
     """Read one stored team's full build by name — use whenever the user
-    asks to see/show/pull up their team or an earlier version of it.
+    asks to see/show/pull up their team, or any earlier version/
+    iteration of it (version counts from 0; omit for current — the
+    response lists all versions for follow-ups like "the previous one").
     (For opponent info use opponent_summary; for advice use lead_assist
     or recommend_move.)"""
     team = STATE.store.get(name, version)
     return {
         "name": name,
-        "team": [set_to_dict(p) for p in team],
+        "team": [_set_view(p) for p in team],
         "versions": STATE.store.versions(name),
     }
 
@@ -203,8 +282,10 @@ def scout(
     item: str | None = None,
     ability: str | None = None,
 ) -> dict:
-    """Record hard facts about an opponent's Pokemon: register the species
-    on their team and optionally a revealed move / item / ability."""
+    """Record hard facts about an OPPONENT'S Pokemon: register the
+    species on THEIR team (e.g. "add X to PlayerY's team", "they have
+    a Z") and optionally a revealed move / item / ability. Opponents'
+    Pokemon are never saved with save_team — that's for my own teams."""
     STATE.scout.add_pokemon(opponent, species)
     if move:
         STATE.scout.reveal_move(opponent, species, move)
@@ -220,13 +301,14 @@ def _resolve_my_pokemon(spec: dict | str) -> PokemonSet:
     team (small models shouldn't have to fabricate EV spreads)."""
     if isinstance(spec, dict):
         return parse_set(spec)
+    wanted = canonical_species(str(spec), RULESET).lower()
     if STATE.battle is not None:
         for p in STATE.battle.my_team:
-            if p.species.lower() == str(spec).lower():
+            if canonical_species(p.species, RULESET).lower() == wanted:
                 return p
     for name in reversed(STATE.store.names()):
         for p in STATE.store.get(name):
-            if p.species.lower() == str(spec).lower():
+            if canonical_species(p.species, RULESET).lower() == wanted:
                 return p
     raise ValueError(
         f"can't resolve {spec!r} to a build — start a battle, save a team "
@@ -245,6 +327,7 @@ def observe_damage(
     ko: bool = False,
     opponent_attacked: bool = False,
     is_crit: bool = False,
+    spread: bool = False,
 ) -> dict:
     """Feed a damage observation into the opponent's build estimate.
     my_pokemon is just my Pokemon's species name (its build is looked up
@@ -253,21 +336,55 @@ def observe_damage(
     with `move` (give percent damage, or remaining_percent of their bar,
     or ko=True). opponent_attacked=True: THEIR `species` hit MY pokemon
     with `move` for `percent` of my max HP (ko=True with percent = HP I
-    had left)."""
+    had left). spread=True when a spread move (Earthquake, Rock Slide,
+    Hyper Voice...) hit more than one target. During a battle, weather/
+    terrain/screens and both Pokemon's stat boosts are taken from it."""
     mine = _resolve_my_pokemon(my_pokemon)
+    context = _battle_context(mine, species, opponent_attacked)
     if opponent_attacked:
         STATE.scout.observe(
             opponent, species, "damage_dealt",
             move=move, target=mine, percent=percent or 0.0, ko=ko,
-            is_crit=is_crit,
+            is_crit=is_crit, spread=spread, **context,
         )
     else:
         STATE.scout.observe(
             opponent, species, "damage_taken",
             attacker=mine, move=move, percent=percent,
             remaining_percent=remaining_percent, ko=ko, is_crit=is_crit,
+            spread=spread, **context,
         )
     return opponent_summary(opponent, species)
+
+
+def _battle_context(mine: PokemonSet, species: str, opponent_attacked: bool) -> dict:
+    """Field + boosts for a damage observation, from the live battle (the
+    hit happened under them: sun-boosted fire must not read as a stronger
+    attacker, damage through Reflect as a bulkier target)."""
+    b = STATE.battle
+    if b is None:
+        return {}
+    my_boosts = next(
+        (dict(s["boosts"]) for p, s in zip(b.my_team, b.my_state)
+         if canonical_species(p.species, RULESET) == mine.species),
+        {},
+    )
+    opp = canonical_species(species, RULESET)
+    opp_boosts = dict(b.opp_state.get(opp, {}).get("boosts", {}))
+    attacker_side, defender_side = (
+        (b.opp_conditions, b.my_conditions) if opponent_attacked
+        else (b.my_conditions, b.opp_conditions)
+    )
+    field = FieldState(
+        weather=b.field.weather, terrain=b.field.terrain,
+        trick_room=b.field.trick_room,
+        attacker_side=attacker_side, defender_side=defender_side,
+    )
+    return {
+        "field": field,
+        "attacker_boosts": opp_boosts if opponent_attacked else my_boosts,
+        "defender_boosts": my_boosts if opponent_attacked else opp_boosts,
+    }
 
 
 @mcp.tool
@@ -290,8 +407,8 @@ def opponent_summary(opponent: str, species: str | None = None) -> dict:
 
 @mcp.tool
 def lead_assist(
-    team_name: str,
-    opponent: str,
+    team_name: str | None = None,
+    opponent: str | None = None,
     format: str = "singles",
     games: int = 8,
 ) -> dict:
@@ -299,7 +416,11 @@ def lead_assist(
     matchup: ranks every bring/lead choice of a stored team against a
     scouted opponent by simulated win rate. Use this whenever the user
     asks about leads, picks, or what to bring — even mid-conversation
-    about their team."""
+    about their team. Every argument is optional: omit team_name to use
+    the user's only/latest team and omit opponent to use the current or
+    only scouted one — call it right away rather than asking which."""
+    team_name = team_name or _default_team_name()
+    opponent = opponent or _default_opponent()
     team = STATE.store.get(team_name)
     ests, revealed = STATE.scout.for_recommend(opponent)
     plan = _leads(
@@ -323,9 +444,17 @@ def lead_assist(
 
 @mcp.tool
 def start_battle(
-    team_name: str, opponent: str, format: str = "singles"
+    team_name: str | None = None,
+    opponent: str = "",
+    format: str = "singles",
 ) -> dict:
-    """Begin tracking a battle: my stored team vs a scouted opponent."""
+    """Begin tracking a battle: my stored team vs an opponent. Call it
+    the moment the user says a match is starting, in any phrasing —
+    "starting a match", "queue popped", "I'm playing X now". Omit
+    team_name to use the user's only/latest team; format defaults to
+    singles. The opponent doesn't need to be scouted first."""
+    team_name = team_name or _default_team_name()
+    opponent = opponent or _default_opponent()
     STATE.battle = BattleSession(
         STATE.store.get(team_name), opponent, STATE.scout,
         format=format, ruleset=RULESET,
@@ -353,9 +482,11 @@ def battle_update(
     b = _battle()
     if turn is not None:
         b.turn = turn
+    pokemon = canonical_species(pokemon, RULESET)
     if side == "mine":
         idx = next(
-            i for i, p in enumerate(b.my_team) if p.species == pokemon
+            i for i, p in enumerate(b.my_team)
+            if canonical_species(p.species, RULESET) == pokemon
         )
         b.update_mine(
             idx, hp_percent=hp_percent,

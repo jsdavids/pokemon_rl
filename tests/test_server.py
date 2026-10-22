@@ -151,6 +151,43 @@ def test_lead_assist_tool(app):
     assert 0.0 <= top["win_rate"] <= 1.0
 
 
+def test_lead_assist_defaults_resolve(app):
+    # the only team + only scouted opponent are assumed when omitted
+    server.save_team("ladder", [CHOMP, AZU])
+    server.scout("rival", "Tyranitar")
+    out = server.lead_assist(games=2)
+    assert out["options"]
+
+    # several teams: the most recently saved one wins
+    server.save_team("aaa-older", [GHOLD, TTAR])
+    STATE = server.STATE
+    STATE.store._data["teams"]["aaa-older"][-1]["saved_at"] = \
+        "2020-01-01T00:00:00+00:00"
+    assert server._default_team_name() == "ladder"
+
+    # several opponents and no battle: ambiguous, told to specify
+    server.scout("other", "Politoed")
+    with pytest.raises(ValueError, match="say which one"):
+        server.lead_assist(games=2)
+    # ...but a live battle resolves it
+    server.start_battle("ladder", "rival")
+    assert server._default_opponent() == "rival"
+
+
+def test_default_helpers_error_when_empty(app):
+    with pytest.raises(ValueError, match="no teams saved"):
+        server._default_team_name()
+    with pytest.raises(ValueError, match="no opponent known"):
+        server._default_opponent()
+
+
+def test_start_battle_defaults(app):
+    server.save_team("ladder", [CHOMP, AZU])
+    out = server.start_battle(opponent="somebody-new")
+    assert out["my_team"] == ["Garchomp", "Azumarill"]
+    assert out["opponent_known"] == []
+
+
 def test_battle_flow(app):
     server.save_team("ladder", [CHOMP, AZU, GHOLD])
     server.scout("rival", "Tyranitar", move="Crunch")
@@ -213,3 +250,77 @@ def test_tool_call_through_the_mcp_protocol(app):
     result = asyncio.run(run())
     assert result.data["type_effectiveness"] == 2.0
     assert "Garchomp" in result.data["summary"]
+
+
+def test_species_spellings_are_canonicalized(app):
+    """'Rotom-Heat' and 'heat rotom' must land on the same scouting entry,
+    the same team slot, and the same battle Pokemon."""
+    server.save_team("ladder", [
+        {"species": "Rotom-Wash", "moves": ["Hydro Pump"]}, CHOMP,
+    ])
+    assert server.get_team("ladder")["team"][0]["species"] == "Wash Rotom"
+    server.scout("rival", "Rotom-Heat")
+    server.scout("rival", "heat rotom", move="Overheat")
+    assert server.opponent_summary("rival")["team"] == ["Heat Rotom"]
+    server.start_battle("ladder", "rival")
+    server.battle_update("mine", "wash rotom", hp_percent=50.0)
+    server.battle_update("opponent", "Rotom-Heat", hp_percent=40.0)
+    state = server.STATE.battle.state()
+    assert state.sides[0].pokemon[0].hp_fraction == pytest.approx(0.5)
+    assert len(state.sides[1].pokemon) == 1
+
+
+def test_stat_points_in_and_out(app):
+    """Players think in Champions Stat Points; '32 Atk' must not be read as
+    32 EVs (+4 stat)."""
+    out = server.save_team("sp", [
+        {"species": "Garchomp", "moves": ["Earthquake"], "nature": "Jolly",
+         "stat_points": {"atk": 32, "spe": 32, "hp": 2}},
+        {"species": "Azumarill", "moves": ["Aqua Jet"],
+         "evs": {"hp": 32, "atk": 32, "def": 2}},  # SP written as 'evs'
+    ])
+    assert any("stat points" in n for n in out["notes"])
+    team = server.get_team("sp")["team"]
+    assert team[0]["evs"]["atk"] == 252 and team[0]["evs"]["hp"] == 12
+    assert team[0]["stat_points"] == {"hp": 2, "atk": 32, "def": 0,
+                                      "spa": 0, "spd": 0, "spe": 32}
+    assert team[1]["stat_points"]["hp"] == 32
+    # a real EV spread is left alone
+    server.save_team("ev", [{"species": "Garchomp", "moves": ["Earthquake"],
+                             "evs": {"atk": 252, "spe": 252, "hp": 4}}])
+    assert server.get_team("ev")["team"][0]["stat_points"]["hp"] == 1
+    # damage from an SP-spec'd hypothetical matches the EV-spec'd one
+    sp = server.damage({"species": "Garchomp", "nature": "Jolly",
+                        "stat_points": {"atk": 32}}, TTAR, "Earthquake")
+    ev = server.damage({"species": "Garchomp", "nature": "Jolly",
+                        "evs": {"atk": 252}}, TTAR, "Earthquake")
+    assert sp["damage"] == ev["damage"]
+
+
+def test_observe_damage_uses_the_live_battle_context(app):
+    """Damage seen under sun / with boosts must be scored under them."""
+    from pokechamp.damage import calc_damage
+    from pokechamp.schemas import PokemonSet
+    server.save_team("ladder", [CHOMP, AZU])
+    server.scout("rival", "Charizard")
+    server.start_battle("ladder", "rival")
+    server.battle_field(weather="sun")
+    server.battle_update("mine", "Garchomp", boosts={"def": 1})
+    res = calc_damage(server.parse_set(CHOMP), PokemonSet(species="Charizard"),
+                      "Dragon Claw", ruleset="champions")
+    pct = 100 * res.rolls[8] / res.defender_hp
+    server.observe_damage("rival", "Charizard", "Dragon Claw", "Garchomp",
+                          percent=pct)
+    obs = server.STATE.scout._mon("rival", "Charizard")["observations"][-1]
+    assert obs["kwargs"]["field"]["weather"] == "sun"
+    assert obs["kwargs"]["attacker_boosts"]["def"] == 1  # my Garchomp's
+    from pokechamp.schemas import FieldState
+    hit = calc_damage(PokemonSet(species="Charizard"), server.parse_set(CHOMP),
+                      "Flamethrower", field=FieldState(weather="sun"),
+                      ruleset="champions")
+    server.observe_damage("rival", "Charizard", "Flamethrower", "Garchomp",
+                          percent=100 * hit.rolls[8] / hit.defender_hp,
+                          opponent_attacked=True)
+    obs = server.STATE.scout._mon("rival", "Charizard")["observations"][-1]
+    assert obs["kwargs"]["field"]["weather"] == "sun"
+    assert obs["kwargs"]["defender_boosts"]["def"] == 1
