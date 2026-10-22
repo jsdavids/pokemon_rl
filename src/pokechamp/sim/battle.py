@@ -43,6 +43,26 @@ Also: berries (threshold heals, status cures, super-effective halving; all
 single-use) with Unnerve denial, Destiny Bond, Counter/Mirror Coat, Wish,
 Heal Bell/Aromatherapy.
 
+Regulation M-C items: Air Balloon (ungrounded + Ground immunity until any
+damaging hit pops it), Rocky Helmet (1/6 to contact attackers; Rough Skin /
+Iron Barbs 1/8 ride the same hook), Red Card / Eject Button (forced switch,
+random replacement), Normal Gem (consumed), Binding Band (1/6 trap chip),
+Terrain Extender (8-turn terrain) and the four terrain Seeds. Champions
+abilities with sim-level effects: Spicy Spray (burns attackers), Eelevate
+(floats; +1 highest stat on a KO, like Beast Boost), Piercing Drill
+(contact moves through Protect at 1/4), Thermal Exchange (+1 Atk when hit
+by Fire, burn-immune).
+
+Every held item in the Champions pool is modeled: crit stages (Gen 7+
+ladder over the 1/24 base: high-crit moves, Scope Lens, Super Luck, Leek,
+Focus Energy / Dragon Cheer; always-crit moves; Battle/Shell Armor), Quick Claw (20% first in bracket),
+Bright Powder (0.9x accuracy), King's Rock (10% flinch), Focus Sash /
+Sturdy (single hit from full HP) and Focus Band (10%), Shell Bell (1/8 of
+damage dealt), White Herb, Metronome (consecutive-use chain), Iron Ball
+(half Speed, grounded), Light Ball (calculator). Status-immunity abilities
+(Limber, Insomnia, Water Veil, ...) and KO boosts (Moxie, Beast Boost)
+share those hooks.
+
 The engine now covers every mechanic with competitive relevance that we
 know of; anything still missing (Metronome randomness, Z-move relics,
 Present) is trivia rather than strategy.
@@ -56,7 +76,9 @@ from copy import deepcopy
 from dataclasses import dataclass, replace
 
 from pokechamp.damage import calc_damage
+from pokechamp.damage.abilities import FLOATING_ABILITIES, ate_type, makes_contact
 from pokechamp.damage.calculator import boosted_stat
+from pokechamp.damage.items import has_air_balloon, has_iron_ball
 from pokechamp.data import load_ruleset
 from pokechamp.data.loader import norm
 from pokechamp.schemas import (
@@ -69,17 +91,35 @@ from pokechamp.schemas import (
 )
 from pokechamp.sim.effects import (
     ABSORB_ABILITIES,
+    ALWAYS_CRIT_MOVES,
+    BINDING_BAND_DENOM,
+    BRIGHT_POWDER_ACCURACY,
     CONFUSION_CURE_BERRIES,
+    CONTACT_CHIP_ABILITIES,
+    CRIT_IMMUNE_ABILITIES,
+    CRIT_RATES,
+    FOCUS_BAND_CHANCE,
+    HIGH_CRIT_MOVES,
+    KINGS_ROCK_CHANCE,
+    KO_BOOST_ABILITIES,
+    LEEK_SPECIES,
+    PIERCE_PROTECT_FRACTION,
+    QUICK_CLAW_CHANCE,
+    STATUS_IMMUNE_ABILITIES,
     DURATIONS,
     FIRST_TURN_ONLY,
     HEAL_BERRIES,
     RESIST_BERRIES,
     STATUS_CURE_BERRIES,
     REDIRECT_ABILITIES,
+    ROCKY_HELMET_DENOM,
     SECONDARY_EFFECTS,
     STATUS_MOVES,
     STATUS_TYPE_IMMUNITY,
     TERRAIN_ABILITIES,
+    TERRAIN_EXTENDER,
+    TERRAIN_SEEDS,
+    TRAP_CHIP_DENOM,
     TRAP_MOVES,
     TRAPPING_ABILITIES,
     WEATHER_ABILITIES,
@@ -87,7 +127,7 @@ from pokechamp.sim.effects import (
 )
 from pokechamp.stats import calc_all_stats
 
-CRIT_RATE = 1 / 24  # serebii lists 4.17% as the Champions base rate
+CRIT_RATE = CRIT_RATES[0]  # serebii lists 4.17% as the Champions base rate
 MULTIHIT_2_5_WEIGHTS = (35, 35, 15, 15)  # 2, 3, 4, 5 hits
 TURN_CAP = 300
 BOOST_KEYS = ("atk", "def", "spa", "spd", "spe")
@@ -140,6 +180,7 @@ class BattlePokemon:
         self.helping_hand = False
         self.turns_on_field = 0
         self.trapped_turns = 0  # partial-trap moves (Fire Spin ...)
+        self.trap_denom = TRAP_CHIP_DENOM  # 6 if the binder held Binding Band
         self.sub_hp = 0  # Substitute doll HP (0 = no sub)
         self.taunt_turns = 0
         self.encore_turns = 0
@@ -147,6 +188,8 @@ class BattlePokemon:
         self.confusion_turns = 0
         self.choice_lock: int | None = None  # Choice item move lock
         self.last_move_index: int | None = None
+        self.metronome_streak = 0  # prior consecutive uses of the last move
+        self.crit_stage = 0  # Focus Energy (+2) / Dragon Cheer (+1 or +2)
         self.perish_count = 0  # 0 = not perishing; faints when it hits 0 from 1
         self.disabled_index: int | None = None
         self.disabled_turns = 0
@@ -159,10 +202,14 @@ class BattlePokemon:
 
     @property
     def grounded(self) -> bool:
+        if has_iron_ball(self.set.item):
+            return True  # beats Flying type, Levitate and Air Balloon alike
         if "flying" in self.types:
             return False
         ability = self.set.ability
-        return not (ability and norm(ability) == "levitate")
+        if ability and norm(ability) in FLOATING_ABILITIES:
+            return False
+        return not has_air_balloon(self.set.item)
 
     @property
     def status(self) -> str | None:
@@ -189,6 +236,7 @@ class BattlePokemon:
         self.helping_hand = False
         self.turns_on_field = 0
         self.trapped_turns = 0
+        self.trap_denom = TRAP_CHIP_DENOM
         self.sub_hp = 0
         self.taunt_turns = 0
         self.encore_turns = 0
@@ -196,6 +244,8 @@ class BattlePokemon:
         self.confusion_turns = 0
         self.choice_lock = None
         self.last_move_index = None
+        self.metronome_streak = 0
+        self.crit_stage = 0
         self.perish_count = 0  # switching escapes the Song
         self.disabled_index = None
         self.disabled_turns = 0
@@ -311,6 +361,10 @@ class Battle:
         }
         self.rng = random.Random(seed)
         self.turn = 0
+        # opt-in observer log (set to [] to enable): what a player would SEE
+        # — every damaging hit and every move executed, in order. The eval
+        # harness turns it into estimator observations.
+        self.events: list[dict] | None = None
 
         # switch-in abilities for the leads: fastest triggers first, so on a
         # contested lead the SLOWER setter's weather/terrain sticks
@@ -343,7 +397,23 @@ class Battle:
         if self.field.terrain == terrain:
             return
         self.field.terrain = terrain
-        self.field_timers["terrain"] = DURATIONS["terrain"]
+        duration = DURATIONS["terrain"]
+        if setter is not None and setter.set.item and norm(setter.set.item) == TERRAIN_EXTENDER:
+            duration = 8
+        self.field_timers["terrain"] = duration
+        for side in self.sides:
+            for s in side.alive_slots():
+                self._check_terrain_seed(side.active(s))
+
+    def _check_terrain_seed(self, mon: BattlePokemon) -> None:
+        """Electric/Grassy Seed +1 Def, Psychic/Misty Seed +1 SpD, eaten
+        when the matching terrain is up."""
+        if mon.fainted or not mon.set.item or not self.field.terrain:
+            return
+        spec = TERRAIN_SEEDS.get(norm(mon.set.item))
+        if spec is not None and spec[0] == self.field.terrain:
+            self._apply_boosts(mon, {spec[1]: 1})
+            mon.set.item = None
 
     def _transform(self, mon: BattlePokemon, target: BattlePokemon) -> None:
         """Transform / Imposter: copy the target's battle form. Keeps own HP,
@@ -364,7 +434,9 @@ class Battle:
         mon.pp = [min(5, self.rs.get_move(m).pp or 5) for m in mon.set.moves]
 
     def _on_entry(self, mon: BattlePokemon) -> None:
-        """Switch-in ability triggers (weather wars and Imposter live here)."""
+        """Switch-in ability triggers (weather wars and Imposter live here),
+        plus terrain seeds entering an already-set terrain."""
+        self._check_terrain_seed(mon)
         if mon.fainted or not mon.set.ability:
             return
         ability = norm(mon.set.ability)
@@ -393,9 +465,12 @@ class Battle:
     def _force_switch(self, side: Side, mon: BattlePokemon) -> None:
         """Phazing: drag `mon` out for a random healthy teammate."""
         bench = side.healthy_bench()
-        if not bench:
+        team_idx = side.team.index(mon)
+        if not bench or team_idx not in side.slots:
+            # already gone: e.g. Dragon Tail dragged out an Eject Button
+            # holder before the button's deferred switch ran
             return
-        slot = side.slots.index(side.team.index(mon))
+        slot = side.slots.index(team_idx)
         mon.reset_on_switch()
         mon.turns_on_field = -1
         side.slots[slot] = self.rng.choice(bench)
@@ -447,9 +522,12 @@ class Battle:
         for key in (
             "taunt_turns", "encore_turns", "confusion_turns",
             "trapped_turns", "perish_count", "disabled_turns",
+            "metronome_streak", "crit_stage",
         ):
             if getattr(mon, key):
                 v[key] = getattr(mon, key)
+        if mon.trapped_turns and mon.trap_denom != TRAP_CHIP_DENOM:
+            v["trap_denom"] = mon.trap_denom
         if mon.encore_index is not None:
             v["encore_index"] = mon.encore_index
         if mon.disabled_index is not None:
@@ -513,6 +591,7 @@ class Battle:
                     else max(1, round(ps.hp_fraction * mon.max_hp))
                 )
                 mon.status = ps.status
+                mon.set.item = ps.set.item  # undo any constructor-time seed
                 if ps.status == "slp":
                     mon.sleep_turns = 1
                 mon.boosts = {k: ps.boosts.get(k, 0) for k in BOOST_KEYS}
@@ -523,8 +602,10 @@ class Battle:
                 for key in (
                     "taunt_turns", "encore_turns", "confusion_turns",
                     "trapped_turns", "perish_count", "disabled_turns",
+                    "metronome_streak", "crit_stage",
                 ):
                     setattr(mon, key, v.get(key, 0))
+                mon.trap_denom = v.get("trap_denom", TRAP_CHIP_DENOM)
                 mon.encore_index = v.get("encore_index")
                 mon.disabled_index = v.get("disabled_index")
                 mon.choice_lock = v.get("choice_lock")
@@ -647,6 +728,8 @@ class Battle:
             spe = math.floor(spe * num / den)
         if mon.set.item and norm(mon.set.item) == "choicescarf":
             spe = math.floor(spe * 1.5)
+        if has_iron_ball(mon.set.item):
+            spe = math.floor(spe / 2)
         if side.conditions.tailwind:
             spe *= 2
         if mon.status == "par":
@@ -764,7 +847,17 @@ class Battle:
             spe = self.effective_speed(side_idx, slot)
             if self.field.trick_room:
                 spe = -spe
-            return (prio, spe, self.rng.random())
+            # Quick Claw: 20% to act first within its priority bracket
+            quick = 0
+            if not switches and act.kind == "move":
+                mon = self.sides[side_idx].active(slot)
+                if (
+                    mon is not None and mon.set.item
+                    and norm(mon.set.item) == "quickclaw"
+                    and self.rng.random() < QUICK_CLAW_CHANCE
+                ):
+                    quick = 1
+            return (prio, quick, spe, self.rng.random())
 
         return sorted(keys, key=sort_key, reverse=True)
 
@@ -869,6 +962,8 @@ class Battle:
             return False
         if side is not None and side.timers.get("safeguard", 0) > 0:
             return False
+        if status in STATUS_IMMUNE_ABILITIES.get(norm(target.set.ability or ""), ()):
+            return False  # Thermal Exchange, Water Veil, Limber, Insomnia...
         if any(
             t in STATUS_TYPE_IMMUNITY.get(status, ())
             for t in target.types
@@ -892,6 +987,13 @@ class Battle:
     def _apply_boosts(self, mon: BattlePokemon, deltas: dict[str, int]) -> None:
         for stat, d in deltas.items():
             mon.boosts[stat] = max(-6, min(6, mon.boosts[stat] + d))
+        # White Herb: wipes every lowered stage once, then it's gone
+        if (
+            mon.set.item and norm(mon.set.item) == "whiteherb"
+            and any(v < 0 for v in mon.boosts.values())
+        ):
+            mon.boosts = {k: max(0, v) for k, v in mon.boosts.items()}
+            mon.set.item = None
 
     def _do_move(self, side_idx: int, slot: int, act: Action) -> None:
         attacker = self.sides[side_idx].active(slot)
@@ -916,7 +1018,17 @@ class Battle:
         move = self.rs.get_move(move_name)
         if attacker.taunt_turns > 0 and move.category == "Status":
             return
+        if self.events is not None:
+            self.events.append({
+                "kind": "move", "turn": self.turn, "move": move.name,
+                "side": side_idx, "mon": self.sides[side_idx].team.index(attacker),
+                "priority": move.priority,
+            })
         attacker.pp[act.index] -= 1
+        attacker.metronome_streak = (
+            attacker.metronome_streak + 1
+            if attacker.last_move_index == act.index else 0
+        )
         attacker.last_move_index = act.index
         if (
             attacker.choice_lock is None
@@ -1003,6 +1115,17 @@ class Battle:
             if ally_slots:
                 side.active(ally_slots[0]).helping_hand = True
             return
+        if eff.crit_boost:  # Focus Energy fails if already pumped
+            if attacker.crit_stage == 0:
+                attacker.crit_stage = eff.crit_boost
+            return
+        if eff.crit_boost_ally:  # Dragon Cheer: no ally (singles) = fails
+            ally_slots = [s for s in side.alive_slots() if s != slot]
+            if ally_slots:
+                ally = side.active(ally_slots[0])
+                if ally.crit_stage == 0:
+                    ally.crit_stage = 2 if "dragon" in ally.types else 1
+            return
 
         if eff.substitute:
             cost = attacker.max_hp // 4
@@ -1016,6 +1139,7 @@ class Battle:
             if bench:
                 passed_boosts = dict(attacker.boosts)
                 passed_sub = attacker.sub_hp
+                passed_crit = attacker.crit_stage
                 attacker.reset_on_switch()
                 attacker.turns_on_field = -1
                 side.slots[slot] = bench[0]
@@ -1024,6 +1148,7 @@ class Battle:
                 incoming.turns_on_field = -1
                 incoming.boosts = passed_boosts
                 incoming.sub_hp = passed_sub
+                incoming.crit_stage = passed_crit  # Baton Pass carries it
                 self._entry_hazards(side, incoming)
                 self._on_entry(incoming)
             return
@@ -1206,11 +1331,24 @@ class Battle:
         is_spread = len(targets) >= 2
         foe_side = self.sides[1 - side_idx]
         secondary = SECONDARY_EFFECTS.get(move.name)
+        contact = makes_contact(move.flags, attacker.set.ability, attacker.set.item)
+        # the type the hit actually lands as (Aerilate & co. retype Normal)
+        landed_type = ate_type(attacker.set.ability, move.type) or move.type
 
+        a_ability = norm(attacker.set.ability or "")
         dealt_any = False
+        dealt_total = 0  # Shell Bell
+        red_carded = False
+        ejected: list[BattlePokemon] = []
         for defender in targets:
+            # Piercing Drill (Mega Excadrill): contact goes through Protect
+            # at 1/4 damage
+            pierced = False
             if defender.protected:
-                continue
+                if a_ability == "piercingdrill" and contact:
+                    pierced = True
+                else:
+                    continue
             if foe_side.wide_guard and is_spread and defender in [
                 foe_side.active(s) for s in foe_side.alive_slots()
             ]:
@@ -1233,8 +1371,12 @@ class Battle:
                 and norm(defender.set.ability) == "soundproof"
             ):
                 continue
-            if move.accuracy is not None and self.rng.random() * 100 >= move.accuracy:
-                continue
+            if move.accuracy is not None:
+                accuracy = move.accuracy
+                if defender.set.item and norm(defender.set.item) == "brightpowder":
+                    accuracy *= BRIGHT_POWDER_ACCURACY
+                if self.rng.random() * 100 >= accuracy:
+                    continue
 
             n_hits = 1
             if move.multihit:
@@ -1244,7 +1386,7 @@ class Battle:
                 else:
                     n_hits = self.rng.randint(lo, hi)
 
-            is_crit = self.rng.random() < CRIT_RATE
+            is_crit = self._rolls_crit(attacker, defender, move)
             res = calc_damage(
                 attacker.set, defender.set, move.name,
                 field=self._field_for(side_idx),
@@ -1254,13 +1396,17 @@ class Battle:
                 attacker_boosts=attacker.boosts,
                 defender_boosts=defender.boosts,
                 attacker_hp_fraction=attacker.hp_fraction,  # Eruption-class
+                metronome_uses=attacker.metronome_streak,
                 ruleset=self.ruleset,
             )
             damage = sum(self.rng.choice(res.rolls) for _ in range(res.hits))
             if damage == 0:
                 continue  # immune
+            rolled = damage  # what the calculator alone explains
             if attacker.helping_hand:
                 damage = int(damage * 1.5)  # sim-level approximation
+            if pierced:
+                damage = max(1, math.floor(damage * PIERCE_PROTECT_FRACTION))
 
             # a Substitute eats the hit (and its riders) unless sound bypasses
             if defender.sub_hp > 0 and "sound" not in move.flags:
@@ -1277,8 +1423,32 @@ class Battle:
                     damage //= 2
                     defender.set.item = None
 
+            if damage >= defender.hp:
+                damage = self._survive_check(defender, damage, res.hits)
+
+            if self.events is not None:
+                d_idx = side_idx if defender in self.sides[side_idx].team else 1 - side_idx
+                self.events.append({
+                    "kind": "hit", "turn": self.turn, "move": move.name,
+                    "attacker": (side_idx, self.sides[side_idx].team.index(attacker)),
+                    "defender": (d_idx, self.sides[d_idx].team.index(defender)),
+                    "damage": min(damage, defender.hp), "hp_before": defender.hp,
+                    "max_hp": defender.max_hp, "ko": damage >= defender.hp,
+                    "crit": is_crit, "hits": res.hits, "spread": is_spread,
+                    # clean = the calculator's roll alone explains the damage
+                    # (no Helping Hand / Piercing Drill / berry / Sash / Sturdy)
+                    "clean": damage == rolled,
+                    "field": self._field_for(side_idx),
+                    "attacker_boosts": dict(attacker.boosts),
+                    "defender_boosts": dict(defender.boosts),
+                    "attacker_status": attacker.status,
+                })
+
             defender.hp = max(0, defender.hp - damage)
             dealt_any = True
+            dealt_total += damage
+            if has_air_balloon(defender.set.item):
+                defender.set.item = None  # any damaging hit pops it
             if move.category == "Physical":
                 defender.last_hit_physical = (attacker, damage)
             else:
@@ -1292,6 +1462,41 @@ class Battle:
                 self.sides[side_idx].active(s)
                 for s in self.sides[side_idx].alive_slots()
             ]
+            self._on_hit_reactions(attacker, defender, contact, side_idx)
+            # Thermal Exchange: a Fire hit raises the holder's Attack
+            if (
+                landed_type == "fire" and not defender.fainted
+                and norm(defender.set.ability or "") == "thermalexchange"
+            ):
+                self._apply_boosts(defender, {"atk": 1})
+            # Moxie / Beast Boost / Eelevate: a KO feeds the attacker
+            if (
+                defender.fainted and not attacker.fainted
+                and a_ability in KO_BOOST_ABILITIES
+            ):
+                stat = KO_BOOST_ABILITIES[a_ability] or max(
+                    BOOST_KEYS,
+                    key=lambda k: (attacker.stats[k], -BOOST_KEYS.index(k)),
+                )
+                self._apply_boosts(attacker, {stat: 1})
+            # King's Rock: 10% flinch on moves without a flinch rider
+            if (
+                not friendly and not defender.fainted
+                and attacker.set.item and norm(attacker.set.item) == "kingsrock"
+                and not (secondary and secondary.flinch)
+                and self.rng.random() < KINGS_ROCK_CHANCE
+            ):
+                defender.flinched = True
+            d_item = norm(defender.set.item or "")
+            if not friendly and not defender.fainted and d_item == "ejectbutton":
+                defender.set.item = None
+                ejected.append(defender)
+            elif (
+                not friendly and not defender.fainted
+                and d_item == "redcard" and not red_carded
+            ):
+                defender.set.item = None
+                red_carded = True
             if secondary and not friendly and not defender.fainted:
                 if self.rng.random() * 100 < secondary.chance:
                     if secondary.status:
@@ -1311,6 +1516,8 @@ class Battle:
                 defender.trapped_turns = max(
                     defender.trapped_turns, self.rng.randint(4, 5)
                 )
+                if norm(attacker.set.item or "") == "bindingband":
+                    defender.trap_denom = BINDING_BAND_DENOM
 
         if dealt_any:
             if secondary and secondary.boosts_self:
@@ -1320,9 +1527,88 @@ class Battle:
                     "stealth_rock": False, "spikes": 0,
                     "toxic_spikes": 0, "sticky_web": False,
                 }
-            if attacker.set.item and norm(attacker.set.item) == "lifeorb":
+            a_item = norm(attacker.set.item or "")
+            if a_item == "lifeorb":
                 attacker.hp = max(0, attacker.hp - math.floor(attacker.max_hp / 10))
+            elif a_item == "normalgem" and landed_type == "normal":
+                attacker.set.item = None  # spent on this move
+            elif a_item == "shellbell" and dealt_total and not attacker.fainted:
+                attacker.hp = min(
+                    attacker.max_hp, attacker.hp + math.floor(dealt_total / 8)
+                )
+        # Eject Button: the holder bails out (to a random healthy teammate —
+        # a real player picks; rollouts treat it like a phaze). Red Card:
+        # the attacker is dragged out instead.
+        for mon in ejected:
+            if not mon.fainted:
+                self._force_switch(foe_side, mon)
+        if red_carded and not attacker.fainted:
+            self._force_switch(self.sides[side_idx], attacker)
         return dealt_any
+
+    def _rolls_crit(
+        self, attacker: BattlePokemon, defender: BattlePokemon, move
+    ) -> bool:
+        """Crit stages: high-crit moves, Scope Lens, Super Luck +1 each;
+        Leek +2 (Farfetch'd line); Focus Energy +2 / Dragon Cheer +1-2
+        (volatile); always-crit moves skip the ladder.
+        Battle Armor / Shell Armor block crits outright."""
+        if norm(defender.set.ability or "") in CRIT_IMMUNE_ABILITIES:
+            return False
+        if move.name in ALWAYS_CRIT_MOVES:
+            return True
+        stage = attacker.crit_stage + (1 if move.name in HIGH_CRIT_MOVES else 0)
+        item = norm(attacker.set.item or "")
+        if item == "scopelens":
+            stage += 1
+        elif item == "leek" and norm(attacker.set.species).startswith(LEEK_SPECIES):
+            stage += 2
+        if norm(attacker.set.ability or "") == "superluck":
+            stage += 1
+        rate = CRIT_RATES[min(stage, len(CRIT_RATES) - 1)]
+        return rate >= 1.0 or self.rng.random() < rate
+
+    def _survive_check(
+        self, defender: BattlePokemon, damage: int, hits: int
+    ) -> int:
+        """A would-be KO: Focus Sash (consumed) and Sturdy hold at 1 HP from
+        full HP against a single hit (a multi-hit's later hits break
+        through); Focus Band holds 10% of the time, at any HP."""
+        if defender.hp <= 1:
+            return damage
+        item = norm(defender.set.item or "")
+        ability = norm(defender.set.ability or "")
+        if defender.hp == defender.max_hp and hits == 1:
+            if item == "focussash":
+                defender.set.item = None
+                return defender.hp - 1
+            if ability == "sturdy":
+                return defender.hp - 1
+        if item == "focusband" and self.rng.random() < FOCUS_BAND_CHANCE:
+            return defender.hp - 1
+        return damage
+
+    def _on_hit_reactions(
+        self, attacker: BattlePokemon, defender: BattlePokemon,
+        contact: bool, side_idx: int,
+    ) -> None:
+        """The defender's ability/item striking back at the attacker:
+        Rough Skin / Iron Barbs / Rocky Helmet on contact (these trigger even
+        if the holder fainted), Spicy Spray (Mega Scovillain) burns on any
+        damaging hit."""
+        if attacker.fainted:
+            return
+        d_ability = norm(defender.set.ability or "")
+        if contact:
+            denom = CONTACT_CHIP_ABILITIES.get(d_ability)
+            if denom:
+                attacker.hp = max(0, attacker.hp - math.floor(attacker.max_hp / denom))
+            if norm(defender.set.item or "") == "rockyhelmet":
+                attacker.hp = max(
+                    0, attacker.hp - math.floor(attacker.max_hp / ROCKY_HELMET_DENOM)
+                )
+        if d_ability == "spicyspray" and not attacker.fainted:
+            self._try_status(attacker, "brn", self.sides[side_idx])
 
     # --- end of turn ---
 
@@ -1346,7 +1632,7 @@ class Battle:
                 ):
                     mon.hp = max(0, mon.hp - math.floor(mon.max_hp / 16))
                 if mon.trapped_turns > 0 and not mon.fainted:
-                    mon.hp = max(0, mon.hp - math.floor(mon.max_hp / 8))
+                    mon.hp = max(0, mon.hp - math.floor(mon.max_hp / mon.trap_denom))
                     mon.trapped_turns -= 1
                 if not mon.fainted:
                     if self.field.terrain == "grassy" and mon.grounded:

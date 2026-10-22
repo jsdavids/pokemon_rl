@@ -15,6 +15,7 @@ from pokechamp.data import load_ruleset
 from pokechamp.data.loader import norm
 from pokechamp.estimator import StatEstimator
 from pokechamp.schemas import PokemonSet
+from pokechamp.sim.effects import STATUS_MOVES
 
 
 def sample_build(
@@ -33,16 +34,36 @@ def fill_moves(
     revealed: list[str] | None = None,
     k: int = 4,
     ruleset: str = "champions",
+    weights: dict[str, float] | None = None,
 ) -> list[str]:
-    """A plausible moveset: every revealed move, topped up to `k` with random
-    damaging moves from the species' learnset (usage data will replace the
-    random fill when it exists)."""
+    """A plausible moveset: every revealed move, then (with usage `weights`,
+    move name -> share of sets) moves drawn by usage without replacement,
+    topped up to `k` with random damaging moves from the learnset. Usage
+    draws skip status moves the sim doesn't model (they'd be dead slots)."""
     rs = load_ruleset(ruleset)
     sp = rs.get_species(species)
     moves = list(revealed or [])
     have = {norm(m) for m in moves}
+    if weights:
+        # weighted sampling without replacement (Efraimidis-Spirakis keys)
+        usable = []
+        for name, w in sorted(weights.items()):
+            key = norm(name)
+            if w <= 0 or key in have or key not in sp.learnset:
+                continue
+            mv = rs.get_move(key)
+            if mv.base_power > 0 or mv.name in STATUS_MOVES:
+                usable.append((rng.random() ** (1.0 / w), mv.name))
+        for _, name in sorted(usable, reverse=True):
+            if len(moves) >= k:
+                break
+            moves.append(name)
+            have.add(norm(name))
+    # sorted: learnset is a frozenset, whose iteration order follows the
+    # per-process string hash seed — unsorted, a seeded rng still produced
+    # different movesets in different processes
     damaging = [
-        m for m in sp.learnset
+        m for m in sorted(sp.learnset)
         if m not in have and rs.get_move(m).base_power > 0
     ]
     rng.shuffle(damaging)
@@ -90,10 +111,13 @@ def sample_opponent(
     rng: random.Random,
     revealed_moves: list[str] | None = None,
 ) -> PokemonSet:
-    """One concrete opponent: posterior build + plausible moveset."""
+    """One concrete opponent: posterior build + plausible moveset (usage-
+    weighted when the estimator carries usage data)."""
     build = sample_build(estimator, rng)
+    usage = getattr(estimator, "usage", None)
     moves = fill_moves(
-        estimator.species, rng, revealed_moves, ruleset=estimator.ruleset
+        estimator.species, rng, revealed_moves, ruleset=estimator.ruleset,
+        weights=usage.moves if usage is not None else None,
     )
     return PokemonSet(
         species=build.species,

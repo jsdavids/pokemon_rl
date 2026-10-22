@@ -1,8 +1,8 @@
 """Phase 4b: action space, feature encoding, masked policy, PPO smoke."""
 
-import numpy as np
 import pytest
 
+np = pytest.importorskip("numpy")
 torch = pytest.importorskip("torch")
 
 from pokechamp.data.loader import DATA_DIR

@@ -45,6 +45,8 @@ class StatusMoveEffect:
     destiny_bond: bool = False  # KO the user before its next move -> KO back
     wish: bool = False  # heal this slot for 1/2 user's max HP next turn's end
     heal_team_status: bool = False  # Heal Bell / Aromatherapy
+    crit_boost: int = 0  # Focus Energy: +2 crit stages until it switches out
+    crit_boost_ally: bool = False  # Dragon Cheer: ally +2 if Dragon, else +1
 
 
 @dataclass(frozen=True)
@@ -130,6 +132,9 @@ STATUS_MOVES: dict[str, StatusMoveEffect] = {
     "Wish": StatusMoveEffect(wish=True),
     "Heal Bell": StatusMoveEffect(heal_team_status=True),
     "Aromatherapy": StatusMoveEffect(heal_team_status=True),
+    # crit setup (one crit volatile: neither stacks with the other)
+    "Focus Energy": StatusMoveEffect(crit_boost=2),
+    "Dragon Cheer": StatusMoveEffect(crit_boost_ally=True),
     # hazards
     "Stealth Rock": StatusMoveEffect(hazard="stealth_rock"),
     "Spikes": StatusMoveEffect(hazard="spikes"),
@@ -228,6 +233,73 @@ TERRAIN_ABILITIES = {
 WEATHER_ROCKS = {
     "rain": "damprock", "sun": "heatrock", "sand": "smoothrock", "snow": "icyrock",
 }
+TERRAIN_EXTENDER = "terrainextender"  # M-C: the setter's terrain lasts 8 turns
+# M-C terrain seeds: norm(item) -> (terrain, stat +1), consumed when the
+# matching terrain is up (on set, or on the holder's entry into it)
+TERRAIN_SEEDS: dict[str, tuple[str, str]] = {
+    "electricseed": ("electric", "def"),
+    "grassyseed": ("grassy", "def"),
+    "psychicseed": ("psychic", "spd"),
+    "mistyseed": ("misty", "spd"),
+}
+
+# punishing contact: holder's ability/item -> fraction of the ATTACKER's
+# max HP lost (denominator). Rocky Helmet is new in M-C.
+CONTACT_CHIP_ABILITIES = {"roughskin": 8, "ironbarbs": 8}
+ROCKY_HELMET_DENOM = 6
+BINDING_BAND_DENOM = 6  # M-C: binding-move chip 1/6 instead of 1/8
+TRAP_CHIP_DENOM = 8
+
+# --- critical hits (Gen 7+ stage ladder over Champions' 1/24 base) ---
+CRIT_RATES = (1 / 24, 1 / 8, 1 / 2, 1.0)  # stage 0, +1, +2, +3 and up
+HIGH_CRIT_MOVES = {
+    "Aeroblast", "Air Cutter", "Aqua Cutter", "Attack Order", "Blaze Kick",
+    "Crabhammer", "Cross Chop", "Cross Poison", "Dire Claw", "Drill Run",
+    "Esper Wing", "Ivy Cudgel", "Karate Chop", "Leaf Blade", "Night Slash",
+    "Poison Tail", "Psycho Cut", "Razor Leaf", "Razor Wind", "Shadow Claw",
+    "Sky Attack", "Slash", "Snipe Shot", "Spacial Rend", "Stone Edge",
+    "Triple Arrows",
+}
+ALWAYS_CRIT_MOVES = {
+    "Flower Trick", "Frost Breath", "Storm Throw", "Surging Strikes",
+    "Wicked Blow", "Zippy Zap",
+}
+CRIT_IMMUNE_ABILITIES = {"battlearmor", "shellarmor"}
+LEEK_SPECIES = ("farfetchd", "sirfetchd")  # norm()ed prefixes (incl. Galarian)
+
+# abilities that make the holder immune to non-volatile statuses
+STATUS_IMMUNE_ABILITIES: dict[str, tuple[str, ...]] = {
+    "thermalexchange": ("brn",),  # Mega/Baxcalibur
+    "waterveil": ("brn",),
+    "waterbubble": ("brn",),
+    "limber": ("par",),
+    "insomnia": ("slp",),
+    "vitalspirit": ("slp",),
+    "sweetveil": ("slp",),
+    "immunity": ("psn", "tox"),
+    "pastelveil": ("psn", "tox"),
+    "magmaarmor": ("frz",),
+    "purifyingsalt": ("brn", "par", "slp", "psn", "tox", "frz"),
+    "comatose": ("brn", "par", "slp", "psn", "tox", "frz"),
+}
+
+# ability -> stat raised by 1 when its attack KOs a target. None = the
+# holder's highest raw stat (ties: Atk > Def > SpA > SpD > Spe).
+# Eelevate (Mega Eelektross) boosts like Beast Boost.
+KO_BOOST_ABILITIES: dict[str, str | None] = {
+    "moxie": "atk",
+    "chillingneigh": "atk",
+    "grimneigh": "spa",
+    "beastboost": None,
+    "eelevate": None,
+}
+
+# Piercing Drill (Mega Excadrill): contact moves go through Protect at 1/4
+PIERCE_PROTECT_FRACTION = 0.25
+QUICK_CLAW_CHANCE = 0.2
+KINGS_ROCK_CHANCE = 0.1
+FOCUS_BAND_CHANCE = 0.1
+BRIGHT_POWDER_ACCURACY = 0.9  # 3686/4096 on moves aimed at the holder
 
 # type-absorbing abilities: the damage calculator already zeroes the damage;
 # the sim adds the on-hit effect. ability -> (absorbed type, effect)

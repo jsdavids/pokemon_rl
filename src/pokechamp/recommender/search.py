@@ -38,7 +38,8 @@ from pokechamp.sim.determinize import sample_opponent
 # encore/disabled index) point into a moveset we just replaced; transform
 # state carries a whole copied build. Both die with the old set.
 _INDEX_FREE_VOLATILES = (
-    "taunt_turns", "confusion_turns", "trapped_turns",
+    "taunt_turns", "confusion_turns", "trapped_turns", "trap_denom",
+    "crit_stage",
     "perish_count", "destiny_bond",
 )
 
@@ -166,8 +167,10 @@ class _Searcher:
         while len(self._worlds) <= k:
             i = len(self._worlds)
             ws = (
+                # opponent = the OTHER side (was hard-wired to side 1, which
+                # resampled our own team when searching from side 1)
                 determinize(self.state, self.estimators, self.rng,
-                            self.revealed_moves)
+                            self.revealed_moves, opponent=1 - self.side_idx)
                 if self.estimators
                 else self.state
             )

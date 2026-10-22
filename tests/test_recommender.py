@@ -201,3 +201,17 @@ def test_search_agent_beats_max_damage_doubles():
         team, [t for t in team], games=8, seed=0, format="doubles",
     )
     assert res.wins > res.losses, res
+
+
+def test_determinization_resamples_the_other_side_from_side_1():
+    """Searching from side 1, the estimators describe side 0's team; worlds
+    used to resample side 1 (our own team) because the opponent index was
+    hard-wired."""
+    from pokechamp.recommender.search import _Searcher
+    b = Battle([chomp()], [mon("Tyranitar", ["Crunch"])], seed=1)
+    s = _Searcher(b.snapshot(), 1, {0: StatEstimator("Garchomp")}, None, 0,
+                  "champions", MaxDamageAgent(), MaxDamageAgent())
+    world, _ = s.world(0)
+    assert world.sides[1].pokemon[0].set.species == "Tyranitar"
+    assert world.sides[1].pokemon[0].set.moves == ["Crunch"]  # untouched
+    assert world.sides[0].pokemon[0].set.species == "Garchomp"
