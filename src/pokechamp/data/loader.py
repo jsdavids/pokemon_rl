@@ -12,6 +12,7 @@ harness for generating the full dataset from Showdown's data files.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
@@ -22,6 +23,45 @@ DATA_DIR = Path(__file__).parent / "rulesets"
 def norm(name: str) -> str:
     """Normalize a name for lookup: 'Great Tusk' == 'great-tusk' == 'greattusk'."""
     return "".join(ch for ch in name.lower() if ch.isalnum())
+
+
+_REGIONS = {"Alolan": "Alola", "Galarian": "Galar", "Hisuian": "Hisui", "Paldean": "Paldea"}
+_FORM_SUFFIX = {"Female": "F", "Jumbo": "Super"}
+_SHOWDOWN_ALIASES = {
+    "Aegislash": "Aegislash-Shield",
+    "Eternal Floette": "Floette-Eternal",
+    "Paldean Tauros": "Tauros-Paldea-Combat",
+    "Mega Meowstic": "Meowstic-M-Mega",
+}
+# further spellings seen in the wild (Pikalytics writes Mega Floette as
+# 'Floette-Eternal-Mega'); looked up like the Showdown name
+EXTRA_ALIASES = {
+    "Mega Floette": ("Floette-Eternal-Mega",),
+    # Champions only has Eternal Flower Floette; team sheets often say Floette
+    "Eternal Floette": ("Floette",),
+    # Low Key differs from Amped only in Minus vs Plus (unmodeled)
+    "Toxtricity": ("Toxtricity-Low-Key",),
+}
+
+
+def showdown_name(display: str) -> str:
+    """Our serebii-style form name -> Showdown/@smogon's ('Mega Salamence'
+    -> 'Salamence-Mega', 'Heat Rotom' -> 'Rotom-Heat', 'Indeedee (Female)'
+    -> 'Indeedee-F'). Local LLMs mostly write the Showdown spelling, so the
+    loader indexes both; scripts/generate_goldens.mjs mirrors this map."""
+    if display in _SHOWDOWN_ALIASES:
+        return _SHOWDOWN_ALIASES[display]
+    if m := re.fullmatch(r"(\w+) Rotom", display):
+        return f"Rotom-{m[1]}"
+    if m := re.fullmatch(r"Mega (.+?) ([XYZ])", display):
+        return f"{m[1]}-Mega-{m[2]}"
+    if m := re.fullmatch(r"Mega (.+)", display):
+        return f"{m[1]}-Mega"
+    if m := re.fullmatch(r"(Alolan|Galarian|Hisuian|Paldean) (\S+)(?: \((\w+) Breed\))?", display):
+        return f"{m[2]}-{_REGIONS[m[1]]}" + (f"-{m[3]}" if m[3] else "")
+    if m := re.fullmatch(r"(.+) \((\w+)(?: \w+)?\)", display):
+        return f"{m[1]}-{_FORM_SUFFIX.get(m[2], m[2])}"
+    return display
 
 
 @dataclass(frozen=True)
@@ -70,6 +110,14 @@ class Ruleset:
     ):
         self.name = name
         self._species = species
+        # Showdown-style spellings ('Rotom-Heat', 'Garchomp-Mega-Z') as
+        # extra lookup keys; a real form name always wins a collision
+        self._aliases = {}
+        for key, sp in species.items():
+            for alias in (showdown_name(sp.name), *EXTRA_ALIASES.get(sp.name, ())):
+                alias = norm(alias)
+                if alias not in species:
+                    self._aliases.setdefault(alias, key)
         self._moves = moves
         self.typechart = typechart
         # raw item/regulation records (rulesets that ship them, e.g. champions)
@@ -78,6 +126,7 @@ class Ruleset:
 
     def get_species(self, name: str) -> Species:
         key = norm(name)
+        key = self._aliases.get(key, key)
         if key not in self._species:
             raise KeyError(f"Unknown species {name!r} in ruleset {self.name!r}")
         return self._species[key]
@@ -97,6 +146,16 @@ class Ruleset:
         for t in defender_types:
             mult *= attacking.get(t.lower(), 1.0)
         return mult
+
+
+def canonical_species(name: str, ruleset: str = "champions") -> str:
+    """The ruleset's own spelling of a species ('rotom-heat' -> 'Heat
+    Rotom'), so names compare equal however they were typed. Unknown names
+    pass through untouched for the caller's validation to report."""
+    try:
+        return load_ruleset(ruleset).get_species(name).name
+    except KeyError:
+        return name
 
 
 @lru_cache(maxsize=None)

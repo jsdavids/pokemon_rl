@@ -11,6 +11,7 @@ observations and move recommendations stay consistent automatically.
 from __future__ import annotations
 
 from pokechamp.data import load_ruleset
+from pokechamp.data.loader import canonical_species
 from pokechamp.schemas import (
     BattleState,
     FieldState,
@@ -66,6 +67,7 @@ class BattleSession:
         self.log.append({"turn": self.turn, "text": text})
 
     def _opp_entry(self, species: str) -> dict:
+        species = canonical_species(species, self.ruleset)
         if species not in self.opp_state:
             self.scout.add_pokemon(self.opponent, species)
             self.opp_species.append(species)
@@ -96,6 +98,7 @@ class BattleSession:
         status: str | None = "unchanged",
         boosts: dict[str, int] | None = None,
     ) -> None:
+        species = canonical_species(species, self.ruleset)
         s = self._opp_entry(species)
         if hp_percent is not None:
             # the estimator owns the opponent's HP bar
@@ -113,6 +116,7 @@ class BattleSession:
         if mine is not None:
             self.my_active = mine
         if opponent is not None:
+            opponent = [canonical_species(sp, self.ruleset) for sp in opponent]
             for sp in opponent:
                 self._opp_entry(sp)
             self.opp_active = opponent
@@ -126,11 +130,12 @@ class BattleSession:
         if not rec_moves:
             rs = load_ruleset(self.ruleset)
             sp = rs.get_species(species)
+            learnset = sorted(sp.learnset)  # frozenset: hash-seed order
             damaging = [
-                rs.get_move(m).name for m in sp.learnset
+                rs.get_move(m).name for m in learnset
                 if rs.get_move(m).base_power > 0
             ]
-            rec_moves = damaging[:1] or [rs.get_move(sp.learnset[0]).name]
+            rec_moves = damaging[:1] or [rs.get_move(learnset[0]).name]
         return PokemonSet(species=species, moves=list(rec_moves))
 
     def state(self) -> BattleState:

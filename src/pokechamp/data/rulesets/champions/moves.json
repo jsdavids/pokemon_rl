@@ -1381,7 +1381,8 @@
   "base_power": 0,
   "accuracy": 100,
   "pp": 12,
-  "target": "field"
+  "target": "field",
+  "effect": "Swaps the statuses affecting the user's side of the field with the statuses affecting the opponent's side of the field."
  },
  "Covet": {
   "type": "normal",
@@ -1740,11 +1741,12 @@
  "Double Shock": {
   "type": "electric",
   "category": "Physical",
-  "base_power": 0,
+  "base_power": 120,
   "accuracy": null,
-  "pp": null,
+  "pp": 8,
   "flags": [
-   "contact"
+   "contact",
+   "punch"
   ],
   "effect": "The user loses the Electric type. This move fails unless it is used by an Electric type."
  },
@@ -1948,7 +1950,8 @@
   "category": "Physical",
   "base_power": 80,
   "accuracy": 100,
-  "pp": 12
+  "pp": 12,
+  "effect": "Lowers the target's Speed stat by 1 stage."
  },
  "Dual Chop": {
   "type": "dragon",
@@ -1957,7 +1960,8 @@
   "accuracy": 90,
   "pp": 16,
   "flags": [
-   "contact"
+   "contact",
+   "slicing"
   ],
   "multihit": [
    2,
@@ -2942,7 +2946,8 @@
   "pp": 8,
   "flags": [
    "contact"
-  ]
+  ],
+  "effect": "The user gains the Wide Open status until the next time it takes an action."
  },
  "Glare": {
   "type": "normal",
@@ -3772,7 +3777,8 @@
   "flags": [
    "contact",
    "bite"
-  ]
+  ],
+  "effect": "The user and target gain the Jaw Locked status."
  },
  "Jet Punch": {
   "type": "water",
@@ -4522,9 +4528,10 @@
  "Meteor Assault": {
   "type": "fighting",
   "category": "Physical",
-  "base_power": 150,
+  "base_power": 170,
   "accuracy": 100,
-  "pp": 8
+  "pp": 8,
+  "effect": "The user gains the Recharging status on the turn after this move is used."
  },
  "Meteor Beam": {
   "type": "rock",
@@ -4572,7 +4579,7 @@
   "accuracy": null,
   "pp": 8,
   "target": "self",
-  "effect": "Restores 1/2 of the user's max HP."
+  "effect": "Restores 1/2 of the max HP of the user or an ally."
  },
  "Mimic": {
   "type": "normal",
@@ -4945,14 +4952,16 @@
   "pp": 12,
   "flags": [
    "bullet"
-  ]
+  ],
+  "effect": "Has a 50% chance of lowering the target's accuracy by 1 stage."
  },
  "Octolock": {
   "type": "fighting",
   "category": "Status",
   "base_power": 0,
   "accuracy": 100,
-  "pp": 16
+  "pp": 16,
+  "effect": "Gives the target the Octolocked and Can't Escape statuses."
  },
  "Odor Sleuth": {
   "type": "normal",
@@ -5598,7 +5607,8 @@
   "pp": 8,
   "flags": [
    "bullet"
-  ]
+  ],
+  "effect": "Has a 10% chance of burning the target. Cures the user of being frozen."
  },
  "Quash": {
   "type": "dark",
@@ -5860,7 +5870,7 @@
   "category": "Status",
   "base_power": 0,
   "accuracy": null,
-  "pp": null,
+  "pp": 1,
   "target": "self",
   "effect": "Revives a Pokémon in the user's party that has fainted and restores 1/2 of that Pokémon's max HP."
  },
@@ -6394,7 +6404,8 @@
   "base_power": 0,
   "accuracy": null,
   "pp": 12,
-  "target": "self"
+  "target": "self",
+  "effect": "Boosts the user's Attack stat by 1 stage and Speed stat by 2 stages."
  },
  "Shock Wave": {
   "type": "electric",
@@ -6557,13 +6568,14 @@
  "Slash": {
   "type": "normal",
   "category": "Physical",
-  "base_power": 70,
+  "base_power": 80,
   "accuracy": 100,
   "pp": 20,
   "flags": [
    "contact",
    "slicing"
-  ]
+  ],
+  "effect": "This move has a 1-stage Critical-Hit Ratio Boost."
  },
  "Sleep Powder": {
   "type": "grass",
@@ -6694,7 +6706,8 @@
   "category": "Special",
   "base_power": 85,
   "accuracy": 100,
-  "pp": 16
+  "pp": 16,
+  "effect": "This move ignores the effects of Abilities and moves that draw in moves. It has a 1-stage Critical-Hit Ratio Boost."
  },
  "Snore": {
   "type": "normal",
@@ -7131,7 +7144,7 @@
   "category": "Status",
   "base_power": 0,
   "accuracy": 100,
-  "pp": 12,
+  "pp": 8,
   "effect": "Restores the user's HP by an amount equal to the target's Attack stat. Lowers the target's Attack stat by 1 stage."
  },
  "String Shot": {
@@ -8191,7 +8204,7 @@
   "flags": [
    "bullet"
   ],
-  "effect": "When a weather condition is present this move's power is doubled and its type changes. Harsh sunlight: Fire type Rain: Water type Snow: Ice type. Sandstorm: Rock type."
+  "effect": "When a weather condition is present this move's power is doubled and its type changes. Harsh sunlight Fire type. Rain Water type. Snow Ice type. Sandstorm Rock type."
  },
  "Whirlpool": {
   "type": "water",
@@ -8287,7 +8300,7 @@
   "category": "Status",
   "base_power": 0,
   "accuracy": null,
-  "pp": 12,
+  "pp": 8,
   "target": "self",
   "effect": "Gives the user's spot the Wish status."
  },
@@ -8405,7 +8418,8 @@
   "pp": 12,
   "flags": [
    "contact"
-  ]
+  ],
+  "effect": "Has a 30% chance of making the target flinch."
  },
  "Zippy Zap": {
   "type": "electric",

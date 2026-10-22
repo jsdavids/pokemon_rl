@@ -4,7 +4,8 @@ Sources:
   /pokedex-champions/           index -> ~209 species pages (incl. Mega forms)
   /attackdex-champions/         index -> ~900 move pages (stats, flags, effects)
   /pokemonchampions/items.shtml         all items with descriptions
-  /pokemonchampions/rankedbattle/regulationm-{a,b}.shtml  per-regulation legality
+  /pokemonchampions/rankedbattle/regulationm-{a,b,c,...}.shtml  per-regulation
+      legality, walked until the first 404 (new regulations need no code change)
 
 Output: src/pokechamp/data/rulesets/champions/{species,moves,items,regulations}.json
 (typechart.json is copied from gen9 — Champions uses the standard chart).
@@ -16,17 +17,21 @@ Usage:
     python scripts/scrape_serebii.py            # fetch (cached) + parse + write
     python scripts/scrape_serebii.py --limit 5  # smoke test on 5 species/moves
     python scripts/scrape_serebii.py --only species,items
+    python scripts/scrape_serebii.py --refresh  # new regulation: re-fetch all
 """
 
 from __future__ import annotations
 
 import argparse
+import codecs
 import html as htmllib
 import json
 import re
 import shutil
 import sys
 import time
+import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -46,25 +51,53 @@ TYPE_NAMES = {
 }
 
 _last_fetch = 0.0
+REFRESH = False  # --refresh: ignore cached pages (a new regulation dropped)
 
 
-def fetch(path: str) -> str:
-    """Fetch a serebii path with local file cache + rate limit."""
+def _cp1252_bytes(err: UnicodeDecodeError) -> tuple[str, int]:
+    bad = err.object[err.start : err.end]
+    return bad.decode("cp1252", errors="replace"), err.end
+
+
+codecs.register_error("cp1252-bytes", _cp1252_bytes)
+
+
+def decode(raw: bytes) -> str:
+    """Serebii pages mix encodings WITHIN a page: UTF-8 text (move effects'
+    em dashes) next to raw cp1252 bytes (0xE9, the é in the 'Pokémon' nav
+    links). Decode as UTF-8 and reinterpret only the invalid bytes as
+    cp1252 — all-or-nothing decoding either turned every cp1252 é into
+    U+FFFD (utf-8, errors='replace') or double-mangled the UTF-8 runs
+    (cp1252 for the whole page)."""
+    return raw.decode("utf-8", errors="cp1252-bytes")
+
+
+def fetch(path: str, missing_ok: bool = False) -> str | None:
+    """Fetch a serebii path with local file cache + rate limit. With
+    missing_ok, a 404 returns None (probing for regulations not out yet)."""
     global _last_fetch
     CACHE_DIR.mkdir(exist_ok=True)
     cache_file = CACHE_DIR / (re.sub(r"[^A-Za-z0-9.-]+", "_", path.strip("/")) + ".html")
-    if cache_file.exists():
-        return cache_file.read_text(encoding="utf-8", errors="replace")
+    if cache_file.exists() and not REFRESH:
+        # the cache holds the server's raw bytes (older caches hold UTF-8
+        # text, which decodes identically)
+        return decode(cache_file.read_bytes())
     wait = _last_fetch + FETCH_DELAY_S - time.monotonic()
     if wait > 0:
         time.sleep(wait)
-    req = urllib.request.Request(BASE + path, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        raw = resp.read()
+    url = BASE + urllib.parse.quote(path, safe="/")  # sirfetch'd, mr.mime
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            raw = resp.read()
+    except urllib.error.HTTPError as e:
+        _last_fetch = time.monotonic()
+        if missing_ok and e.code == 404:
+            return None
+        raise
     _last_fetch = time.monotonic()
-    text = raw.decode("utf-8", errors="replace")
-    cache_file.write_text(text, encoding="utf-8")
-    return text
+    cache_file.write_bytes(raw)
+    return decode(raw)
 
 
 # serebii sometimes serves UTF-8 bytes mis-labeled as cp1252 (mojibake)
@@ -83,7 +116,9 @@ def clean_text(s: str) -> str:
 # ---------------------------------------------------------------- species ---
 
 def species_slugs(index_html: str) -> list[str]:
-    slugs = re.findall(r'<option value="/pokedex-champions/([a-z0-9]+)/"', index_html)
+    # [^"/]+, not [a-z0-9]+: that silently dropped farfetch'd, sirfetch'd,
+    # mr.mime, mr.rime and kommo-o
+    slugs = re.findall(r'<option value="/pokedex-champions/([^"/]+)/"', index_html)
     return sorted(set(slugs))
 
 
@@ -180,14 +215,21 @@ def parse_species_page(page: str) -> list[dict]:
         if mnum:
             num = int(mnum.group(1))
 
-        # kg weight (Grass Knot / Heavy Slam tiers). Regional forms sharing
-        # an identity table get the first listed weight (tiers are coarse).
-        weight = None
+        # kg weights (Grass Knot / Heavy Slam tiers). Forms sharing an
+        # identity table list theirs slash-separated in form order
+        # ('30kg / 21kg' = Raichu / Alolan Raichu); a form past the end of
+        # the list (Gourgeist sizes: one weight given) gets the first.
+        weights: list[float] = []
         wi = section.find("Weight</td>")
         if wi != -1:
-            mw = re.search(r"([\d.]+)\s*kg", section[wi : wi + 600])
+            mw = re.search(r"[\d.]+\s*kg(?:\s*/\s*[\d.]+\s*kg)*", section[wi : wi + 600])
             if mw:
-                weight = float(mw.group(1))
+                weights = [float(w) for w in re.findall(r"([\d.]+)\s*kg", mw.group(0))]
+
+        def weight_for(i: int) -> float | None:
+            if not weights:
+                return None
+            return weights[i] if i < len(weights) else weights[0]
 
         # types live in the identity table, before the Classification row;
         # bound the search so learnset move-type icons don't leak in.
@@ -235,9 +277,21 @@ def parse_species_page(page: str) -> list[dict]:
             return groups[0][1]
 
         last_regional: tuple[str, dict, list[str]] | None = None
+        used_stats: set[str] = set()
+        section_start = len(forms)
+        # one table shared by every non-base form (Rotom's appliances)
+        alt_label, alt_stats = next(
+            ((l, s) for l, s in named_stats if l.lower().startswith("alternate form")),
+            (None, None),
+        )
         for lbl, types in labeled:
-            if lbl in ("", "Normal"):
-                name, stats, abilities = ident_name, anon_stats, abilities_for(lbl)
+            if lbl in ("", "Normal") or lbl == ident_name:
+                name, stats, abilities = ident_name, anon_stats, abilities_for("")
+                if stats is None and named_stats:
+                    # no plain 'Stats' table: the game only has a named form
+                    # (Floette exists in Champions only as 'Eternal Floette')
+                    name, stats = named_stats[0]
+                    used_stats.add(name)
             else:
                 match = next(
                     ((full, s) for full, s in named_stats
@@ -246,13 +300,21 @@ def parse_species_page(page: str) -> list[dict]:
                 )
                 if match:
                     name, stats = match
+                    used_stats.add(name)
                     abilities = abilities_for(lbl)
                     last_regional = (name, stats, abilities)
                 elif last_regional:  # e.g. Paldean Tauros breed rows
                     name = f"{last_regional[0]} ({lbl})"
                     stats, abilities = last_regional[1], last_regional[2]
                 else:
-                    name, stats, abilities = f"{lbl} {ident_name}", anon_stats, abilities_for(lbl)
+                    # 'Heat Rotom' already names the form; 'Sunny Form'
+                    # becomes 'Castform (Sunny Form)'. Prepending the label
+                    # used to produce 'Heat Rotom Rotom'.
+                    name = lbl if ident_name in lbl else f"{ident_name} ({lbl})"
+                    stats = alt_stats or anon_stats
+                    if alt_stats is not None:
+                        used_stats.add(alt_label)
+                    abilities = abilities_for(lbl)
             if stats is None:
                 continue  # decorative table (gender differences etc.)
             form = {
@@ -263,6 +325,32 @@ def parse_species_page(page: str) -> list[dict]:
                 "base_stats": stats,
                 "moves": learnset,
             }
+            weight = weight_for(len(forms) - section_start)
+            if weight is not None:
+                form["weight"] = weight
+            forms.append(form)
+
+        # forms that differ only in stats (Indeedee's 'Stats - Female')
+        # have no labeled type row; give each leftover named stats table
+        # its own form with the base typing and its '(Label)' ability group
+        if not forms or forms[0]["name"] != ident_name:
+            continue
+        base_form = forms[0]
+        for lbl, stats in named_stats:
+            if lbl in used_stats or ident_name.lower() in lbl.lower():
+                continue  # regional/mega tables carry the full form name
+            key = _first_word(lbl)[:4]
+            abilities = next(
+                (abs_ for glbl, abs_ in groups if _first_word(glbl)[:4] == key),
+                base_form["abilities"],
+            )
+            form = {
+                **base_form,
+                "name": f"{ident_name} ({lbl})",
+                "abilities": abilities,
+                "base_stats": stats,
+            }
+            weight = weight_for(len(forms) - section_start)
             if weight is not None:
                 form["weight"] = weight
             forms.append(form)
@@ -525,9 +613,14 @@ def parse_regulation(page: str) -> dict:
 
 
 def scrape_regulations() -> dict:
+    """Walk regulationm-a, -b, -c, ... until serebii has no page yet, so a
+    new regulation is picked up by a --refresh re-run with no code change."""
     out = {}
-    for reg in ("a", "b"):
-        page = fetch(f"/pokemonchampions/rankedbattle/regulationm-{reg}.shtml")
+    for reg in "abcdefghijklmnopqrstuvwxyz":
+        page = fetch(f"/pokemonchampions/rankedbattle/regulationm-{reg}.shtml",
+                     missing_ok=True)
+        if page is None:
+            break
         out[f"regulation-m-{reg}"] = parse_regulation(page)
     return out
 
@@ -548,8 +641,12 @@ def main() -> None:
                     help="comma list of: species,moves,items,regulations")
     ap.add_argument("--limit", type=int, default=None,
                     help="smoke test: first N species/move pages only")
+    ap.add_argument("--refresh", action="store_true",
+                    help="re-fetch pages even if cached (new regulation out)")
     args = ap.parse_args()
     parts = set(args.only.split(","))
+    global REFRESH
+    REFRESH = args.refresh
 
     if "species" in parts:
         print("scraping species...")

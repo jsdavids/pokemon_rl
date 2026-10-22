@@ -99,3 +99,40 @@ def test_end_to_end_damage_calc(rs):
                       ruleset="champions")
     assert res.type_effectiveness == 2.0
     assert res.max_damage > 0
+
+
+def test_rotom_appliance_forms(rs):
+    """serebii gives Rotom's appliances one shared 'Stats - Alternate
+    Forms' table; they used to get base Rotom's stats under names like
+    'Heat Rotom Rotom'. Found by the smogon species-parity check."""
+    heat = rs.get_species("Heat Rotom")
+    assert heat.base_species == "Rotom"
+    assert heat.types == ("electric", "fire")
+    assert heat.base_stats == {
+        "hp": 50, "atk": 65, "def": 107, "spa": 105, "spd": 107, "spe": 86,
+    }
+    assert rs.get_species("Rotom").base_stats["spe"] == 91
+    assert rs.get_species("Castform (Sunny Form)").types == ("fire",)
+
+
+def test_regional_forms_carry_their_own_weight(rs):
+    """Forms sharing an identity table list weights slash-separated in
+    form order ('30kg / 21kg'); only the first used to be read."""
+    assert rs.get_species("Raichu").weight == 30
+    assert rs.get_species("Alolan Raichu").weight == 21
+    assert rs.get_species("Hisuian Goodra").weight == 334.1  # 120 BP Grass Knot
+    assert rs.get_species("Paldean Tauros (Aqua Breed)").weight == 110
+
+
+def test_showdown_spellings_resolve(rs):
+    """Local LLMs mostly write Showdown's spelling of forms."""
+    for alias, ours in (
+        ("Rotom-Heat", "Heat Rotom"),
+        ("Garchomp-Mega-Z", "Mega Garchomp Z"),
+        ("Charizard-Mega-Y", "Mega Charizard Y"),
+        ("Indeedee-F", "Indeedee (Female)"),
+        ("Raichu-Alola", "Alolan Raichu"),
+        ("Tauros-Paldea-Blaze", "Paldean Tauros (Blaze Breed)"),
+        ("Lycanroc-Dusk", "Lycanroc (Dusk Form)"),
+    ):
+        assert rs.get_species(alias).name == ours

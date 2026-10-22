@@ -248,7 +248,7 @@
   "items": []
  },
  "regulation-m-b": {
-  "dates": "June 17th 2026 - September 2nd 2026",
+  "dates": "June 17th 2026 - September 9th 2026",
   "pokemon": [
    "Mega Raichu X",
    "Mega Raichu Y",
@@ -305,6 +305,51 @@
    "Damp Rock",
    "Shed Shell",
    "Big Root"
+  ]
+ },
+ "regulation-m-c": {
+  "dates": "September 9th 2026 - December 2nd 2026",
+  "pokemon": [
+   "Wigglytuff",
+   "Persian",
+   "Swalot",
+   "Mega Absol Z",
+   "Salamence",
+   "Mega Salamence",
+   "Mega Garchomp Z",
+   "Mega Lucario Z",
+   "Gogoat",
+   "Golisopod",
+   "Mega Golisopod",
+   "Rillaboom",
+   "Cinderace",
+   "Inteleon",
+   "Thievul",
+   "Toxtricity",
+   "Grapploct",
+   "Perrserker",
+   "Pincurchin",
+   "Indeedee",
+   "Pawmot",
+   "Arboliva",
+   "Squawkabilly",
+   "Mabosstiff",
+   "Baxcalibur",
+   "Mega Baxcalibur"
+  ],
+  "items": [
+   "Leek",
+   "Rocky Helmet",
+   "Air Balloon",
+   "Red Card",
+   "Binding Band",
+   "Eject Button",
+   "Normal Gem",
+   "Terrain Extender",
+   "Electric Seed",
+   "Psychic Seed",
+   "Misty Seed",
+   "Grassy Seed"
   ]
  }
 }

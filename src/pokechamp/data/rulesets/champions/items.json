@@ -1,6 +1,16 @@
 {
+ "Air Balloon": {
+  "description": "An item to be held by a Pokémon. This balloon makes the holder float in the air. If the holder is hit with an attack, the balloon will burst.",
+  "location": "Shop 1000 VP",
+  "held": true
+ },
  "Big Root": {
   "description": "An item to be held by a Pokémon. This root boosts the amount of HP the holder restores to itself when it uses HP-stealing moves.",
+  "location": "Shop 700 VP",
+  "held": true
+ },
+ "Binding Band": {
+  "description": "An item to be held by a Pokémon. This band boosts the power of binding moves used by the holder.",
   "location": "Shop 700 VP",
   "held": true
  },
@@ -39,6 +49,16 @@
   "location": "Shop 700 VP",
   "held": true
  },
+ "Eject Button": {
+  "description": "An item to be held by a Pokémon. If the holder is damaged by an attack, it will be switched out of battle to be replaced by another Pokémon on your team.",
+  "location": "Shop 700 VP",
+  "held": true
+ },
+ "Electric Seed": {
+  "description": "An item to be held by a Pokémon. If the terrain becomes Electric Terrain, the holder will use this seed to boost its own Defense stat.",
+  "location": "Shop 700 VP",
+  "held": true
+ },
  "Expert Belt": {
   "description": "An item to be held by a Pokémon. It's a well-worn belt that slightly boosts the power of the holder's supereffective moves.",
   "location": "Shop 1000 VP",
@@ -57,6 +77,11 @@
  "Focus Sash": {
   "description": "An item to be held by a Pokémon. If the holder has full HP and it is hit with a move that should knock it out, it will endure with 1 HP—but only once.",
   "location": "Beginning",
+  "held": true
+ },
+ "Grassy Seed": {
+  "description": "An item to be held by a Pokémon. If the terrain becomes Grassy Terrain, the holder will use this seed to boost its own Defense stat.",
+  "location": "Shop 700 VP",
   "held": true
  },
  "Hard Stone": {
@@ -82,6 +107,11 @@
  "King's Rock": {
   "description": "An item to be held by a Pokémon. It may cause the target to flinch whenever the holder successfully inflicts damage on them with an attack.",
   "location": "Beginning",
+  "held": true
+ },
+ "Leek": {
+  "description": "An item to be held by Farfetch'd or Sirfetch'd. This very long and stiff stalk of leek boosts the critical-hit ratio of their moves.",
+  "location": "Shop 700 VP",
   "held": true
  },
  "Leftovers": {
@@ -129,6 +159,11 @@
   "location": "Shop 700 VP",
   "held": true
  },
+ "Misty Seed": {
+  "description": "An item to be held by a Pokémon. If the terrain becomes Misty Terrain, the holder will use this seed to boost its own Sp. Def stat.",
+  "location": "Shop 700 VP",
+  "held": true
+ },
  "Muscle Band": {
   "description": "An item to be held by a Pokémon. This headband exudes strength, slightly boosting the power of the holder's physical moves.",
   "location": "Shop 700 VP",
@@ -144,14 +179,34 @@
   "location": "Shop 700 VP",
   "held": true
  },
+ "Normal Gem": {
+  "description": "An item to be held by a Pokémon. This gem is imbued with the essence of normalcy and will boost the power of a Normal-type move—but only once.",
+  "location": "Shop 1000 VP",
+  "held": true
+ },
  "Poison Barb": {
   "description": "An item to be held by a Pokémon. This small poisonous barb boosts the power of the holder's Poison-type moves.",
+  "location": "Shop 700 VP",
+  "held": true
+ },
+ "Psychic Seed": {
+  "description": "An item to be held by a Pokémon. If the terrain becomes Psychic Terrain, the holder will use this seed to boost its own Sp. Def stat.",
   "location": "Shop 700 VP",
   "held": true
  },
  "Quick Claw": {
   "description": "An item to be held by a Pokémon. This light, sharp claw lets the holder occasionally unleash a move faster than it usually would.",
   "location": "Beginning",
+  "held": true
+ },
+ "Red Card": {
+  "description": "An item to be held by a Pokémon. If the holder is damaged by an attack, the mysterious power of this card can remove the attacker from the battle.",
+  "location": "Shop 1000 VP",
+  "held": true
+ },
+ "Rocky Helmet": {
+  "description": "An item to be held by a Pokémon. This helmet damages any attacker that makes direct contact with the holder.",
+  "location": "Shop 1000 VP",
   "held": true
  },
  "Scope Lens": {
@@ -199,6 +254,11 @@
   "location": "Shop 700 VP",
   "held": true
  },
+ "Terrain Extender": {
+  "description": "An item to be held by a Pokémon. It extends the duration of terrain caused by the holder's move or Ability.",
+  "location": "Shop 700 VP",
+  "held": true
+ },
  "Twisted Spoon": {
   "description": "An item to be held by a Pokémon. This spoon is imbued with telekinetic energy and boosts the power of the holder's Psychic-type moves.",
   "location": "Shop 700 VP",
@@ -231,6 +291,12 @@
   "mega_stone": true
  },
  "Absolite": {
+  "description": "One of a variety of mysterious Mega Stones. An Absol holding this stone will be able to Mega Evolve during battle.",
+  "location": "Shop 2000 VP",
+  "held": true,
+  "mega_stone": true
+ },
+ "Absolite Z": {
   "description": "One of a variety of mysterious Mega Stones. An Absol holding this stone will be able to Mega Evolve during battle.",
   "location": "Shop 2000 VP",
   "held": true,
@@ -280,6 +346,12 @@
  },
  "Barbaracite": {
   "description": "One of a variety of mysterious Mega Stones. A Barbaracle holding this stone will be able to Mega Evolve during battle.",
+  "location": "Shop 2000 VP",
+  "held": true,
+  "mega_stone": true
+ },
+ "Baxcalibrite": {
+  "description": "One of a variety of mysterious Mega Stones. A Baxcalibur holding this stone will be able to Mega Evolve during battle.",
   "location": "Shop 2000 VP",
   "held": true,
   "mega_stone": true
@@ -428,6 +500,12 @@
   "held": true,
   "mega_stone": true
  },
+ "Garchompite Z": {
+  "description": "One of a variety of mysterious Mega Stones. A Garchomp holding this stone will be able to Mega Evolve during battle.",
+  "location": "Shop 2000 VP",
+  "held": true,
+  "mega_stone": true
+ },
  "Gardevoirite": {
   "description": "One of a variety of mysterious Mega Stones. A Gardevoir holding this stone will be able to Mega Evolve during battle.",
   "location": "Shop 2000 VP",
@@ -448,6 +526,12 @@
  },
  "Glimmoranite": {
   "description": "One of a variety of mysterious Mega Stones. A Glimmora holding this stone will be able to Mega Evolve during battle.",
+  "location": "Shop 2000 VP",
+  "held": true,
+  "mega_stone": true
+ },
+ "Golisopite": {
+  "description": "One of a variety of mysterious Mega Stones. A Golisopod holding this stone will be able to Mega Evolve during battle.",
   "location": "Shop 2000 VP",
   "held": true,
   "mega_stone": true
@@ -501,6 +585,12 @@
   "mega_stone": true
  },
  "Lucarionite": {
+  "description": "One of a variety of mysterious Mega Stones. A Lucario holding this stone will be able to Mega Evolve during battle.",
+  "location": "Shop 2000 VP",
+  "held": true,
+  "mega_stone": true
+ },
+ "Lucarionite Z": {
   "description": "One of a variety of mysterious Mega Stones. A Lucario holding this stone will be able to Mega Evolve during battle.",
   "location": "Shop 2000 VP",
   "held": true,
@@ -580,6 +670,12 @@
  },
  "Sablenite": {
   "description": "One of a variety of mysterious Mega Stones. A Sableye holding this stone will be able to Mega Evolve during battle.",
+  "location": "Shop 2000 VP",
+  "held": true,
+  "mega_stone": true
+ },
+ "Salamencite": {
+  "description": "One of a variety of mysterious Mega Stones. A Salamence holding this stone will be able to Mega Evolve during battle.",
   "location": "Shop 2000 VP",
   "held": true,
   "mega_stone": true
@@ -814,9 +910,9 @@
   "location": "Shop 400 VP",
   "held": false
  },
- "Bug-Type Affinity Ticket": {
-  "description": "A ticket that makes you more likely to meet Bug-type Pokémon in the next lineup.",
-  "location": "Achievements",
+ "2026 Worlds Commemorative Roster Ticket": {
+  "description": "-",
+  "location": "Bug-Type Affinity Ticket",
   "held": false
  },
  "Dark-Type Affinity Ticket": {
