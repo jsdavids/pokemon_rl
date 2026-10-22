@@ -20,7 +20,29 @@ Architecture decisions (made up front):
 - [x] Full **champions** ruleset scraped from serebii.net
       (scripts/scrape_serebii.py): all species incl. Mega forms with
       abilities + learnsets, all moves with Champions-rebalanced PP / flags /
-      multi-hit / effect text, items, per-regulation legality (M-A, M-B)
+      multi-hit / effect text, items, per-regulation legality (M-A, M-B,
+      M-C). Regulation pages are discovered automatically; `--refresh`
+      re-crawls when a new one drops (see README)
+- [x] Regulation M-C update (2026-10): 26 newly usable Pokemon incl. the
+      first Z Megas (Mega Absol Z Dark/Ghost Sharpness, Mega Garchomp Z
+      Dragon Levitate, Mega Lucario Z Aura Guard) + Mega Salamence/
+      Golisopod/Baxcalibur, 12 items (Rocky Helmet, Air Balloon, Red Card,
+      Eject Button, Binding Band, Normal Gem, Terrain Extender, 4 Seeds,
+      Leek), patch rebalances (Slash 80 BP and learned far more widely,
+      Meteor Assault 170, Wish/Strength Sap 8 PP, Archaludon lost Metal
+      Burst/Mirror Coat). Scraper fixes found on the way: (a) serebii mixes
+      UTF-8 and raw cp1252 bytes WITHIN a page — now decoded byte-run-wise
+      and cached as raw bytes; (b) forms that differ only by a 'Stats -
+      <Form>' table were silently dropped — recovered 9 (Indeedee-F,
+      Basculegion-F, Lycanroc Midnight/Dusk, Palafin Hero, Aegislash
+      Blade, Gourgeist sizes); 339 forms total. tests/test_item_coverage.py
+      now fails on any held item no module has classified — the to-do
+      list for the next regulation's item pool. The new learnsets also
+      surfaced a determinism bug: fill_moves iterated the learnset
+      frozenset, whose order follows the per-process string hash seed, so
+      a seeded recommend() varied between processes (a recommender test
+      failed ~1 run in 7). Now sorted; verified identical across 20 hash
+      seeds
 - [ ] Full gen9 data dump (script to convert Showdown data files) — lower
       priority now that champions data exists
 
@@ -30,11 +52,39 @@ Architecture decisions (made up front):
 - [x] Batch API (moves x hypothetical defender builds)
 - [x] Stat boost stages (incl. crit interactions)
 - [x] Items: Choice Band/Specs, Life Orb, Expert Belt, Assault Vest,
-      Muscle Band/Wise Glasses, type boosters
+      Muscle Band/Wise Glasses, type boosters; M-C: Normal Gem (1.3x),
+      Air Balloon (Ground immunity + ungrounded for terrain); Light Ball
+      (Pikachu 2x), Metronome (metronome_uses: +819/4096 per repeat, 2x
+      cap), Iron Ball (grounds Flying/Levitate holders; a Flying holder
+      takes Ground NEUTRALLY, not its other type's weakness)
+- [x] Champions golden suite (2026-10, node on the target machine):
+      generate_goldens.mjs gained `champions` (32 damage cases on the
+      scraped ruleset — Light Ball, the Metronome chain, Iron Ball, Air
+      Balloon, Normal Gem, Aerilate/Pixilate, the M-C Megas — each with a
+      smogon `ref` block so data and calc divergences report separately)
+      and `champions-species` (all 339 forms' stats/types/weight vs
+      smogon's dex). First run found: (a) MY Iron Ball bug — I let Iron
+      Ball Skarmory keep its Steel weakness to Ground; Showdown and smogon
+      both make a Flying holder take Ground neutrally; (b) Rotom's
+      appliance forms carried base Rotom's stats (serebii's shared 'Stats -
+      Alternate Forms' table went unread) under names like 'Heat Rotom
+      Rotom', Castform's as 'Sunny Form Castform'; (c) 19 regional/alt
+      forms inherited the base form's weight (serebii lists them slash-
+      separated: '30kg / 21kg') — Hisuian Goodra was a Grass Knot tier
+      low; (d) smogon 0.11.0's own Mega Starmie is wrong (Atk 140, a +140
+      Mega; serebii/champdex say 100). 6 explained exceptions remain
+      (SPECIES_PARITY_EXCEPTIONS). The loader now also accepts Showdown
+      spellings ('Rotom-Heat', 'Garchomp-Mega-Z', 'Indeedee-F'), and
+      tool/scout/battle inputs are canonicalized so every spelling lands
+      on one entry
 - [x] Spread modifier, weather (incl. sand/snow stat boosts), terrain, screens
 - [x] Abilities: immunities (Levitate etc.), Huge Power, Guts, Technician,
       Adaptability, Thick Fat, Fur Coat, Marvel Scale, Multiscale, Ice Scales,
-      Tinted Lens, Filter/Solid Rock
+      Tinted Lens, Filter/Solid Rock; -ate retyping (Aerilate/Pixilate/
+      Refrigerate/Galvanize + Champions' Dragonize: type, STAB, immunities,
+      terrain and gems all see the new type, 1.2x), and the Champions
+      abilities Aura Guard (contact 0.5x), Fire Mane (Fire 1.5x), Mega Sol
+      (own moves in sun), Eelevate (floats)
 - [x] Tera STAB (attacker) and Tera defensive typing (defender)
 - [x] Move special cases: Body Press, Psyshock, Seismic Toss/Night Shade, Facade
 - [x] Move flags (contact/sound/punch/bite/slicing/bullet) with
@@ -69,8 +119,31 @@ Architecture decisions (made up front):
       the ruleset's move data — cross-bracket order carries no speed info,
       contradictions raise (unmodeled Prankster/Gale Wings/Quick Claw)
 - [x] apply_prior hook (external reweighting of the candidate space)
-- [ ] Usage-statistics priors and usage-derived candidate sets (hook exists;
-      no public Champions usage data yet)
+- [x] Usage-statistics priors and usage-derived candidate sets (2026-10).
+      scripts/fetch_usage.py pulls Limitless open team sheets (no API key;
+      50 req/5 min respected, finished events cached forever — 5,136 teams
+      from 70 M-C events of 32+ players) as the PRIMARY source (exact
+      counts, natures, per-form via the held Mega stone) and Pikalytics'
+      crawler-friendly /ai pages as SECONDARY (its M-C format is built from
+      the same events; point --pikalytics-format at a ladder format when
+      one exists for M-C). estimator/usage.py turns shares into a softened
+      prior (uniform floor 5%, more for thin samples) over item bucket x
+      ability x nature, applied via apply_prior before any evidence;
+      meta-run natures (Naive/Hasty/Brave...) and calc-modeled items
+      (Rillaboom's Miracle Seed 72%!) join the candidate grid per species;
+      rollout opponents draw moves by usage (sim-modeled moves only).
+      Held-out check (scripts/eval_usage_priors.py: train on 56 older
+      events, test on the 14 newest): rollout movesets recover 68.6% of
+      real moves vs 6.3% for the old random fill; top-1 ability 95% vs 43%
+      uniform, nature 69% vs 11%, item bucket 90% vs 16%. Wired through
+      the scout (server uses the newest regulation), so opponent_summary
+      also returns a 'meta' read. The usage join surfaced scraper gaps:
+      slugs with punctuation were dropped (Kommo-o, Sirfetch'd,
+      Farfetch'd, Mr. Mime/Rime) and Floette — in the #1 4-core as Mega
+      Floette — was missing (serebii only has 'Stats - Eternal Floette');
+      345 forms now. Not yet used: teammate co-occurrence (predict the
+      unrevealed back line at team preview) and full-set joint
+      distributions (moves conditioned on revealed moves)
 
 ## Phase 3 — Simulation infrastructure (3-4 weeks) — IN PROGRESS
 
@@ -136,7 +209,7 @@ cross-check, not a rollout path.
       lock, confusion (2-5 turns, 33% typeless 40 BP self-hit)
 - [x] Weight/HP-scaled base power in the CALCULATOR with golden parity
       (201 cases): Grass Knot/Low Kick tiers from scraped kg weights (all
-      303 champions forms), Heavy Slam/Heat Crash ratios, Eruption/Water
+      303 champions forms at the time; 345 now), Heavy Slam/Heat Crash ratios, Eruption/Water
       Spout via integer current HP; Technician sees the computed BP
 - [x] Perish Song (3-turn clock, switching escapes, Soundproof deaf to it
       and to Hyper Voice), Disable (4 turns; Disable+Encore = forced
@@ -149,6 +222,29 @@ cross-check, not a rollout path.
 - [x] Destiny Bond (lapses on the user's next move), Counter/Mirror Coat
       (2x category-matched return), Wish (slot-targeted delayed heal,
       lands on the switch-in), Heal Bell/Aromatherapy
+- [x] Regulation M-C items in the engine: Air Balloon (pops on any
+      damaging hit), Rocky Helmet 1/6 on contact (plus Rough Skin/Iron
+      Barbs 1/8, previously unmodeled), Red Card / Eject Button (forced
+      switch, random replacement — a real player picks), Normal Gem
+      consumption, Binding Band 1/6 trap chip (snapshotted), Terrain
+      Extender (8 turns), terrain Seeds (on set and on entry; from_state
+      restores items so constructor-time entry can't eat a benched seed);
+      Spicy Spray burns attackers
+- [x] Full item-pool coverage (2026-10): the last ten unmodeled items —
+      Scope Lens (with a real crit-stage ladder: high-crit moves, Super
+      Luck, Leek, always-crit moves, Battle/Shell Armor), Quick Claw,
+      Bright Powder, King's Rock, Focus Band, Shell Bell, White Herb,
+      Metronome (consecutive-use streak, snapshotted), Iron Ball (half
+      Speed + grounded, also in the estimator's speed math), Light Ball.
+      Found missing on the way and added: Focus Sash + Sturdy (single hit
+      from full HP), status-immunity abilities (Limber/Insomnia/Water
+      Veil/...), Moxie/Beast Boost. Champions abilities: Piercing Drill
+      (contact through Protect at 1/4), Eelevate (+1 highest stat on KO),
+      Thermal Exchange (+1 Atk on Fire hits, burn immunity).
+      test_item_coverage's allowlist is now EMPTY — any future item is
+      unmodeled by definition until classified. Focus Energy (+2) and
+      Dragon Cheer (ally +2 if Dragon, else +1) share one crit volatile:
+      no stacking, cleared on switch, carried by Baton Pass, snapshotted
 - [ ] Showdown/poke-env bridge as a mechanics cross-check (deferred)
 
 ## Phase 4 — Move recommender (6-10 weeks) — IN PROGRESS
@@ -207,6 +303,83 @@ cross-check, not a rollout path.
       (policy_varied.pt retrained 2026-07 on post-Psychic-fix data; the
       instrumented run confirmed 880 Psychic carriers across 60 species
       flowed through training)
+- [x] Recommender vs real tournament teams (2026-10,
+      scripts/eval_recommender_meta.py): 400 random pairings of held-out
+      Limitless team sheets (the 14 newest M-C events; usage rebuilt from
+      the 56 older ones so no opponent's set feeds its own prior), both
+      orientations, doubles at the server's search settings, vs a
+      MaxDamage opponent that knows its own team. 3,200 games:
+      oracle (true sets) 77.9% / usage-primed inference 63.4% /
+      uniform inference (pre-usage behavior) 57.7% / MaxDamage 49.4%.
+      Paired: usage - uniform = +5.8 pts [95% CI +2.1, +9.3] — the priors
+      close ~29% of the 20-point information gap. The run also found two
+      bugs: free-text sheets leaked a lowercase 'relaxed' into a candidate
+      grid (natures now canonicalized at fetch + validated), and Dragon
+      Tail into an Eject Button holder crashed the deferred switch
+      (_force_switch now ignores a Pokemon that's already gone); plus
+      determinize() hard-wired the opponent to side 1 (a side-1 search
+      resampled its own team). Caveats: the opponent never clicks status
+      moves (MaxDamage), team sheets have no EVs (nature-derived spreads),
+      Megas start Mega-Evolved, and estimators get NO in-battle damage
+      updates here — the next arm to add (the server does update them)
+- [x] Champions Stat Points (2026-10): Champions has no EVs — 66 Stat
+      Points, max 32 per stat, each exactly +1 at level 50; the HOME rule
+      (first SP = 4 EVs, each further = 8) makes SP n == 8n-4 EVs exact
+      (tested for every value), so builds stay stored as EVs. Fixed: the
+      validator's mainline 508-EV cap rejected the legal 32/32/2 (516 EV-
+      equivalents) — now 66 SP total; tools take `stat_points` (and read an
+      'evs' dict that fits 0-32/66 as SP, with a note — "32 Atk" used to
+      mean +4 stat), get_team reports stat_points
+- [x] Ladder spread data + truth-spread sensitivity (2026-10):
+      scripts/fetch_spreads.py pulls Pikalytics RANKED spreads (SP, top 30
+      per species, 50 species of M-B S3 — no M-C ladder data yet);
+      scripts/analyze_spreads.py: 97.3% of builds spend all 66 SP (stats
+      are not independent); by role (from species + nature) offense
+      natures max attack 61% / Speed 53% and leave the dump stat empty
+      94%, bulk natures max HP 73% with Def/SpD benchmarks (14-15, 19-20)
+      72-74%, Trick Room natures leave Speed empty 93%. The estimator's 8
+      EV templates match only 0.3% of real builds exactly (its 252/252/4
+      is 32/32/1 = 65 SP; real is 32/32/2) and 39% sit > 8 SP from every
+      template. estimator/spreads.py samples whole spreads: `species`
+      (its own ladder spreads) or `role` (a role-space spread from OTHER
+      species of the same nature archetype — the data-grounded stress
+      test). eval_recommender_meta.py --spreads, same 400 matchups each:
+        heuristic: usage - uniform +5.8 [+2.1, +9.3]  (oracle 77.9 / usage 63.4 / uniform 57.7)
+        species:   usage - uniform +5.6 [+2.1, +9.2]  (75.1 / 63.9 / 58.3)
+        role:      usage - uniform +3.8 [+0.1, +7.4]  (74.4 / 62.1 / 58.2)
+      The prior's gain holds under realistic spreads and shrinks (still
+      positive) when truth is off-grid by construction. Next: replace the
+      EV templates with ladder-grounded candidates — evaluate with `role`
+      truth (leave-one-species-out), since `species` truth drawn from the
+      same data the candidates come from would grade itself
+- [x] Ladder spread candidates + observation-in-the-loop eval (2026-10):
+      estimator/spreads.py SpreadCandidates picks K=12 role-space shapes
+      per nature archetype by greedy weighted coverage (radius 4 SP),
+      maps each onto the species through the candidate's own nature, and
+      uses the shape's build mass as the prior (out-of-sample coverage
+      within 4 SP: K=12 vs the 8 templates in analyze_spreads.py
+      fold_coverage). The sim now has an opt-in event log (battle.events:
+      hits with rolled/clean damage, field, boosts; move order by
+      priority), and the eval feeds clean single hits + same-priority
+      move order to the estimators the way a player would see them
+      (their hits as rounded HP-bar %). Fixes found along the way:
+      observe_damage ignored spread reduction (`spread=` now passed to
+      the calc), and the server's observe_damage dropped the live
+      battle's field/boosts (now taken from the BattleSession).
+      400 matchups, `role` truth, candidates from the OTHER species fold:
+        arm               win%   stat MAE  nature
+        oracle            75.8      -        -
+        usage             65.1    12.13    67.3%
+        usage+obs         65.2     7.02    71.9%
+        usage+ladder      67.1     9.15    67.2%
+        usage+ladder+obs  68.6     5.32    76.3%
+        maxdamage         51.2      -        -
+      Paired: usage+ladder+obs − usage+obs MAE −1.69 [−1.84, −1.54],
+      win +3.4 pts [+0.0, +6.5]; it closes ~33% of the oracle gap (vs
+      ~1% for observations alone). The server's scout now uses ladder
+      candidates by default. Observations cut MAE ~40% but barely move
+      win rate on their own — most clean hits land after the decision
+      they'd have informed
 - [ ] 4b data-blocked (revisit when sources exist): usage-informed team
       sampling; imitation warm-start from replays
 
@@ -245,7 +418,7 @@ cross-check, not a rollout path.
       config strings, so llama.cpp/vLLM/LM Studio are drop-ins), MCP tool
       schemas converted to OpenAI function definitions, tool calls
       executed against the in-process FastMCP server with errors surfaced
-      back to the model as text; routing system prompt; 54-fixture
+      back to the model as text; routing system prompt; 53-fixture
       routing eval scoring first-tool choice overall and per tool
       (`pokechamp-routing-eval --model qwen3:14b`), `pokechamp-chat`
       terminal REPL. Target hardware (16GB GPU / 32GB RAM): qwen3:14b or
@@ -306,10 +479,65 @@ cross-check, not a rollout path.
       belong in schemas/descriptions, or grammar-constrained decoding.
       Expected clean-config accuracy ~75-77%; definitive numbers on the
       16GB machine
-- [ ] Model bake-off on the target machine (16GB GPU):
-      pokechamp-routing-eval vs qwen3:14b / gpt-oss:20b / qwen3:30b-a3b;
-      escalate to llama.cpp grammar-constrained decoding if routing
-      accuracy is the bottleneck
+- [x] Model bake-off on the target machine (RTX 5080 16GB, Ollama
+      0.31.2, 16k ctx, seeded runs, results in routing_results.jsonl):
+      qwen3:30b-a3b 79% (71% GPU, split) = qwen3:14b-q8_0 79% (75% GPU)
+      > qwen3:14b Q4 77% (100% GPU, 7.4s warmup — best operational
+      profile; the q8-vs-q4 "quant tax" measured ONE fixture, inside
+      noise) >> gpt-oss:20b 64% (100% GPU; 15 of its 19 misses were
+      no-tool-call — it KNOWS the tool per its reasoning trace but
+      declines and asks a clarifying question when arguments feel
+      unconfirmed; a personality mismatch with a move timer, not a
+      capability gap). DECISION: deploy qwen3:14b Q4. The remaining
+      headroom is not model choice: lead_assist went 0/16 ACROSS ALL
+      FOUR models (they ask "which team?" or call list_teams — the
+      required team_name argument needs an omit-to-default), "Add a
+      Hydreigon to PlayerX's known team" hit save_team 4/4 (scout/
+      save_team descriptions need own-team-vs-opponent contrast), and
+      casual start_battle phrasings no-call 3-4/4. Fix those schemas
+      (per the 4b lesson: schemas, not prompts), re-run, and any of
+      these models should approach the ~90% fixture-ambiguity ceiling
+      before reaching for grammar-constrained decoding.
+- [x] Post-bake-off schema iteration (2026-07, same seed re-runs):
+      lead_assist and start_battle arguments became optional —
+      team_name defaults to the only/latest-saved team, opponent to the
+      live battle's or only-scouted one, with "call it right away
+      rather than asking" in the description; scout/save_team got
+      own-team-vs-opponent contrast; get_team names "previous
+      version/iteration" explicitly. Result: qwen3:14b Q4 77%->91%,
+      qwen3:30b-a3b 79%->91% — both AT the ambiguity ceiling, residual
+      misses are the genuinely-dual fixtures (switch-in = battle_update
+      or scout). gpt-oss:20b 64%->74%: the fixes help but its
+      clarify-first hedging survives schema-level nudges
+      (recommend_move still no-calls). DEPLOY CONFIRMED: qwen3:14b Q4 —
+      ties the 30b at a third the footprint, 100% GPU, 7s load.
+      Grammar-constrained decoding not needed at 14B+. Harness prep DONE (2026-07):
+      per-model-family sampling presets (qwen3 0.6/0.95, gpt-oss 1.0 —
+      hardcoded 0.2 was against every candidate's guidance and near-greedy
+      decoding is the documented cause of qwen3 thinking spirals) with
+      --temperature/--top-p/--seed/--max-tokens overrides; eval max_tokens
+      default raised to 4096 so the cap doesn't score as routing misses;
+      preflight before fixture 1 (warmup absorbs the cold load, /api/ps
+      confirms 100% GPU vs silent split, warns if context < 8192);
+      setup.ps1 persists OLLAMA_CONTEXT_LENGTH=16384 (the 4096 default
+      silently front-truncates system prompt + tool schemas) and prints
+      the ollama version (Blackwell needs a recent build); --json appends
+      full run records incl. misses to routing_results.jsonl for
+      cross-model comparison. Seeded runs or 3 runs per model — at 53
+      fixtures one flip is ±1.9%
+- [x] Newer-model bake-off (2026-10, Ollama 0.35.1, seed 7, 53 fixtures):
+      qwen3.8:27b-q4_K_M 94% (50/53) — most accurate router yet, but 18GB
+      runs ~75% GPU on 16GB, ~14s/fixture. qwen3:14b re-baselined against
+      the current tool schemas: 92% (49/53; latency invalid, a stray server
+      held VRAM). Bonsai 2 27B (ternary Qwen3.8, PQ2_0 7.2GB, PrismML
+      llama.cpp fork only — Ollama rejects the quant type) 77% thinking-on
+      / 83% thinking-off, fully on-GPU at ~3-6s/fixture; most misses are
+      list_teams-first anchoring (lead_assist 0/4, start_battle 1/3 with
+      thinking off). Sampling presets added for qwen3.8/bonsai (1.0/0.95,
+      both model cards); first-match order keeps qwen3.8 off qwen3's 0.6.
+      Open: whether Bonsai's list_teams detour still reaches the right
+      tool in a multi-step chat (the eval scores only the first call), and
+      schema nudges for it if its speed is wanted
 - [ ] Ladder validation: use it in real matches; fix what annoys
 - [ ] Simple web UI (optional, after the terminal flow proves itself)
 

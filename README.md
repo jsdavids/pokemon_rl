@@ -6,22 +6,22 @@ if it's bulky?") to the right tool.
 
 | Tool | Package | Status |
 |---|---|---|
-| Damage calculator | `pokechamp.damage` | complete incl. multi-hit, move flags, weight/HP-scaled moves; 201 golden cases vs @smogon/calc |
-| Stat/set estimator | `pokechamp.estimator` | Bayesian damage/speed/priority observations, regulation-legal items, ability inference, censored KOs |
+| Damage calculator | `pokechamp.damage` | complete incl. multi-hit, move flags, weight/HP-scaled moves; 233 golden cases vs @smogon/calc (201 gen9 + 32 on champions data) plus a 345-form data-parity check |
+| Stat/set estimator | `pokechamp.estimator` | Bayesian damage/speed/priority observations, usage-based priors from 5k+ tournament team sheets, ladder-grounded Stat Point spread hypotheses, regulation-legal items, ability inference, censored KOs; in simulated battles on held-out teams, stat error 5.3 points vs 12.1 with usage priors alone |
 | Battle simulator (rollout engine) | `pokechamp.sim` | seeded singles + doubles engine on champions data, full competitive mechanics (~270/~170 games/s) |
-| Move recommender | `pokechamp.recommender` | determinized search (screening + UCB budget); beats MaxDamage 69-75% both formats |
+| Move recommender | `pokechamp.recommender` | determinized search (screening + UCB budget); beats MaxDamage 69-75% both formats; on real M-C tournament teams under imperfect info, 63% with usage priors vs 58% without (78% with perfect info); with realistic spreads, 69% with ladder spread hypotheses + in-battle observations vs 65% usage alone (76% perfect info) |
 | Self-play RL | `pokechamp.rl` | masked PPO + opponent pool; hybrid (search + learned net) beats pure search 69% |
 | Session tools | `pokechamp.session` | versioned team store, opponent scouting book, lead assist, live-battle tracking |
 | MCP server + LLM harness | `pokechamp.server`, `pokechamp.llm` | 13 tools over stdio; Ollama chat loop + routing eval |
 
-See [ROADMAP.md](ROADMAP.md) for phase status. Remaining: the model bake-off
-(needs the target machine) and ladder validation.
+See [ROADMAP.md](ROADMAP.md) for phase status. Game data is current through
+**Regulation M-C** (Sept 9 - Dec 2, 2026). Remaining: ladder validation.
 
 ## Setup
 
 ```powershell
-.\scripts\setup.ps1                    # venv + install + tests
-.\scripts\setup.ps1 -Model qwen3:14b   # + pull the model and run the routing eval
+.\scripts\setup.ps1                      # venv + install + tests
+.\scripts\setup.ps1 -Model qwen3:14b     # + pull the model and run the routing eval
 ```
 
 or by hand: `python -m venv .venv && .venv\Scripts\pip install -e ".[dev,llm]"`.
@@ -32,7 +32,7 @@ Extras: `[llm]` (FastMCP + httpx), `[rl]` (PyTorch for the 4b trainer),
 
 ```
 pokechamp-chat --model qwen3:14b     # terminal assistant (needs Ollama running)
-pokechamp-routing-eval --model ...   # tool-choice accuracy over 54 fixtures
+pokechamp-routing-eval --model ...   # tool-choice accuracy over 53 fixtures
 pokechamp-mcp                        # bare MCP server on stdio, for any MCP client
 ```
 
@@ -42,9 +42,44 @@ narrate what you see ("my Garchomp is at 62%", "rain is up") and ask "what
 should I click?" — the recommender searches determinized worlds sampled from
 everything scouted so far. `/help` lists the no-LLM slash commands.
 
-Data persists under `~/.pokechamp/`. Model guidance for a 16GB GPU:
-`qwen3:14b` or `gpt-oss:20b` (fully on-GPU), `qwen3:30b-a3b` (split, MoE-fast);
-prefer Q5+ quants — tool calling degrades with quantization faster than chat.
+Data persists under `~/.pokechamp/`. Model guidance for a 16GB GPU — pin
+quant tags explicitly, since tool calling degrades with quantization faster
+than chat and bare tags are Q4. Ollama's qwen3 offers no Q5: the choices
+are `qwen3:14b` (Q4_K_M, fully on-GPU) vs `qwen3:14b-q8_0` (16GB, splits
+slightly — eval both to measure the quant tax), `gpt-oss:20b` (MXFP4-only,
+fully on-GPU), `qwen3:30b-a3b` (Q4, split, MoE-fast), `qwen3.8:27b-q4_K_M`
+(18GB, ~75% GPU: most accurate router, 94%, but slowest), and Bonsai 2 27B
+(ternary Qwen3.8, 7GB, fully on-GPU and fast, but 77-83%: it tends to
+call `list_teams` first). Bonsai won't load in Ollama — run it with
+PrismML's llama.cpp fork (`llama-server --jinja`, port 8080) and pass
+`--url http://localhost:8080/v1 --model bonsai-2-27b`. Ollama
+prerequisites (setup.ps1 handles both; the eval preflight verifies them):
+a recent build (Blackwell/RTX 50xx support; old builds fall back to CPU
+silently) and `OLLAMA_CONTEXT_LENGTH=16384` — the 4096 default silently
+front-truncates the system prompt + tool schemas. Sampling defaults come
+from per-model-family presets (qwen3 0.6/0.95, gpt-oss 1.0 — near-greedy
+decoding makes thinking models loop); the eval takes
+`--temperature/--top-p/--seed/--max-tokens/--json` for controlled runs.
+
+## When a new regulation drops
+
+```powershell
+.venv\Scripts\python scripts\scrape_serebii.py --refresh   # re-fetch everything (~20 min, rate-limited)
+.venv\Scripts\python scripts\fetch_usage.py                # usage priors for the newest regulation (~10 min)
+.venv\Scripts\python scripts\fetch_spreads.py --format <ladder format>   # Stat Point spreads, once Pikalytics has ladder data
+.venv\Scripts\python -m pytest
+```
+
+Re-run `fetch_usage.py` weekly or so during a regulation: it reads the last
+28 days of Limitless tournaments (`--days`, `--min-players`) and caches
+finished ones, so refreshes only fetch what's new.
+
+Regulation pages are discovered automatically (`regulationm-a`, `-b`, `-c`,
+... until serebii 404s), so the scrape itself needs no code change. New
+*mechanics* do: `tests/test_item_coverage.py` fails on any held item that
+neither the calculator nor the sim has classified, which is the to-do list
+for a new item pool. New abilities go in `damage/abilities.py`
+(damage-roll effects) or `sim/` (battle-flow effects).
 
 ## Quick taste (library)
 
@@ -86,7 +121,8 @@ scripts/            serebii scraper, golden generator, setup.ps1, latency benchm
   exclusive Megas, and item pool aren't representable there, and search needs
   thousands of seeded games per decision.
 - **Correctness anchors:** the calculator has exact rounding parity with
-  `@smogon/calc` (201 golden cases); the team store and scout validate every
+  `@smogon/calc` (233 golden cases, plus every scraped form's stats/types/
+  weight checked against smogon's dex); the team store and scout validate every
   entry against the scraped ruleset — validation once flagged "Alakazam
   can't learn Psychic," which turned out to be a scraper bug (a type-name
   filter eating the one move named after a type), caught precisely because
