@@ -87,18 +87,33 @@ def default_candidates(
     level: int = 50,
     ruleset: str = "gen9",
     regulation: str | None = None,
+    extra_natures: tuple[str, ...] | list[str] = (),
+    extra_items: tuple[str, ...] | list[str] = (),
+    spreads=None,
 ) -> list[PokemonSet]:
-    """EV templates x natures x legal items x ability hypotheses."""
+    """EV spreads x natures x legal items x ability hypotheses.
+    extra_natures / extra_items: what the meta runs beyond the archetype
+    grid (from usage data, estimator/usage.py) — e.g. Rillaboom's Miracle
+    Seed, which the static item list leaves out as a rare choice.
+    spreads: a SpreadCandidates (estimator/spreads.py) — ladder-grounded,
+    per-nature spreads replacing the hand-written EV_TEMPLATES."""
     rs = load_ruleset(ruleset)
     sp = rs.get_species(species)  # fail loud: species not in this ruleset
 
     is_mega = sp.base_species is not None and sp.name.startswith("Mega ")
     items = [None] if is_mega else legal_items(ruleset, regulation)
+    if not is_mega:
+        items += [i for i in extra_items if i not in items]
     abilities: list[str | None] = list(sp.abilities) or [None]
 
     out = []
-    for template in EV_TEMPLATES:
-        for nature in NATURES:
+    natures = NATURES + [n for n in extra_natures if n not in NATURES]
+    for nature in natures:
+        templates = (
+            [evs for evs, _ in spreads.evs_for(species, nature, rs)]
+            if spreads is not None else EV_TEMPLATES
+        )
+        for template in templates:
             for item in items:
                 for ability in abilities:
                     out.append(

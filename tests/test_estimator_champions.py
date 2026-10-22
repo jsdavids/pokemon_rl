@@ -170,3 +170,26 @@ def test_apply_prior_reweights():
         lambda c: 0.0 if c.item == "Choice Scarf" else 1.0, "team looks Trick Room"
     )
     assert "Choice Scarf" not in est.marginal(lambda c: c.item)
+
+
+def test_spread_hits_are_scored_as_spread():
+    """A doubles Earthquake into two targets deals 0.75x; scoring it as a
+    single-target hit makes the true build look underpowered."""
+    from pokechamp.damage import calc_damage
+    from pokechamp.estimator import StatEstimator
+    from pokechamp.schemas import PokemonSet, stat_table
+    truth = PokemonSet(species="Garchomp", nature="Jolly",
+                       evs={**stat_table(), "atk": 252, "spe": 252, "hp": 4})
+    target = PokemonSet(species="Tyranitar", nature="Adamant",
+                        evs={**stat_table(), "hp": 252})
+    res = calc_damage(truth, target, "Earthquake", spread=True, ruleset="champions")
+    pct = 100 * res.rolls[8] / res.defender_hp
+    is_truth = lambda c: (c.nature, c.evs.get("atk"), c.evs.get("spe")) == ("Jolly", 252, 252)
+
+    good = StatEstimator("Garchomp", regulation="regulation-m-c")
+    good.observe_damage_dealt("Earthquake", target, pct, spread=True)
+    assert good.marginal(is_truth).get(True, 0) > 0
+
+    naive = StatEstimator("Garchomp", regulation="regulation-m-c")
+    naive.observe_damage_dealt("Earthquake", target, pct)  # spread ignored
+    assert naive.marginal(is_truth).get(True, 0) == 0  # truth wrongly ruled out

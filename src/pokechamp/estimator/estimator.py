@@ -64,6 +64,8 @@ def effective_speed(
     spe = boosted_stat(spe, boost)
     if pkm.item and norm(pkm.item) == "choicescarf":
         spe = math.floor(spe * 1.5)
+    if pkm.item and norm(pkm.item) == "ironball":
+        spe = math.floor(spe / 2)
     if tailwind:
         spe *= 2
     if paralyzed:
@@ -104,6 +106,9 @@ class StatEstimator:
         )
         n = len(self.candidates)
         self.weights = [1.0 / n] * n
+        # SpeciesUsage (estimator/usage.py) when a usage prior was applied;
+        # determinization also reads its move weights
+        self.usage = None
         self.log: list[Observation] = []
         # the opponent's HP bar, as shown in-game (percent of its max HP)
         self.hp_percent = 100.0
@@ -170,8 +175,12 @@ class StatEstimator:
         is_crit: bool = False,
         attacker_boosts: dict[str, int] | None = None,
         defender_boosts: dict[str, int] | None = None,
+        spread: bool = False,
     ) -> None:
         """The opponent's `move` hit my `target` for `percent` of its max HP.
+        spread=True: a doubles spread move that hit more than one target
+        (0.75x) — without it, every Earthquake/Rock Slide/Hyper Voice into
+        two targets reads as a weaker attacker.
 
         ko=True: the hit KO'd my target, and `percent` is the HP it had left —
         we only learn the damage was at least that (censored).
@@ -180,7 +189,7 @@ class StatEstimator:
         for cand in self.candidates:
             res = calc_damage(
                 cand, target, move,
-                field=field, is_crit=is_crit,
+                field=field, is_crit=is_crit, spread=spread,
                 attacker_boosts=attacker_boosts, defender_boosts=defender_boosts,
                 ruleset=self.ruleset,
             )
@@ -204,6 +213,7 @@ class StatEstimator:
         is_crit: bool = False,
         attacker_boosts: dict[str, int] | None = None,
         defender_boosts: dict[str, int] | None = None,
+        spread: bool = False,
     ) -> None:
         """My `attacker` hit the opponent with `move`. Report the hit as one of:
 
@@ -223,7 +233,7 @@ class StatEstimator:
         for cand in self.candidates:
             res = calc_damage(
                 attacker, cand, move,
-                field=field, is_crit=is_crit,
+                field=field, is_crit=is_crit, spread=spread,
                 attacker_boosts=attacker_boosts, defender_boosts=defender_boosts,
                 ruleset=self.ruleset,
             )
