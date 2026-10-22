@@ -72,9 +72,12 @@ def test_team_store_validation_catches_problems(tmp_path):
         store.save("bad", [mon("Missingno", ["Tackle"])])
     with pytest.raises(ValueError, match="can't learn"):
         store.save("bad", [mon("Azumarill", ["Earthquake"])])
-    with pytest.raises(ValueError, match="EV total"):
+    with pytest.raises(ValueError, match="stat points"):  # 96 SP > 66
         store.save("bad", [mon("Garchomp", ["Earthquake"],
                                evs={"hp": 252, "atk": 252, "spe": 252})])
+    # 32/32/2 SP is legal in Champions though it's 516 EVs (> mainline 508)
+    assert validate_set(mon("Garchomp", ["Earthquake"],
+                            evs={"atk": 252, "spe": 252, "hp": 12})) == []
     with pytest.raises(ValueError, match="item"):
         store.save("bad", [chomp(item="Choice Band")])  # not in champions!
     with pytest.raises(ValueError, match="ability"):

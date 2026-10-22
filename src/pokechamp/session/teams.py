@@ -16,11 +16,13 @@ from pathlib import Path
 from pokechamp.data import load_ruleset
 from pokechamp.data.loader import norm
 from pokechamp.schemas import PokemonSet, STAT_KEYS
+from pokechamp.stats import SP_MAX_PER_STAT, SP_MAX_TOTAL, ev_to_sp
 from pokechamp.session.serialize import set_from_dict, set_to_dict
 
 DEFAULT_DIR = Path.home() / ".pokechamp"
+# Champions spreads are Stat Points (stats.py): 32 per stat (= 252 EVs),
+# 66 in total — 32/32/2 is 516 EV-equivalents, over the mainline 508 cap
 EV_MAX_PER_STAT = 252
-EV_MAX_TOTAL = 508
 
 
 def validate_set(pset: PokemonSet, ruleset: str = "champions") -> list[str]:
@@ -55,11 +57,18 @@ def validate_set(pset: PokemonSet, ruleset: str = "champions") -> list[str]:
 
     for k in STAT_KEYS:
         if not 0 <= pset.evs.get(k, 0) <= EV_MAX_PER_STAT:
-            problems.append(f"{pset.species}: {k} EVs outside 0-{EV_MAX_PER_STAT}")
+            problems.append(
+                f"{pset.species}: {k} over {SP_MAX_PER_STAT} stat points "
+                f"({EV_MAX_PER_STAT} EVs)"
+            )
         if not 0 <= pset.ivs.get(k, 31) <= 31:
             problems.append(f"{pset.species}: {k} IVs outside 0-31")
-    if sum(pset.evs.values()) > EV_MAX_TOTAL:
-        problems.append(f"{pset.species}: EV total over {EV_MAX_TOTAL}")
+    total_sp = sum(ev_to_sp(pset.evs.get(k, 0)) for k in STAT_KEYS)
+    if total_sp > SP_MAX_TOTAL:
+        problems.append(
+            f"{pset.species}: {total_sp} stat points (max {SP_MAX_TOTAL}, "
+            f"{SP_MAX_PER_STAT} per stat)"
+        )
     return problems
 
 

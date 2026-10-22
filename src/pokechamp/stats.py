@@ -39,6 +39,30 @@ NATURES: dict[str, tuple[str | None, str | None]] = {
 }
 
 
+# Pokemon Champions replaces EVs with Stat Points (SP): 66 per Pokemon, at
+# most 32 in one stat, each adding exactly +1 to that level-50 stat (IVs are
+# 31). HOME's conversion rule — a stat's first SP is 4 EVs, each further SP
+# 8 — reproduces the stat exactly, so builds are stored as EVs (8n - 4 per
+# n SP) and the mainline formula above stays the single source of truth.
+SP_MAX_PER_STAT = 32
+SP_MAX_TOTAL = 66
+
+
+def sp_to_ev(sp: int) -> int:
+    """Stat Points in one stat -> the EVs giving the same level-50 stat."""
+    return 0 if sp <= 0 else 8 * sp - 4
+
+
+def ev_to_sp(ev: int) -> int:
+    """EVs in one stat -> the Stat Points they're worth at level 50 (31 IV):
+    floor((floor(ev/4) + 1) / 2) == (ev + 4) // 8. 252 -> 32, 4 -> 1."""
+    return 0 if ev <= 0 else (ev + 4) // 8
+
+
+def evs_to_sp(evs: dict[str, int]) -> dict[str, int]:
+    return {k: ev_to_sp(evs.get(k, 0)) for k in STAT_KEYS}
+
+
 def nature_multiplier(nature: str, stat: str) -> float:
     plus, minus = NATURES[nature]
     if stat == plus:
