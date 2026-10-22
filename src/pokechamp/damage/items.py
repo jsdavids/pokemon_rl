@@ -46,6 +46,11 @@ IMPLEMENTED = set(TYPE_BOOST_ITEMS) | {
     "muscleband",
     "wiseglasses",
     "punchingglove",
+    "normalgem",   # 1.3x first Normal move (sim consumes it)
+    "airballoon",  # Ground immunity until popped (calculator + sim)
+    "lightball",   # Pikachu only: 2x Atk and SpA
+    "metronome",   # 1.2x per consecutive use of the same move, cap 2x
+    "ironball",    # grounds the holder (Ground hits Flying/Levitate); sim halves Speed
 }
 
 # Known items with no effect on a single damage roll (speed, recovery,
@@ -68,6 +73,17 @@ NO_DAMAGE_EFFECT = {
     "mentalherb",
     "widelens",
     "loadeddice",
+    # Champions M-B / M-C additions without a damage-roll effect (the sim
+    # models the battle-flow ones: rocks, Terrain Extender, Seeds, Binding
+    # Band, Rocky Helmet, Red Card, Eject Button)
+    "lightclay", "shedshell", "bigroot", "zoomlens",
+    "damprock", "heatrock", "smoothrock", "icyrock",
+    "terrainextender", "bindingband",
+    "electricseed", "grassyseed", "psychicseed", "mistyseed",
+    "leek",  # crit boost for the Farfetch'd line only; crits are a caller flag
+    # crit / accuracy / flinch / survival / sustain: the sim rolls these
+    "scopelens", "brightpowder", "kingsrock", "quickclaw",
+    "focusband", "shellbell", "whiteherb",
 }
 
 
@@ -97,13 +113,22 @@ def base_power_mods(
         mods.append(4505)
     if i == "punchingglove" and "punch" in flags:
         mods.append(4506)  # also negates contact; see abilities.makes_contact
+    if i == "normalgem" and move_type.lower() == "normal":
+        mods.append(5325)  # gems are 1.3x since Gen 6; consumed on use
     return mods
 
 
-def attack_mods(item: str | None, category: str) -> list[int]:
+def has_air_balloon(item: str | None) -> bool:
+    """Air Balloon: Ground immunity (and ungrounded) until the holder is hit."""
+    return item is not None and norm(item) == "airballoon"
+
+
+def attack_mods(item: str | None, category: str, species: str = "") -> list[int]:
     if item is None:
         return []
     i = norm(item)
+    if i == "lightball" and norm(species) == "pikachu":
+        return [8192]
     if i == "choiceband" and category == "Physical":
         return [6144]
     if i == "choicespecs" and category == "Special":
@@ -119,7 +144,11 @@ def defense_mods(item: str | None, category: str) -> list[int]:
     return []
 
 
-def final_mods(item: str | None, type_effectiveness: float) -> list[int]:
+def final_mods(
+    item: str | None, type_effectiveness: float, metronome_uses: int = 0
+) -> list[int]:
+    """metronome_uses: how many times in a row the holder has ALREADY used
+    this move (0 on the first use), as @smogon/calc's timesUsedWithMetronome."""
     if item is None:
         return []
     i = norm(item)
@@ -128,4 +157,10 @@ def final_mods(item: str | None, type_effectiveness: float) -> list[int]:
         mods.append(4915)
     if i == "lifeorb":
         mods.append(5324)
+    if i == "metronome" and metronome_uses >= 1:
+        mods.append(4096 + 819 * metronome_uses if metronome_uses <= 4 else 8192)
     return mods
+
+
+def has_iron_ball(item: str | None) -> bool:
+    return item is not None and norm(item) == "ironball"

@@ -25,11 +25,37 @@ TYPE_IMMUNITIES: dict[str, str] = {
     "lightningrod": "electric",
     "motordrive": "electric",
     "sapsipper": "grass",
+    "eelevate": "ground",  # Champions: Mega Eelektross floats like Levitate
 }
+
+# Normal-type moves become this type with a 1.2x power boost. Dragonize is
+# Champions' own (Mega Feraligatr); Aerilate returns with Mega Salamence (M-C).
+ATE_ABILITIES: dict[str, str] = {
+    "aerilate": "flying",
+    "pixilate": "fairy",
+    "refrigerate": "ice",
+    "galvanize": "electric",
+    "dragonize": "dragon",
+}
+
+# abilities that keep the holder off the ground (terrain, Spikes, Ground)
+FLOATING_ABILITIES = {"levitate", "eelevate"}
 
 
 def grants_immunity(ability: str | None, move_type: str) -> bool:
     return ability is not None and TYPE_IMMUNITIES.get(norm(ability)) == move_type.lower()
+
+
+def ate_type(ability: str | None, move_type: str) -> str | None:
+    """The type an -ate ability turns this move into, or None if it doesn't."""
+    if ability is None or move_type.lower() != "normal":
+        return None
+    return ATE_ABILITIES.get(norm(ability))
+
+
+def forces_sun(ability: str | None) -> bool:
+    """Mega Sol (Mega Meganium): its moves act as if the sun were out."""
+    return ability is not None and norm(ability) == "megasol"
 
 
 def makes_contact(
@@ -47,12 +73,21 @@ def makes_contact(
 
 
 def bp_mods(
-    ability: str | None, base_power: int, flags: frozenset[str], contact: bool
+    ability: str | None,
+    base_power: int,
+    flags: frozenset[str],
+    contact: bool,
+    move_type: str = "",
+    ate_converted: bool = False,
 ) -> list[int]:
     if ability is None:
         return []
     a = norm(ability)
     mods = []
+    if ate_converted:  # Aerilate/Pixilate/Dragonize/...: 1.2x on converted moves
+        mods.append(4915)
+    if a == "firemane" and move_type.lower() == "fire":  # Mega Pyroar
+        mods.append(6144)
     if a == "technician" and base_power <= 60:
         mods.append(6144)
     if a == "toughclaws" and contact:
@@ -124,13 +159,15 @@ def final_mods(
     order (which matters because the chain rounds at each link):
     Multiscale -> Fluffy contact -> Punk Rock/Ice Scales -> Tinted Lens ->
     Fluffy fire -> Filter/Solid Rock/Prism Armor.
+    Aura Guard (Champions, Mega Lucario Z) halves contact damage exactly like
+    Fluffy's contact half, so it shares that link of the chain.
     """
     atk = norm(attacker_ability) if attacker_ability else ""
     dfn = norm(defender_ability) if defender_ability else ""
     mods = []
     if dfn in ("multiscale", "shadowshield"):
         mods.append(2048)  # assumes full HP; calculator adds a note
-    if dfn == "fluffy" and contact:
+    if dfn in ("fluffy", "auraguard") and contact:
         mods.append(2048)
     if (dfn == "punkrock" and "sound" in flags) or (dfn == "icescales" and category == "Special"):
         mods.append(2048)

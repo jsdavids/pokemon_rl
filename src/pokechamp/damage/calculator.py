@@ -159,12 +159,16 @@ def _effective_types(pkm: PokemonSet, species_types: tuple[str, ...]) -> tuple[s
 
 
 def _grounded(pkm: PokemonSet, species_types: tuple[str, ...]) -> bool:
+    if items.has_iron_ball(pkm.item):
+        return True  # overrides Flying type, Levitate, Air Balloon
     types = _effective_types(pkm, species_types)
     if "flying" in types:
         return False
-    if pkm.ability and norm(pkm.ability) == "levitate":
+    if pkm.ability and norm(pkm.ability) in abilities.FLOATING_ABILITIES:
         return False
-    return True  # TODO: Air Balloon, Iron Ball, Gravity, Magnet Rise
+    if items.has_air_balloon(pkm.item):
+        return False
+    return True  # TODO: Gravity, Magnet Rise
 
 
 def _stab_mod(move_type: str, original_types: tuple[str, ...], attacker: PokemonSet) -> int:
@@ -189,6 +193,7 @@ def calc_damage(
     attacker_boosts: dict[str, int] | None = None,
     defender_boosts: dict[str, int] | None = None,
     attacker_hp_fraction: float = 1.0,  # Eruption / Water Spout scaling
+    metronome_uses: int = 0,  # prior consecutive uses (Metronome item)
     ruleset: str = "gen9",
 ) -> DamageResult:
     rs = load_ruleset(ruleset)
@@ -235,11 +240,32 @@ def calc_damage(
         notes.append("status move")
         return result([0] * 16)
 
+    # -ate abilities retype Normal moves before anything reads the type:
+    # effectiveness, STAB, immunities, terrain, weather, items all see it
+    move_type = move.type
+    converted = abilities.ate_type(attacker.ability, move.type)
+    if converted:
+        move_type = converted
+        notes.append(f"{attacker.ability}: {move.name} becomes {converted}-type")
+
     def_types = _effective_types(defender, def_species.types)
-    eff = rs.type_effectiveness(move.type, def_types)
-    if abilities.grants_immunity(defender.ability, move.type):
+    iron_ball = items.has_iron_ball(defender.item)
+    eff = rs.type_effectiveness(move_type, def_types)
+    if move_type == "ground" and iron_ball and "flying" in def_types:
+        # a grounded Flying type takes Ground hits NEUTRALLY, whatever its
+        # other type (Showdown's per-type handler neutralizes every type
+        # component; @smogon/calc turns the 0x into 1x) — Iron Ball
+        # Skarmory takes 1x, not its Steel weakness
+        eff = 1.0
+        notes.append(f"{def_species.name}'s Iron Ball grounds it (neutral)")
+    if move_type == "ground" and iron_ball:
+        pass  # Levitate / Eelevate don't lift an Iron Ball holder
+    elif abilities.grants_immunity(defender.ability, move_type):
         eff = 0.0
         notes.append(f"immune ({def_species.name}'s {defender.ability})")
+    elif move_type == "ground" and items.has_air_balloon(defender.item):
+        eff = 0.0
+        notes.append(f"immune ({def_species.name}'s Air Balloon, until it pops)")
     if eff == 0:
         if "immune" not in " ".join(notes):
             notes.append("immune")
@@ -278,19 +304,22 @@ def calc_damage(
         notes.append(f"BP {bp} at {100 * attacker_hp_fraction:.0f}% HP")
 
     # dynamic BP feeds ability mods (a 40 BP Grass Knot is Technician-boosted)
-    bp_mod_list = abilities.bp_mods(attacker.ability, bp, move.flags, contact)
+    bp_mod_list = abilities.bp_mods(
+        attacker.ability, bp, move.flags, contact,
+        move_type=move_type, ate_converted=converted is not None,
+    )
     if field.terrain:
         terrain = field.terrain.lower()
         if (
-            TERRAIN_BOOSTED_TYPE.get(terrain) == move.type
+            TERRAIN_BOOSTED_TYPE.get(terrain) == move_type
             and _grounded(attacker, atk_species.types)
         ):
             bp_mod_list.append(5325)
-        if terrain == "misty" and move.type == "dragon" and _grounded(defender, def_species.types):
+        if terrain == "misty" and move_type == "dragon" and _grounded(defender, def_species.types):
             bp_mod_list.append(2048)
         if terrain == "grassy" and move_id in GRASSY_TERRAIN_HALVED:
             bp_mod_list.append(2048)
-    bp_mod_list += items.base_power_mods(attacker.item, move.type, move.category, move.flags)
+    bp_mod_list += items.base_power_mods(attacker.item, move_type, move.category, move.flags)
     bp_mod = chain_mods(bp_mod_list)
     if bp_mod != 4096:
         bp = max(1, poke_round(bp * bp_mod / 4096))
@@ -302,8 +331,8 @@ def calc_damage(
     a = boosted_stat(atk_stats[uses_stat], atk_stage)
     at_mods = (
         abilities.offensive_stat_mods(attacker.ability, attacker.status, uses_stat == "atk")
-        + abilities.defensive_attack_mods(defender.ability, move.type)
-        + items.attack_mods(attacker.item, move.category)
+        + abilities.defensive_attack_mods(defender.ability, move_type)
+        + items.attack_mods(attacker.item, move.category, atk_species.name)
     )
     atk_mod = chain_mods(at_mods)
     if atk_mod != 4096:
@@ -333,13 +362,15 @@ def calc_damage(
         base = poke_round(base * 3072 / 4096)
         notes.append("spread move in doubles")
 
-    if weather in ("sun", "rain"):
+    # Mega Sol: the holder's own moves act as if the sun were out
+    attack_weather = "sun" if abilities.forces_sun(attacker.ability) else weather
+    if attack_weather in ("sun", "rain"):
         weather_mod = {
             ("sun", "fire"): 6144,
             ("sun", "water"): 2048,
             ("rain", "water"): 6144,
             ("rain", "fire"): 2048,
-        }.get((weather, move.type))
+        }.get((attack_weather, move_type))
         if weather_mod:
             base = poke_round(base * weather_mod / 4096)
 
@@ -348,7 +379,7 @@ def calc_damage(
         notes.append("critical hit")
 
     # --- Per-roll modifiers ---
-    stab_mod = _stab_mod(move.type, atk_species.types, attacker)
+    stab_mod = _stab_mod(move_type, atk_species.types, attacker)
     burned = (
         physical
         and attacker.status == "brn"
@@ -370,9 +401,11 @@ def calc_damage(
         if n_hits > 1:
             notes.append("Multiscale first-hit-only interaction not modeled")
     final_list += abilities.final_mods(
-        attacker.ability, defender.ability, eff, move.category, move.type, move.flags, contact
+        attacker.ability, defender.ability, eff, move.category, move_type, move.flags, contact
     )
-    final_list += items.final_mods(attacker.item, eff)
+    final_list += items.final_mods(attacker.item, eff, metronome_uses)
+    if metronome_uses and attacker.item and norm(attacker.item) == "metronome":
+        notes.append(f"Metronome: use #{metronome_uses + 1} in a row")
     final_mod = chain_mods(final_list)
 
     rolls: list[int] = []
