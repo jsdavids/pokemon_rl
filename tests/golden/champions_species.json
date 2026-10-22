@@ -1,0 +1,5751 @@
+[
+  {
+    "species": "Abomasnow",
+    "smogon": "Abomasnow",
+    "base_stats": {
+      "hp": 90,
+      "atk": 92,
+      "def": 75,
+      "spa": 92,
+      "spd": 85,
+      "spe": 60
+    },
+    "types": [
+      "grass",
+      "ice"
+    ],
+    "weight": 135.5
+  },
+  {
+    "species": "Mega Abomasnow",
+    "smogon": "Abomasnow-Mega",
+    "base_stats": {
+      "hp": 90,
+      "atk": 132,
+      "def": 105,
+      "spa": 132,
+      "spd": 105,
+      "spe": 30
+    },
+    "types": [
+      "grass",
+      "ice"
+    ],
+    "weight": 185
+  },
+  {
+    "species": "Absol",
+    "smogon": "Absol",
+    "base_stats": {
+      "hp": 65,
+      "atk": 130,
+      "def": 60,
+      "spa": 75,
+      "spd": 60,
+      "spe": 75
+    },
+    "types": [
+      "dark"
+    ],
+    "weight": 47
+  },
+  {
+    "species": "Mega Absol",
+    "smogon": "Absol-Mega",
+    "base_stats": {
+      "hp": 65,
+      "atk": 150,
+      "def": 60,
+      "spa": 115,
+      "spd": 60,
+      "spe": 115
+    },
+    "types": [
+      "dark"
+    ],
+    "weight": 49
+  },
+  {
+    "species": "Mega Absol Z",
+    "smogon": "Absol-Mega-Z",
+    "base_stats": {
+      "hp": 65,
+      "atk": 154,
+      "def": 60,
+      "spa": 75,
+      "spd": 60,
+      "spe": 151
+    },
+    "types": [
+      "dark",
+      "ghost"
+    ],
+    "weight": 49
+  },
+  {
+    "species": "Aegislash",
+    "smogon": "Aegislash-Shield",
+    "base_stats": {
+      "hp": 60,
+      "atk": 50,
+      "def": 140,
+      "spa": 50,
+      "spd": 140,
+      "spe": 60
+    },
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "weight": 53
+  },
+  {
+    "species": "Aegislash (Blade Forme)",
+    "smogon": "Aegislash-Blade",
+    "base_stats": {
+      "hp": 60,
+      "atk": 140,
+      "def": 50,
+      "spa": 140,
+      "spd": 50,
+      "spe": 60
+    },
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "weight": 53
+  },
+  {
+    "species": "Aerodactyl",
+    "smogon": "Aerodactyl",
+    "base_stats": {
+      "hp": 80,
+      "atk": 105,
+      "def": 65,
+      "spa": 60,
+      "spd": 75,
+      "spe": 130
+    },
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "weight": 59
+  },
+  {
+    "species": "Mega Aerodactyl",
+    "smogon": "Aerodactyl-Mega",
+    "base_stats": {
+      "hp": 80,
+      "atk": 135,
+      "def": 85,
+      "spa": 70,
+      "spd": 95,
+      "spe": 150
+    },
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "weight": 79
+  },
+  {
+    "species": "Aggron",
+    "smogon": "Aggron",
+    "base_stats": {
+      "hp": 70,
+      "atk": 110,
+      "def": 180,
+      "spa": 60,
+      "spd": 60,
+      "spe": 50
+    },
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "weight": 360
+  },
+  {
+    "species": "Mega Aggron",
+    "smogon": "Aggron-Mega",
+    "base_stats": {
+      "hp": 70,
+      "atk": 140,
+      "def": 230,
+      "spa": 60,
+      "spd": 80,
+      "spe": 50
+    },
+    "types": [
+      "steel"
+    ],
+    "weight": 395
+  },
+  {
+    "species": "Alakazam",
+    "smogon": "Alakazam",
+    "base_stats": {
+      "hp": 55,
+      "atk": 50,
+      "def": 45,
+      "spa": 135,
+      "spd": 95,
+      "spe": 120
+    },
+    "types": [
+      "psychic"
+    ],
+    "weight": 48
+  },
+  {
+    "species": "Mega Alakazam",
+    "smogon": "Alakazam-Mega",
+    "base_stats": {
+      "hp": 55,
+      "atk": 50,
+      "def": 65,
+      "spa": 175,
+      "spd": 105,
+      "spe": 150
+    },
+    "types": [
+      "psychic"
+    ],
+    "weight": 48
+  },
+  {
+    "species": "Alcremie",
+    "smogon": "Alcremie",
+    "base_stats": {
+      "hp": 65,
+      "atk": 60,
+      "def": 75,
+      "spa": 110,
+      "spd": 121,
+      "spe": 64
+    },
+    "types": [
+      "fairy"
+    ],
+    "weight": 0.5
+  },
+  {
+    "species": "Altaria",
+    "smogon": "Altaria",
+    "base_stats": {
+      "hp": 75,
+      "atk": 70,
+      "def": 90,
+      "spa": 70,
+      "spd": 105,
+      "spe": 80
+    },
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "weight": 20.6
+  },
+  {
+    "species": "Mega Altaria",
+    "smogon": "Altaria-Mega",
+    "base_stats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 110,
+      "spa": 110,
+      "spd": 105,
+      "spe": 80
+    },
+    "types": [
+      "dragon",
+      "fairy"
+    ],
+    "weight": 20.6
+  },
+  {
+    "species": "Ampharos",
+    "smogon": "Ampharos",
+    "base_stats": {
+      "hp": 90,
+      "atk": 75,
+      "def": 85,
+      "spa": 115,
+      "spd": 90,
+      "spe": 55
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 61.5
+  },
+  {
+    "species": "Mega Ampharos",
+    "smogon": "Ampharos-Mega",
+    "base_stats": {
+      "hp": 90,
+      "atk": 95,
+      "def": 105,
+      "spa": 165,
+      "spd": 110,
+      "spe": 45
+    },
+    "types": [
+      "electric",
+      "dragon"
+    ],
+    "weight": 61.5
+  },
+  {
+    "species": "Annihilape",
+    "smogon": "Annihilape",
+    "base_stats": {
+      "hp": 110,
+      "atk": 115,
+      "def": 80,
+      "spa": 50,
+      "spd": 90,
+      "spe": 90
+    },
+    "types": [
+      "fighting",
+      "ghost"
+    ],
+    "weight": 56
+  },
+  {
+    "species": "Appletun",
+    "smogon": "Appletun",
+    "base_stats": {
+      "hp": 110,
+      "atk": 85,
+      "def": 80,
+      "spa": 100,
+      "spd": 80,
+      "spe": 30
+    },
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "weight": 13
+  },
+  {
+    "species": "Araquanid",
+    "smogon": "Araquanid",
+    "base_stats": {
+      "hp": 68,
+      "atk": 70,
+      "def": 92,
+      "spa": 50,
+      "spd": 132,
+      "spe": 42
+    },
+    "types": [
+      "water",
+      "bug"
+    ],
+    "weight": 82
+  },
+  {
+    "species": "Arbok",
+    "smogon": "Arbok",
+    "base_stats": {
+      "hp": 60,
+      "atk": 95,
+      "def": 69,
+      "spa": 65,
+      "spd": 79,
+      "spe": 80
+    },
+    "types": [
+      "poison"
+    ],
+    "weight": 65
+  },
+  {
+    "species": "Arboliva",
+    "smogon": "Arboliva",
+    "base_stats": {
+      "hp": 78,
+      "atk": 69,
+      "def": 90,
+      "spa": 125,
+      "spd": 109,
+      "spe": 39
+    },
+    "types": [
+      "grass",
+      "normal"
+    ],
+    "weight": 48.2
+  },
+  {
+    "species": "Arcanine",
+    "smogon": "Arcanine",
+    "base_stats": {
+      "hp": 90,
+      "atk": 110,
+      "def": 80,
+      "spa": 100,
+      "spd": 80,
+      "spe": 95
+    },
+    "types": [
+      "fire"
+    ],
+    "weight": 155
+  },
+  {
+    "species": "Hisuian Arcanine",
+    "smogon": "Arcanine-Hisui",
+    "base_stats": {
+      "hp": 95,
+      "atk": 115,
+      "def": 80,
+      "spa": 95,
+      "spd": 80,
+      "spe": 90
+    },
+    "types": [
+      "fire",
+      "rock"
+    ],
+    "weight": 168
+  },
+  {
+    "species": "Archaludon",
+    "smogon": "Archaludon",
+    "base_stats": {
+      "hp": 90,
+      "atk": 105,
+      "def": 130,
+      "spa": 125,
+      "spd": 65,
+      "spe": 85
+    },
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "weight": 60
+  },
+  {
+    "species": "Ariados",
+    "smogon": "Ariados",
+    "base_stats": {
+      "hp": 70,
+      "atk": 90,
+      "def": 70,
+      "spa": 60,
+      "spd": 70,
+      "spe": 40
+    },
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "weight": 33.5
+  },
+  {
+    "species": "Armarouge",
+    "smogon": "Armarouge",
+    "base_stats": {
+      "hp": 85,
+      "atk": 60,
+      "def": 100,
+      "spa": 125,
+      "spd": 80,
+      "spe": 75
+    },
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "weight": 85
+  },
+  {
+    "species": "Aromatisse",
+    "smogon": "Aromatisse",
+    "base_stats": {
+      "hp": 101,
+      "atk": 72,
+      "def": 72,
+      "spa": 99,
+      "spd": 89,
+      "spe": 29
+    },
+    "types": [
+      "fairy"
+    ],
+    "weight": 15.5
+  },
+  {
+    "species": "Audino",
+    "smogon": "Audino",
+    "base_stats": {
+      "hp": 103,
+      "atk": 60,
+      "def": 86,
+      "spa": 60,
+      "spd": 86,
+      "spe": 50
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 31
+  },
+  {
+    "species": "Mega Audino",
+    "smogon": "Audino-Mega",
+    "base_stats": {
+      "hp": 103,
+      "atk": 60,
+      "def": 126,
+      "spa": 80,
+      "spd": 126,
+      "spe": 50
+    },
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "weight": 32
+  },
+  {
+    "species": "Aurorus",
+    "smogon": "Aurorus",
+    "base_stats": {
+      "hp": 123,
+      "atk": 77,
+      "def": 72,
+      "spa": 99,
+      "spd": 92,
+      "spe": 58
+    },
+    "types": [
+      "rock",
+      "ice"
+    ],
+    "weight": 225
+  },
+  {
+    "species": "Avalugg",
+    "smogon": "Avalugg",
+    "base_stats": {
+      "hp": 95,
+      "atk": 117,
+      "def": 184,
+      "spa": 44,
+      "spd": 46,
+      "spe": 28
+    },
+    "types": [
+      "ice"
+    ],
+    "weight": 505
+  },
+  {
+    "species": "Hisuian Avalugg",
+    "smogon": "Avalugg-Hisui",
+    "base_stats": {
+      "hp": 95,
+      "atk": 127,
+      "def": 184,
+      "spa": 34,
+      "spd": 36,
+      "spe": 38
+    },
+    "types": [
+      "ice",
+      "rock"
+    ],
+    "weight": 262.4
+  },
+  {
+    "species": "Azumarill",
+    "smogon": "Azumarill",
+    "base_stats": {
+      "hp": 100,
+      "atk": 50,
+      "def": 80,
+      "spa": 60,
+      "spd": 80,
+      "spe": 50
+    },
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "weight": 28.5
+  },
+  {
+    "species": "Banette",
+    "smogon": "Banette",
+    "base_stats": {
+      "hp": 64,
+      "atk": 115,
+      "def": 65,
+      "spa": 83,
+      "spd": 63,
+      "spe": 65
+    },
+    "types": [
+      "ghost"
+    ],
+    "weight": 12.5
+  },
+  {
+    "species": "Mega Banette",
+    "smogon": "Banette-Mega",
+    "base_stats": {
+      "hp": 64,
+      "atk": 165,
+      "def": 75,
+      "spa": 93,
+      "spd": 83,
+      "spe": 75
+    },
+    "types": [
+      "ghost"
+    ],
+    "weight": 13
+  },
+  {
+    "species": "Barbaracle",
+    "smogon": "Barbaracle",
+    "base_stats": {
+      "hp": 72,
+      "atk": 105,
+      "def": 115,
+      "spa": 54,
+      "spd": 86,
+      "spe": 68
+    },
+    "types": [
+      "rock",
+      "water"
+    ],
+    "weight": 96
+  },
+  {
+    "species": "Mega Barbaracle",
+    "smogon": "Barbaracle-Mega",
+    "base_stats": {
+      "hp": 72,
+      "atk": 140,
+      "def": 130,
+      "spa": 64,
+      "spd": 106,
+      "spe": 88
+    },
+    "types": [
+      "rock",
+      "fighting"
+    ],
+    "weight": 100
+  },
+  {
+    "species": "Basculegion",
+    "smogon": "Basculegion",
+    "base_stats": {
+      "hp": 120,
+      "atk": 112,
+      "def": 65,
+      "spa": 80,
+      "spd": 75,
+      "spe": 78
+    },
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "weight": 110
+  },
+  {
+    "species": "Basculegion (Female)",
+    "smogon": "Basculegion-F",
+    "base_stats": {
+      "hp": 120,
+      "atk": 92,
+      "def": 65,
+      "spa": 100,
+      "spd": 75,
+      "spe": 78
+    },
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "weight": 110
+  },
+  {
+    "species": "Bastiodon",
+    "smogon": "Bastiodon",
+    "base_stats": {
+      "hp": 60,
+      "atk": 52,
+      "def": 168,
+      "spa": 47,
+      "spd": 138,
+      "spe": 30
+    },
+    "types": [
+      "rock",
+      "steel"
+    ],
+    "weight": 149.5
+  },
+  {
+    "species": "Baxcalibur",
+    "smogon": "Baxcalibur",
+    "base_stats": {
+      "hp": 115,
+      "atk": 145,
+      "def": 92,
+      "spa": 75,
+      "spd": 86,
+      "spe": 87
+    },
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "weight": 210
+  },
+  {
+    "species": "Mega Baxcalibur",
+    "smogon": "Baxcalibur-Mega",
+    "base_stats": {
+      "hp": 115,
+      "atk": 175,
+      "def": 117,
+      "spa": 105,
+      "spd": 101,
+      "spe": 87
+    },
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "weight": 315
+  },
+  {
+    "species": "Beartic",
+    "smogon": "Beartic",
+    "base_stats": {
+      "hp": 95,
+      "atk": 130,
+      "def": 80,
+      "spa": 70,
+      "spd": 80,
+      "spe": 50
+    },
+    "types": [
+      "ice"
+    ],
+    "weight": 260
+  },
+  {
+    "species": "Beedrill",
+    "smogon": "Beedrill",
+    "base_stats": {
+      "hp": 65,
+      "atk": 90,
+      "def": 40,
+      "spa": 45,
+      "spd": 80,
+      "spe": 75
+    },
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "weight": 29.5
+  },
+  {
+    "species": "Mega Beedrill",
+    "smogon": "Beedrill-Mega",
+    "base_stats": {
+      "hp": 65,
+      "atk": 150,
+      "def": 40,
+      "spa": 15,
+      "spd": 80,
+      "spe": 145
+    },
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "weight": 40.5
+  },
+  {
+    "species": "Bellibolt",
+    "smogon": "Bellibolt",
+    "base_stats": {
+      "hp": 109,
+      "atk": 64,
+      "def": 91,
+      "spa": 103,
+      "spd": 83,
+      "spe": 45
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 113
+  },
+  {
+    "species": "Blastoise",
+    "smogon": "Blastoise",
+    "base_stats": {
+      "hp": 79,
+      "atk": 83,
+      "def": 100,
+      "spa": 85,
+      "spd": 105,
+      "spe": 78
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 85.5
+  },
+  {
+    "species": "Mega Blastoise",
+    "smogon": "Blastoise-Mega",
+    "base_stats": {
+      "hp": 79,
+      "atk": 103,
+      "def": 120,
+      "spa": 135,
+      "spd": 115,
+      "spe": 78
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 101.1
+  },
+  {
+    "species": "Blaziken",
+    "smogon": "Blaziken",
+    "base_stats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 70,
+      "spa": 110,
+      "spd": 70,
+      "spe": 80
+    },
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "weight": 52
+  },
+  {
+    "species": "Mega Blaziken",
+    "smogon": "Blaziken-Mega",
+    "base_stats": {
+      "hp": 80,
+      "atk": 160,
+      "def": 80,
+      "spa": 130,
+      "spd": 80,
+      "spe": 100
+    },
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "weight": 52
+  },
+  {
+    "species": "Camerupt",
+    "smogon": "Camerupt",
+    "base_stats": {
+      "hp": 70,
+      "atk": 100,
+      "def": 70,
+      "spa": 105,
+      "spd": 75,
+      "spe": 40
+    },
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "weight": 220
+  },
+  {
+    "species": "Mega Camerupt",
+    "smogon": "Camerupt-Mega",
+    "base_stats": {
+      "hp": 70,
+      "atk": 120,
+      "def": 100,
+      "spa": 145,
+      "spd": 105,
+      "spe": 20
+    },
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "weight": 320.5
+  },
+  {
+    "species": "Castform",
+    "smogon": "Castform",
+    "base_stats": {
+      "hp": 70,
+      "atk": 70,
+      "def": 70,
+      "spa": 70,
+      "spd": 70,
+      "spe": 70
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 0.8
+  },
+  {
+    "species": "Castform (Sunny Form)",
+    "smogon": "Castform-Sunny",
+    "base_stats": {
+      "hp": 70,
+      "atk": 70,
+      "def": 70,
+      "spa": 70,
+      "spd": 70,
+      "spe": 70
+    },
+    "types": [
+      "fire"
+    ],
+    "weight": 0.8
+  },
+  {
+    "species": "Castform (Rainy Form)",
+    "smogon": "Castform-Rainy",
+    "base_stats": {
+      "hp": 70,
+      "atk": 70,
+      "def": 70,
+      "spa": 70,
+      "spd": 70,
+      "spe": 70
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 0.8
+  },
+  {
+    "species": "Castform (Snowy Form)",
+    "smogon": "Castform-Snowy",
+    "base_stats": {
+      "hp": 70,
+      "atk": 70,
+      "def": 70,
+      "spa": 70,
+      "spd": 70,
+      "spe": 70
+    },
+    "types": [
+      "ice"
+    ],
+    "weight": 0.8
+  },
+  {
+    "species": "Ceruledge",
+    "smogon": "Ceruledge",
+    "base_stats": {
+      "hp": 75,
+      "atk": 125,
+      "def": 80,
+      "spa": 60,
+      "spd": 100,
+      "spe": 85
+    },
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "weight": 62
+  },
+  {
+    "species": "Chandelure",
+    "smogon": "Chandelure",
+    "base_stats": {
+      "hp": 60,
+      "atk": 55,
+      "def": 90,
+      "spa": 145,
+      "spd": 90,
+      "spe": 80
+    },
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "weight": 34.3
+  },
+  {
+    "species": "Mega Chandelure",
+    "smogon": "Chandelure-Mega",
+    "base_stats": {
+      "hp": 60,
+      "atk": 75,
+      "def": 110,
+      "spa": 175,
+      "spd": 110,
+      "spe": 90
+    },
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "weight": 69.6
+  },
+  {
+    "species": "Charizard",
+    "smogon": "Charizard",
+    "base_stats": {
+      "hp": 78,
+      "atk": 84,
+      "def": 78,
+      "spa": 109,
+      "spd": 85,
+      "spe": 100
+    },
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "weight": 90.5
+  },
+  {
+    "species": "Mega Charizard X",
+    "smogon": "Charizard-Mega-X",
+    "base_stats": {
+      "hp": 78,
+      "atk": 130,
+      "def": 111,
+      "spa": 130,
+      "spd": 85,
+      "spe": 100
+    },
+    "types": [
+      "fire",
+      "dragon"
+    ],
+    "weight": 110.5
+  },
+  {
+    "species": "Mega Charizard Y",
+    "smogon": "Charizard-Mega-Y",
+    "base_stats": {
+      "hp": 78,
+      "atk": 104,
+      "def": 78,
+      "spa": 159,
+      "spd": 115,
+      "spe": 100
+    },
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "weight": 100.5
+  },
+  {
+    "species": "Chesnaught",
+    "smogon": "Chesnaught",
+    "base_stats": {
+      "hp": 88,
+      "atk": 107,
+      "def": 122,
+      "spa": 74,
+      "spd": 75,
+      "spe": 64
+    },
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "weight": 90
+  },
+  {
+    "species": "Mega Chesnaught",
+    "smogon": "Chesnaught-Mega",
+    "base_stats": {
+      "hp": 88,
+      "atk": 137,
+      "def": 172,
+      "spa": 74,
+      "spd": 115,
+      "spe": 44
+    },
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "weight": 90
+  },
+  {
+    "species": "Chimecho",
+    "smogon": "Chimecho",
+    "base_stats": {
+      "hp": 75,
+      "atk": 50,
+      "def": 80,
+      "spa": 95,
+      "spd": 90,
+      "spe": 65
+    },
+    "types": [
+      "psychic"
+    ],
+    "weight": 1
+  },
+  {
+    "species": "Mega Chimecho",
+    "smogon": "Chimecho-Mega",
+    "base_stats": {
+      "hp": 75,
+      "atk": 50,
+      "def": 110,
+      "spa": 135,
+      "spd": 120,
+      "spe": 65
+    },
+    "types": [
+      "psychic",
+      "steel"
+    ],
+    "weight": 8
+  },
+  {
+    "species": "Cinderace",
+    "smogon": "Cinderace",
+    "base_stats": {
+      "hp": 80,
+      "atk": 116,
+      "def": 75,
+      "spa": 65,
+      "spd": 75,
+      "spe": 119
+    },
+    "types": [
+      "fire"
+    ],
+    "weight": 33
+  },
+  {
+    "species": "Clawitzer",
+    "smogon": "Clawitzer",
+    "base_stats": {
+      "hp": 71,
+      "atk": 73,
+      "def": 88,
+      "spa": 120,
+      "spd": 89,
+      "spe": 59
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 35.3
+  },
+  {
+    "species": "Clefable",
+    "smogon": "Clefable",
+    "base_stats": {
+      "hp": 95,
+      "atk": 70,
+      "def": 73,
+      "spa": 95,
+      "spd": 90,
+      "spe": 60
+    },
+    "types": [
+      "fairy"
+    ],
+    "weight": 40
+  },
+  {
+    "species": "Mega Clefable",
+    "smogon": "Clefable-Mega",
+    "base_stats": {
+      "hp": 95,
+      "atk": 80,
+      "def": 93,
+      "spa": 135,
+      "spd": 110,
+      "spe": 70
+    },
+    "types": [
+      "fairy",
+      "flying"
+    ],
+    "weight": 42.3
+  },
+  {
+    "species": "Cofagrigus",
+    "smogon": "Cofagrigus",
+    "base_stats": {
+      "hp": 58,
+      "atk": 50,
+      "def": 145,
+      "spa": 95,
+      "spd": 105,
+      "spe": 30
+    },
+    "types": [
+      "ghost"
+    ],
+    "weight": 76.5
+  },
+  {
+    "species": "Conkeldurr",
+    "smogon": "Conkeldurr",
+    "base_stats": {
+      "hp": 105,
+      "atk": 140,
+      "def": 95,
+      "spa": 55,
+      "spd": 65,
+      "spe": 45
+    },
+    "types": [
+      "fighting"
+    ],
+    "weight": 87
+  },
+  {
+    "species": "Corviknight",
+    "smogon": "Corviknight",
+    "base_stats": {
+      "hp": 98,
+      "atk": 87,
+      "def": 105,
+      "spa": 53,
+      "spd": 85,
+      "spe": 67
+    },
+    "types": [
+      "flying",
+      "steel"
+    ],
+    "weight": 75
+  },
+  {
+    "species": "Crabominable",
+    "smogon": "Crabominable",
+    "base_stats": {
+      "hp": 97,
+      "atk": 132,
+      "def": 77,
+      "spa": 62,
+      "spd": 67,
+      "spe": 43
+    },
+    "types": [
+      "fighting",
+      "ice"
+    ],
+    "weight": 180
+  },
+  {
+    "species": "Mega Crabominable",
+    "smogon": "Crabominable-Mega",
+    "base_stats": {
+      "hp": 97,
+      "atk": 157,
+      "def": 122,
+      "spa": 62,
+      "spd": 107,
+      "spe": 33
+    },
+    "types": [
+      "fighting",
+      "ice"
+    ],
+    "weight": 252.8
+  },
+  {
+    "species": "Decidueye",
+    "smogon": "Decidueye",
+    "base_stats": {
+      "hp": 78,
+      "atk": 107,
+      "def": 75,
+      "spa": 100,
+      "spd": 100,
+      "spe": 70
+    },
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "weight": 36.6
+  },
+  {
+    "species": "Hisuian Decidueye",
+    "smogon": "Decidueye-Hisui",
+    "base_stats": {
+      "hp": 88,
+      "atk": 112,
+      "def": 80,
+      "spa": 95,
+      "spd": 95,
+      "spe": 60
+    },
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "weight": 37
+  },
+  {
+    "species": "Dedenne",
+    "smogon": "Dedenne",
+    "base_stats": {
+      "hp": 67,
+      "atk": 58,
+      "def": 57,
+      "spa": 81,
+      "spd": 67,
+      "spe": 101
+    },
+    "types": [
+      "electric",
+      "fairy"
+    ],
+    "weight": 2.2
+  },
+  {
+    "species": "Delphox",
+    "smogon": "Delphox",
+    "base_stats": {
+      "hp": 75,
+      "atk": 69,
+      "def": 72,
+      "spa": 114,
+      "spd": 100,
+      "spe": 104
+    },
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "weight": 39
+  },
+  {
+    "species": "Mega Delphox",
+    "smogon": "Delphox-Mega",
+    "base_stats": {
+      "hp": 75,
+      "atk": 69,
+      "def": 72,
+      "spa": 159,
+      "spd": 125,
+      "spe": 134
+    },
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "weight": 39
+  },
+  {
+    "species": "Diggersby",
+    "smogon": "Diggersby",
+    "base_stats": {
+      "hp": 85,
+      "atk": 56,
+      "def": 77,
+      "spa": 50,
+      "spd": 77,
+      "spe": 78
+    },
+    "types": [
+      "normal",
+      "ground"
+    ],
+    "weight": 42.4
+  },
+  {
+    "species": "Ditto",
+    "smogon": "Ditto",
+    "base_stats": {
+      "hp": 48,
+      "atk": 48,
+      "def": 48,
+      "spa": 48,
+      "spd": 48,
+      "spe": 48
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 4
+  },
+  {
+    "species": "Dragalge",
+    "smogon": "Dragalge",
+    "base_stats": {
+      "hp": 65,
+      "atk": 75,
+      "def": 90,
+      "spa": 97,
+      "spd": 123,
+      "spe": 44
+    },
+    "types": [
+      "poison",
+      "dragon"
+    ],
+    "weight": 81.5
+  },
+  {
+    "species": "Mega Dragalge",
+    "smogon": "Dragalge-Mega",
+    "base_stats": {
+      "hp": 65,
+      "atk": 85,
+      "def": 105,
+      "spa": 132,
+      "spd": 163,
+      "spe": 44
+    },
+    "types": [
+      "poison",
+      "dragon"
+    ],
+    "weight": 100.3
+  },
+  {
+    "species": "Dragapult",
+    "smogon": "Dragapult",
+    "base_stats": {
+      "hp": 88,
+      "atk": 120,
+      "def": 75,
+      "spa": 100,
+      "spd": 75,
+      "spe": 142
+    },
+    "types": [
+      "dragon",
+      "ghost"
+    ],
+    "weight": 50
+  },
+  {
+    "species": "Dragonite",
+    "smogon": "Dragonite",
+    "base_stats": {
+      "hp": 91,
+      "atk": 134,
+      "def": 95,
+      "spa": 100,
+      "spd": 100,
+      "spe": 80
+    },
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "weight": 210
+  },
+  {
+    "species": "Mega Dragonite",
+    "smogon": "Dragonite-Mega",
+    "base_stats": {
+      "hp": 91,
+      "atk": 124,
+      "def": 115,
+      "spa": 145,
+      "spd": 125,
+      "spe": 100
+    },
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "weight": 290
+  },
+  {
+    "species": "Drampa",
+    "smogon": "Drampa",
+    "base_stats": {
+      "hp": 78,
+      "atk": 60,
+      "def": 85,
+      "spa": 135,
+      "spd": 91,
+      "spe": 36
+    },
+    "types": [
+      "normal",
+      "dragon"
+    ],
+    "weight": 185
+  },
+  {
+    "species": "Mega Drampa",
+    "smogon": "Drampa-Mega",
+    "base_stats": {
+      "hp": 78,
+      "atk": 85,
+      "def": 110,
+      "spa": 160,
+      "spd": 116,
+      "spe": 36
+    },
+    "types": [
+      "normal",
+      "dragon"
+    ],
+    "weight": 185
+  },
+  {
+    "species": "Eelektross",
+    "smogon": "Eelektross",
+    "base_stats": {
+      "hp": 85,
+      "atk": 115,
+      "def": 80,
+      "spa": 105,
+      "spd": 80,
+      "spe": 50
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 80.5
+  },
+  {
+    "species": "Mega Eelektross",
+    "smogon": "Eelektross-Mega",
+    "base_stats": {
+      "hp": 85,
+      "atk": 145,
+      "def": 80,
+      "spa": 135,
+      "spd": 90,
+      "spe": 80
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 160
+  },
+  {
+    "species": "Emboar",
+    "smogon": "Emboar",
+    "base_stats": {
+      "hp": 110,
+      "atk": 123,
+      "def": 65,
+      "spa": 100,
+      "spd": 65,
+      "spe": 65
+    },
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "weight": 150
+  },
+  {
+    "species": "Mega Emboar",
+    "smogon": "Emboar-Mega",
+    "base_stats": {
+      "hp": 110,
+      "atk": 148,
+      "def": 75,
+      "spa": 110,
+      "spd": 110,
+      "spe": 75
+    },
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "weight": 180.3
+  },
+  {
+    "species": "Emolga",
+    "smogon": "Emolga",
+    "base_stats": {
+      "hp": 55,
+      "atk": 75,
+      "def": 60,
+      "spa": 75,
+      "spd": 60,
+      "spe": 103
+    },
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "weight": 5
+  },
+  {
+    "species": "Empoleon",
+    "smogon": "Empoleon",
+    "base_stats": {
+      "hp": 84,
+      "atk": 86,
+      "def": 88,
+      "spa": 111,
+      "spd": 101,
+      "spe": 60
+    },
+    "types": [
+      "water",
+      "steel"
+    ],
+    "weight": 84.5
+  },
+  {
+    "species": "Espathra",
+    "smogon": "Espathra",
+    "base_stats": {
+      "hp": 95,
+      "atk": 60,
+      "def": 60,
+      "spa": 101,
+      "spd": 60,
+      "spe": 105
+    },
+    "types": [
+      "psychic"
+    ],
+    "weight": 90
+  },
+  {
+    "species": "Espeon",
+    "smogon": "Espeon",
+    "base_stats": {
+      "hp": 65,
+      "atk": 65,
+      "def": 60,
+      "spa": 130,
+      "spd": 95,
+      "spe": 110
+    },
+    "types": [
+      "psychic"
+    ],
+    "weight": 26.5
+  },
+  {
+    "species": "Excadrill",
+    "smogon": "Excadrill",
+    "base_stats": {
+      "hp": 110,
+      "atk": 135,
+      "def": 60,
+      "spa": 50,
+      "spd": 65,
+      "spe": 88
+    },
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "weight": 40.4
+  },
+  {
+    "species": "Mega Excadrill",
+    "smogon": "Excadrill-Mega",
+    "base_stats": {
+      "hp": 110,
+      "atk": 165,
+      "def": 100,
+      "spa": 65,
+      "spd": 65,
+      "spe": 103
+    },
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "weight": 60
+  },
+  {
+    "species": "Falinks",
+    "smogon": "Falinks",
+    "base_stats": {
+      "hp": 65,
+      "atk": 100,
+      "def": 100,
+      "spa": 70,
+      "spd": 60,
+      "spe": 75
+    },
+    "types": [
+      "fighting"
+    ],
+    "weight": 62
+  },
+  {
+    "species": "Mega Falinks",
+    "smogon": "Falinks-Mega",
+    "base_stats": {
+      "hp": 65,
+      "atk": 135,
+      "def": 135,
+      "spa": 70,
+      "spd": 65,
+      "spe": 100
+    },
+    "types": [
+      "fighting"
+    ],
+    "weight": 99
+  },
+  {
+    "species": "Farfetch'd",
+    "smogon": "Farfetch’d",
+    "base_stats": {
+      "hp": 52,
+      "atk": 90,
+      "def": 55,
+      "spa": 58,
+      "spd": 62,
+      "spe": 60
+    },
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "weight": 15
+  },
+  {
+    "species": "Farigiraf",
+    "smogon": "Farigiraf",
+    "base_stats": {
+      "hp": 120,
+      "atk": 90,
+      "def": 70,
+      "spa": 110,
+      "spd": 70,
+      "spe": 60
+    },
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "weight": 160
+  },
+  {
+    "species": "Feraligatr",
+    "smogon": "Feraligatr",
+    "base_stats": {
+      "hp": 85,
+      "atk": 105,
+      "def": 100,
+      "spa": 79,
+      "spd": 83,
+      "spe": 78
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 88.8
+  },
+  {
+    "species": "Mega Feraligatr",
+    "smogon": "Feraligatr-Mega",
+    "base_stats": {
+      "hp": 85,
+      "atk": 160,
+      "def": 125,
+      "spa": 89,
+      "spd": 93,
+      "spe": 78
+    },
+    "types": [
+      "water",
+      "dragon"
+    ],
+    "weight": 108.8
+  },
+  {
+    "species": "Flapple",
+    "smogon": "Flapple",
+    "base_stats": {
+      "hp": 70,
+      "atk": 110,
+      "def": 80,
+      "spa": 95,
+      "spd": 60,
+      "spe": 70
+    },
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "weight": 1
+  },
+  {
+    "species": "Flareon",
+    "smogon": "Flareon",
+    "base_stats": {
+      "hp": 65,
+      "atk": 130,
+      "def": 60,
+      "spa": 95,
+      "spd": 110,
+      "spe": 65
+    },
+    "types": [
+      "fire"
+    ],
+    "weight": 25
+  },
+  {
+    "species": "Eternal Floette",
+    "smogon": "Floette-Eternal",
+    "base_stats": {
+      "hp": 74,
+      "atk": 65,
+      "def": 67,
+      "spa": 125,
+      "spd": 128,
+      "spe": 92
+    },
+    "types": [
+      "fairy"
+    ],
+    "weight": 0.9
+  },
+  {
+    "species": "Mega Floette",
+    "smogon": "Floette-Mega",
+    "base_stats": {
+      "hp": 74,
+      "atk": 85,
+      "def": 87,
+      "spa": 155,
+      "spd": 148,
+      "spe": 102
+    },
+    "types": [
+      "fairy"
+    ],
+    "weight": 100.8
+  },
+  {
+    "species": "Florges",
+    "smogon": "Florges",
+    "base_stats": {
+      "hp": 78,
+      "atk": 65,
+      "def": 68,
+      "spa": 112,
+      "spd": 154,
+      "spe": 75
+    },
+    "types": [
+      "fairy"
+    ],
+    "weight": 10
+  },
+  {
+    "species": "Forretress",
+    "smogon": "Forretress",
+    "base_stats": {
+      "hp": 75,
+      "atk": 90,
+      "def": 140,
+      "spa": 60,
+      "spd": 60,
+      "spe": 40
+    },
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "weight": 125.8
+  },
+  {
+    "species": "Froslass",
+    "smogon": "Froslass",
+    "base_stats": {
+      "hp": 70,
+      "atk": 80,
+      "def": 70,
+      "spa": 80,
+      "spd": 70,
+      "spe": 110
+    },
+    "types": [
+      "ice",
+      "ghost"
+    ],
+    "weight": 26.6
+  },
+  {
+    "species": "Mega Froslass",
+    "smogon": "Froslass-Mega",
+    "base_stats": {
+      "hp": 70,
+      "atk": 80,
+      "def": 70,
+      "spa": 140,
+      "spd": 100,
+      "spe": 120
+    },
+    "types": [
+      "ice",
+      "ghost"
+    ],
+    "weight": 29.6
+  },
+  {
+    "species": "Furfrou",
+    "smogon": "Furfrou",
+    "base_stats": {
+      "hp": 75,
+      "atk": 80,
+      "def": 60,
+      "spa": 65,
+      "spd": 90,
+      "spe": 102
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 28
+  },
+  {
+    "species": "Gallade",
+    "smogon": "Gallade",
+    "base_stats": {
+      "hp": 68,
+      "atk": 125,
+      "def": 65,
+      "spa": 65,
+      "spd": 115,
+      "spe": 80
+    },
+    "types": [
+      "psychic",
+      "fighting"
+    ],
+    "weight": 52
+  },
+  {
+    "species": "Mega Gallade",
+    "smogon": "Gallade-Mega",
+    "base_stats": {
+      "hp": 68,
+      "atk": 165,
+      "def": 95,
+      "spa": 65,
+      "spd": 115,
+      "spe": 110
+    },
+    "types": [
+      "psychic",
+      "fighting"
+    ],
+    "weight": 56.4
+  },
+  {
+    "species": "Garbodor",
+    "smogon": "Garbodor",
+    "base_stats": {
+      "hp": 80,
+      "atk": 95,
+      "def": 82,
+      "spa": 60,
+      "spd": 82,
+      "spe": 75
+    },
+    "types": [
+      "poison"
+    ],
+    "weight": 107.3
+  },
+  {
+    "species": "Garchomp",
+    "smogon": "Garchomp",
+    "base_stats": {
+      "hp": 108,
+      "atk": 130,
+      "def": 95,
+      "spa": 80,
+      "spd": 85,
+      "spe": 102
+    },
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "weight": 95
+  },
+  {
+    "species": "Mega Garchomp",
+    "smogon": "Garchomp-Mega",
+    "base_stats": {
+      "hp": 108,
+      "atk": 170,
+      "def": 115,
+      "spa": 120,
+      "spd": 95,
+      "spe": 92
+    },
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "weight": 95
+  },
+  {
+    "species": "Mega Garchomp Z",
+    "smogon": "Garchomp-Mega-Z",
+    "base_stats": {
+      "hp": 108,
+      "atk": 130,
+      "def": 85,
+      "spa": 141,
+      "spd": 85,
+      "spe": 151
+    },
+    "types": [
+      "dragon"
+    ],
+    "weight": 99
+  },
+  {
+    "species": "Gardevoir",
+    "smogon": "Gardevoir",
+    "base_stats": {
+      "hp": 68,
+      "atk": 65,
+      "def": 65,
+      "spa": 125,
+      "spd": 115,
+      "spe": 80
+    },
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "weight": 48.4
+  },
+  {
+    "species": "Mega Gardevoir",
+    "smogon": "Gardevoir-Mega",
+    "base_stats": {
+      "hp": 68,
+      "atk": 85,
+      "def": 65,
+      "spa": 165,
+      "spd": 135,
+      "spe": 100
+    },
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "weight": 48.4
+  },
+  {
+    "species": "Garganacl",
+    "smogon": "Garganacl",
+    "base_stats": {
+      "hp": 100,
+      "atk": 100,
+      "def": 130,
+      "spa": 45,
+      "spd": 90,
+      "spe": 35
+    },
+    "types": [
+      "rock"
+    ],
+    "weight": 240
+  },
+  {
+    "species": "Gengar",
+    "smogon": "Gengar",
+    "base_stats": {
+      "hp": 60,
+      "atk": 65,
+      "def": 60,
+      "spa": 130,
+      "spd": 75,
+      "spe": 110
+    },
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "weight": 40.5
+  },
+  {
+    "species": "Mega Gengar",
+    "smogon": "Gengar-Mega",
+    "base_stats": {
+      "hp": 60,
+      "atk": 65,
+      "def": 80,
+      "spa": 170,
+      "spd": 95,
+      "spe": 130
+    },
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "weight": 40.5
+  },
+  {
+    "species": "Gholdengo",
+    "smogon": "Gholdengo",
+    "base_stats": {
+      "hp": 87,
+      "atk": 60,
+      "def": 95,
+      "spa": 133,
+      "spd": 91,
+      "spe": 84
+    },
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "weight": 30
+  },
+  {
+    "species": "Glaceon",
+    "smogon": "Glaceon",
+    "base_stats": {
+      "hp": 65,
+      "atk": 60,
+      "def": 110,
+      "spa": 130,
+      "spd": 95,
+      "spe": 65
+    },
+    "types": [
+      "ice"
+    ],
+    "weight": 25.9
+  },
+  {
+    "species": "Glalie",
+    "smogon": "Glalie",
+    "base_stats": {
+      "hp": 80,
+      "atk": 80,
+      "def": 80,
+      "spa": 80,
+      "spd": 80,
+      "spe": 80
+    },
+    "types": [
+      "ice"
+    ],
+    "weight": 256.5
+  },
+  {
+    "species": "Mega Glalie",
+    "smogon": "Glalie-Mega",
+    "base_stats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 80,
+      "spa": 120,
+      "spd": 80,
+      "spe": 100
+    },
+    "types": [
+      "ice"
+    ],
+    "weight": 350.2
+  },
+  {
+    "species": "Glimmora",
+    "smogon": "Glimmora",
+    "base_stats": {
+      "hp": 83,
+      "atk": 55,
+      "def": 90,
+      "spa": 130,
+      "spd": 81,
+      "spe": 86
+    },
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "weight": 45
+  },
+  {
+    "species": "Mega Glimmora",
+    "smogon": "Glimmora-Mega",
+    "base_stats": {
+      "hp": 83,
+      "atk": 90,
+      "def": 105,
+      "spa": 150,
+      "spd": 96,
+      "spe": 101
+    },
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "weight": 77
+  },
+  {
+    "species": "Gliscor",
+    "smogon": "Gliscor",
+    "base_stats": {
+      "hp": 75,
+      "atk": 95,
+      "def": 125,
+      "spa": 45,
+      "spd": 75,
+      "spe": 95
+    },
+    "types": [
+      "ground",
+      "flying"
+    ],
+    "weight": 42.5
+  },
+  {
+    "species": "Gogoat",
+    "smogon": "Gogoat",
+    "base_stats": {
+      "hp": 123,
+      "atk": 100,
+      "def": 62,
+      "spa": 97,
+      "spd": 81,
+      "spe": 68
+    },
+    "types": [
+      "grass"
+    ],
+    "weight": 91
+  },
+  {
+    "species": "Golisopod",
+    "smogon": "Golisopod",
+    "base_stats": {
+      "hp": 75,
+      "atk": 125,
+      "def": 140,
+      "spa": 60,
+      "spd": 90,
+      "spe": 40
+    },
+    "types": [
+      "bug",
+      "water"
+    ],
+    "weight": 108
+  },
+  {
+    "species": "Mega Golisopod",
+    "smogon": "Golisopod-Mega",
+    "base_stats": {
+      "hp": 75,
+      "atk": 150,
+      "def": 175,
+      "spa": 70,
+      "spd": 120,
+      "spe": 40
+    },
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "weight": 148
+  },
+  {
+    "species": "Golurk",
+    "smogon": "Golurk",
+    "base_stats": {
+      "hp": 89,
+      "atk": 124,
+      "def": 80,
+      "spa": 55,
+      "spd": 80,
+      "spe": 55
+    },
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "weight": 330
+  },
+  {
+    "species": "Mega Golurk",
+    "smogon": "Golurk-Mega",
+    "base_stats": {
+      "hp": 89,
+      "atk": 159,
+      "def": 105,
+      "spa": 70,
+      "spd": 105,
+      "spe": 55
+    },
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "weight": 330
+  },
+  {
+    "species": "Goodra",
+    "smogon": "Goodra",
+    "base_stats": {
+      "hp": 90,
+      "atk": 100,
+      "def": 70,
+      "spa": 110,
+      "spd": 150,
+      "spe": 80
+    },
+    "types": [
+      "dragon"
+    ],
+    "weight": 150.5
+  },
+  {
+    "species": "Hisuian Goodra",
+    "smogon": "Goodra-Hisui",
+    "base_stats": {
+      "hp": 80,
+      "atk": 100,
+      "def": 100,
+      "spa": 110,
+      "spd": 150,
+      "spe": 60
+    },
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "weight": 334.1
+  },
+  {
+    "species": "Gourgeist",
+    "smogon": "Gourgeist",
+    "base_stats": {
+      "hp": 65,
+      "atk": 90,
+      "def": 122,
+      "spa": 58,
+      "spd": 75,
+      "spe": 84
+    },
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "weight": 12.5
+  },
+  {
+    "species": "Gourgeist (Small Variety)",
+    "smogon": "Gourgeist-Small",
+    "base_stats": {
+      "hp": 55,
+      "atk": 85,
+      "def": 122,
+      "spa": 58,
+      "spd": 75,
+      "spe": 99
+    },
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "weight": 9.5
+  },
+  {
+    "species": "Gourgeist (Large Variety)",
+    "smogon": "Gourgeist-Large",
+    "base_stats": {
+      "hp": 75,
+      "atk": 95,
+      "def": 122,
+      "spa": 58,
+      "spd": 75,
+      "spe": 69
+    },
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "weight": 14
+  },
+  {
+    "species": "Gourgeist (Jumbo Variety)",
+    "smogon": "Gourgeist-Super",
+    "base_stats": {
+      "hp": 85,
+      "atk": 100,
+      "def": 122,
+      "spa": 58,
+      "spd": 75,
+      "spe": 54
+    },
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "weight": 39
+  },
+  {
+    "species": "Grapploct",
+    "smogon": "Grapploct",
+    "base_stats": {
+      "hp": 80,
+      "atk": 118,
+      "def": 90,
+      "spa": 70,
+      "spd": 80,
+      "spe": 42
+    },
+    "types": [
+      "fighting"
+    ],
+    "weight": 39
+  },
+  {
+    "species": "Greninja",
+    "smogon": "Greninja",
+    "base_stats": {
+      "hp": 72,
+      "atk": 95,
+      "def": 67,
+      "spa": 103,
+      "spd": 71,
+      "spe": 122
+    },
+    "types": [
+      "water",
+      "dark"
+    ],
+    "weight": 40
+  },
+  {
+    "species": "Mega Greninja",
+    "smogon": "Greninja-Mega",
+    "base_stats": {
+      "hp": 72,
+      "atk": 125,
+      "def": 77,
+      "spa": 133,
+      "spd": 81,
+      "spe": 142
+    },
+    "types": [
+      "water",
+      "dark"
+    ],
+    "weight": 40
+  },
+  {
+    "species": "Grimmsnarl",
+    "smogon": "Grimmsnarl",
+    "base_stats": {
+      "hp": 95,
+      "atk": 120,
+      "def": 65,
+      "spa": 95,
+      "spd": 75,
+      "spe": 60
+    },
+    "types": [
+      "dark",
+      "fairy"
+    ],
+    "weight": 61
+  },
+  {
+    "species": "Gyarados",
+    "smogon": "Gyarados",
+    "base_stats": {
+      "hp": 95,
+      "atk": 125,
+      "def": 79,
+      "spa": 60,
+      "spd": 100,
+      "spe": 81
+    },
+    "types": [
+      "water",
+      "flying"
+    ],
+    "weight": 235
+  },
+  {
+    "species": "Mega Gyarados",
+    "smogon": "Gyarados-Mega",
+    "base_stats": {
+      "hp": 95,
+      "atk": 155,
+      "def": 109,
+      "spa": 70,
+      "spd": 130,
+      "spe": 81
+    },
+    "types": [
+      "water",
+      "dark"
+    ],
+    "weight": 305
+  },
+  {
+    "species": "Hatterene",
+    "smogon": "Hatterene",
+    "base_stats": {
+      "hp": 57,
+      "atk": 90,
+      "def": 95,
+      "spa": 136,
+      "spd": 103,
+      "spe": 29
+    },
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "weight": 5.1
+  },
+  {
+    "species": "Hawlucha",
+    "smogon": "Hawlucha",
+    "base_stats": {
+      "hp": 78,
+      "atk": 92,
+      "def": 75,
+      "spa": 74,
+      "spd": 63,
+      "spe": 118
+    },
+    "types": [
+      "fighting",
+      "flying"
+    ],
+    "weight": 21.5
+  },
+  {
+    "species": "Mega Hawlucha",
+    "smogon": "Hawlucha-Mega",
+    "base_stats": {
+      "hp": 78,
+      "atk": 137,
+      "def": 100,
+      "spa": 74,
+      "spd": 93,
+      "spe": 118
+    },
+    "types": [
+      "fighting",
+      "flying"
+    ],
+    "weight": 25
+  },
+  {
+    "species": "Heliolisk",
+    "smogon": "Heliolisk",
+    "base_stats": {
+      "hp": 62,
+      "atk": 55,
+      "def": 52,
+      "spa": 109,
+      "spd": 94,
+      "spe": 109
+    },
+    "types": [
+      "electric",
+      "normal"
+    ],
+    "weight": 21
+  },
+  {
+    "species": "Heracross",
+    "smogon": "Heracross",
+    "base_stats": {
+      "hp": 80,
+      "atk": 125,
+      "def": 75,
+      "spa": 40,
+      "spd": 95,
+      "spe": 85
+    },
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "weight": 54
+  },
+  {
+    "species": "Mega Heracross",
+    "smogon": "Heracross-Mega",
+    "base_stats": {
+      "hp": 80,
+      "atk": 185,
+      "def": 115,
+      "spa": 40,
+      "spd": 105,
+      "spe": 75
+    },
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "weight": 62.5
+  },
+  {
+    "species": "Hippowdon",
+    "smogon": "Hippowdon",
+    "base_stats": {
+      "hp": 108,
+      "atk": 112,
+      "def": 118,
+      "spa": 68,
+      "spd": 72,
+      "spe": 47
+    },
+    "types": [
+      "ground"
+    ],
+    "weight": 300
+  },
+  {
+    "species": "Houndoom",
+    "smogon": "Houndoom",
+    "base_stats": {
+      "hp": 75,
+      "atk": 90,
+      "def": 50,
+      "spa": 110,
+      "spd": 80,
+      "spe": 95
+    },
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "weight": 35
+  },
+  {
+    "species": "Mega Houndoom",
+    "smogon": "Houndoom-Mega",
+    "base_stats": {
+      "hp": 75,
+      "atk": 90,
+      "def": 90,
+      "spa": 140,
+      "spd": 90,
+      "spe": 115
+    },
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "weight": 49.5
+  },
+  {
+    "species": "Houndstone",
+    "smogon": "Houndstone",
+    "base_stats": {
+      "hp": 72,
+      "atk": 101,
+      "def": 100,
+      "spa": 50,
+      "spd": 97,
+      "spe": 68
+    },
+    "types": [
+      "ghost"
+    ],
+    "weight": 15
+  },
+  {
+    "species": "Hydrapple",
+    "smogon": "Hydrapple",
+    "base_stats": {
+      "hp": 106,
+      "atk": 80,
+      "def": 110,
+      "spa": 120,
+      "spd": 80,
+      "spe": 44
+    },
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "weight": 93
+  },
+  {
+    "species": "Hydreigon",
+    "smogon": "Hydreigon",
+    "base_stats": {
+      "hp": 92,
+      "atk": 105,
+      "def": 90,
+      "spa": 125,
+      "spd": 90,
+      "spe": 98
+    },
+    "types": [
+      "dark",
+      "dragon"
+    ],
+    "weight": 160
+  },
+  {
+    "species": "Incineroar",
+    "smogon": "Incineroar",
+    "base_stats": {
+      "hp": 95,
+      "atk": 115,
+      "def": 90,
+      "spa": 80,
+      "spd": 90,
+      "spe": 60
+    },
+    "types": [
+      "fire",
+      "dark"
+    ],
+    "weight": 83
+  },
+  {
+    "species": "Indeedee",
+    "smogon": "Indeedee",
+    "base_stats": {
+      "hp": 60,
+      "atk": 65,
+      "def": 55,
+      "spa": 105,
+      "spd": 95,
+      "spe": 95
+    },
+    "types": [
+      "psychic",
+      "normal"
+    ],
+    "weight": 28
+  },
+  {
+    "species": "Indeedee (Female)",
+    "smogon": "Indeedee-F",
+    "base_stats": {
+      "hp": 70,
+      "atk": 55,
+      "def": 65,
+      "spa": 95,
+      "spd": 105,
+      "spe": 85
+    },
+    "types": [
+      "psychic",
+      "normal"
+    ],
+    "weight": 28
+  },
+  {
+    "species": "Infernape",
+    "smogon": "Infernape",
+    "base_stats": {
+      "hp": 76,
+      "atk": 104,
+      "def": 71,
+      "spa": 104,
+      "spd": 71,
+      "spe": 108
+    },
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "weight": 55
+  },
+  {
+    "species": "Inteleon",
+    "smogon": "Inteleon",
+    "base_stats": {
+      "hp": 70,
+      "atk": 85,
+      "def": 65,
+      "spa": 125,
+      "spd": 65,
+      "spe": 120
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 45.2
+  },
+  {
+    "species": "Jolteon",
+    "smogon": "Jolteon",
+    "base_stats": {
+      "hp": 65,
+      "atk": 65,
+      "def": 60,
+      "spa": 110,
+      "spd": 95,
+      "spe": 130
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 24.5
+  },
+  {
+    "species": "Kangaskhan",
+    "smogon": "Kangaskhan",
+    "base_stats": {
+      "hp": 105,
+      "atk": 95,
+      "def": 80,
+      "spa": 40,
+      "spd": 80,
+      "spe": 90
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 80
+  },
+  {
+    "species": "Mega Kangaskhan",
+    "smogon": "Kangaskhan-Mega",
+    "base_stats": {
+      "hp": 105,
+      "atk": 125,
+      "def": 100,
+      "spa": 60,
+      "spd": 100,
+      "spe": 100
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 100
+  },
+  {
+    "species": "Kingambit",
+    "smogon": "Kingambit",
+    "base_stats": {
+      "hp": 100,
+      "atk": 135,
+      "def": 120,
+      "spa": 60,
+      "spd": 85,
+      "spe": 50
+    },
+    "types": [
+      "dark",
+      "steel"
+    ],
+    "weight": 120
+  },
+  {
+    "species": "Kleavor",
+    "smogon": "Kleavor",
+    "base_stats": {
+      "hp": 70,
+      "atk": 135,
+      "def": 95,
+      "spa": 45,
+      "spd": 70,
+      "spe": 85
+    },
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "weight": 89
+  },
+  {
+    "species": "Klefki",
+    "smogon": "Klefki",
+    "base_stats": {
+      "hp": 57,
+      "atk": 80,
+      "def": 91,
+      "spa": 80,
+      "spd": 87,
+      "spe": 75
+    },
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "weight": 3
+  },
+  {
+    "species": "Kommo-o",
+    "smogon": "Kommo-o",
+    "base_stats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 125,
+      "spa": 100,
+      "spd": 105,
+      "spe": 85
+    },
+    "types": [
+      "dragon",
+      "fighting"
+    ],
+    "weight": 78.2
+  },
+  {
+    "species": "Krookodile",
+    "smogon": "Krookodile",
+    "base_stats": {
+      "hp": 95,
+      "atk": 117,
+      "def": 80,
+      "spa": 65,
+      "spd": 70,
+      "spe": 92
+    },
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "weight": 96.3
+  },
+  {
+    "species": "Leafeon",
+    "smogon": "Leafeon",
+    "base_stats": {
+      "hp": 65,
+      "atk": 110,
+      "def": 130,
+      "spa": 60,
+      "spd": 65,
+      "spe": 95
+    },
+    "types": [
+      "grass"
+    ],
+    "weight": 25.5
+  },
+  {
+    "species": "Liepard",
+    "smogon": "Liepard",
+    "base_stats": {
+      "hp": 64,
+      "atk": 88,
+      "def": 50,
+      "spa": 88,
+      "spd": 50,
+      "spe": 106
+    },
+    "types": [
+      "dark"
+    ],
+    "weight": 37.5
+  },
+  {
+    "species": "Lopunny",
+    "smogon": "Lopunny",
+    "base_stats": {
+      "hp": 65,
+      "atk": 76,
+      "def": 84,
+      "spa": 54,
+      "spd": 96,
+      "spe": 105
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 33.3
+  },
+  {
+    "species": "Mega Lopunny",
+    "smogon": "Lopunny-Mega",
+    "base_stats": {
+      "hp": 65,
+      "atk": 136,
+      "def": 94,
+      "spa": 54,
+      "spd": 96,
+      "spe": 135
+    },
+    "types": [
+      "normal",
+      "fighting"
+    ],
+    "weight": 28.3
+  },
+  {
+    "species": "Lucario",
+    "smogon": "Lucario",
+    "base_stats": {
+      "hp": 70,
+      "atk": 110,
+      "def": 70,
+      "spa": 115,
+      "spd": 70,
+      "spe": 90
+    },
+    "types": [
+      "fighting",
+      "steel"
+    ],
+    "weight": 54
+  },
+  {
+    "species": "Mega Lucario",
+    "smogon": "Lucario-Mega",
+    "base_stats": {
+      "hp": 70,
+      "atk": 145,
+      "def": 88,
+      "spa": 140,
+      "spd": 70,
+      "spe": 112
+    },
+    "types": [
+      "fighting",
+      "steel"
+    ],
+    "weight": 57.5
+  },
+  {
+    "species": "Mega Lucario Z",
+    "smogon": "Lucario-Mega-Z",
+    "base_stats": {
+      "hp": 70,
+      "atk": 100,
+      "def": 70,
+      "spa": 164,
+      "spd": 70,
+      "spe": 151
+    },
+    "types": [
+      "fighting",
+      "steel"
+    ],
+    "weight": 49.4
+  },
+  {
+    "species": "Luxray",
+    "smogon": "Luxray",
+    "base_stats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 79,
+      "spa": 95,
+      "spd": 79,
+      "spe": 70
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 42
+  },
+  {
+    "species": "Lycanroc",
+    "smogon": "Lycanroc",
+    "base_stats": {
+      "hp": 75,
+      "atk": 115,
+      "def": 65,
+      "spa": 55,
+      "spd": 65,
+      "spe": 112
+    },
+    "types": [
+      "rock"
+    ],
+    "weight": 25
+  },
+  {
+    "species": "Lycanroc (Midnight Form)",
+    "smogon": "Lycanroc-Midnight",
+    "base_stats": {
+      "hp": 85,
+      "atk": 115,
+      "def": 75,
+      "spa": 55,
+      "spd": 75,
+      "spe": 82
+    },
+    "types": [
+      "rock"
+    ],
+    "weight": 25
+  },
+  {
+    "species": "Lycanroc (Dusk Form)",
+    "smogon": "Lycanroc-Dusk",
+    "base_stats": {
+      "hp": 75,
+      "atk": 117,
+      "def": 65,
+      "spa": 55,
+      "spd": 65,
+      "spe": 110
+    },
+    "types": [
+      "rock"
+    ],
+    "weight": 25
+  },
+  {
+    "species": "Mabosstiff",
+    "smogon": "Mabosstiff",
+    "base_stats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 90,
+      "spa": 60,
+      "spd": 70,
+      "spe": 85
+    },
+    "types": [
+      "dark"
+    ],
+    "weight": 61
+  },
+  {
+    "species": "Machamp",
+    "smogon": "Machamp",
+    "base_stats": {
+      "hp": 90,
+      "atk": 130,
+      "def": 80,
+      "spa": 65,
+      "spd": 85,
+      "spe": 55
+    },
+    "types": [
+      "fighting"
+    ],
+    "weight": 130
+  },
+  {
+    "species": "Malamar",
+    "smogon": "Malamar",
+    "base_stats": {
+      "hp": 86,
+      "atk": 92,
+      "def": 88,
+      "spa": 68,
+      "spd": 75,
+      "spe": 73
+    },
+    "types": [
+      "dark",
+      "psychic"
+    ],
+    "weight": 47
+  },
+  {
+    "species": "Mega Malamar",
+    "smogon": "Malamar-Mega",
+    "base_stats": {
+      "hp": 86,
+      "atk": 102,
+      "def": 88,
+      "spa": 98,
+      "spd": 120,
+      "spe": 88
+    },
+    "types": [
+      "dark",
+      "psychic"
+    ],
+    "weight": 69.8
+  },
+  {
+    "species": "Mamoswine",
+    "smogon": "Mamoswine",
+    "base_stats": {
+      "hp": 110,
+      "atk": 130,
+      "def": 80,
+      "spa": 70,
+      "spd": 60,
+      "spe": 80
+    },
+    "types": [
+      "ice",
+      "ground"
+    ],
+    "weight": 291
+  },
+  {
+    "species": "Manectric",
+    "smogon": "Manectric",
+    "base_stats": {
+      "hp": 70,
+      "atk": 75,
+      "def": 60,
+      "spa": 105,
+      "spd": 60,
+      "spe": 105
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 40.2
+  },
+  {
+    "species": "Mega Manectric",
+    "smogon": "Manectric-Mega",
+    "base_stats": {
+      "hp": 70,
+      "atk": 75,
+      "def": 80,
+      "spa": 135,
+      "spd": 80,
+      "spe": 135
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 44
+  },
+  {
+    "species": "Maushold",
+    "smogon": "Maushold",
+    "base_stats": {
+      "hp": 74,
+      "atk": 75,
+      "def": 70,
+      "spa": 65,
+      "spd": 75,
+      "spe": 111
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 2.3
+  },
+  {
+    "species": "Mawile",
+    "smogon": "Mawile",
+    "base_stats": {
+      "hp": 50,
+      "atk": 85,
+      "def": 85,
+      "spa": 55,
+      "spd": 55,
+      "spe": 50
+    },
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "weight": 11.5
+  },
+  {
+    "species": "Mega Mawile",
+    "smogon": "Mawile-Mega",
+    "base_stats": {
+      "hp": 50,
+      "atk": 105,
+      "def": 125,
+      "spa": 55,
+      "spd": 95,
+      "spe": 50
+    },
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "weight": 23.5
+  },
+  {
+    "species": "Medicham",
+    "smogon": "Medicham",
+    "base_stats": {
+      "hp": 60,
+      "atk": 60,
+      "def": 75,
+      "spa": 60,
+      "spd": 75,
+      "spe": 80
+    },
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "weight": 31.5
+  },
+  {
+    "species": "Mega Medicham",
+    "smogon": "Medicham-Mega",
+    "base_stats": {
+      "hp": 60,
+      "atk": 100,
+      "def": 85,
+      "spa": 80,
+      "spd": 85,
+      "spe": 100
+    },
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "weight": 31.5
+  },
+  {
+    "species": "Meganium",
+    "smogon": "Meganium",
+    "base_stats": {
+      "hp": 80,
+      "atk": 82,
+      "def": 100,
+      "spa": 83,
+      "spd": 100,
+      "spe": 80
+    },
+    "types": [
+      "grass"
+    ],
+    "weight": 100.5
+  },
+  {
+    "species": "Mega Meganium",
+    "smogon": "Meganium-Mega",
+    "base_stats": {
+      "hp": 80,
+      "atk": 92,
+      "def": 115,
+      "spa": 143,
+      "spd": 115,
+      "spe": 80
+    },
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "weight": 201
+  },
+  {
+    "species": "Meowscarada",
+    "smogon": "Meowscarada",
+    "base_stats": {
+      "hp": 76,
+      "atk": 110,
+      "def": 70,
+      "spa": 81,
+      "spd": 70,
+      "spe": 123
+    },
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "weight": 31.2
+  },
+  {
+    "species": "Meowstic",
+    "smogon": "Meowstic",
+    "base_stats": {
+      "hp": 74,
+      "atk": 48,
+      "def": 76,
+      "spa": 83,
+      "spd": 81,
+      "spe": 104
+    },
+    "types": [
+      "psychic"
+    ],
+    "weight": 8.5
+  },
+  {
+    "species": "Mega Meowstic",
+    "smogon": "Meowstic-M-Mega",
+    "base_stats": {
+      "hp": 74,
+      "atk": 48,
+      "def": 76,
+      "spa": 143,
+      "spd": 101,
+      "spe": 124
+    },
+    "types": [
+      "psychic"
+    ],
+    "weight": 10.1
+  },
+  {
+    "species": "Metagross",
+    "smogon": "Metagross",
+    "base_stats": {
+      "hp": 80,
+      "atk": 135,
+      "def": 130,
+      "spa": 95,
+      "spd": 90,
+      "spe": 70
+    },
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "weight": 550
+  },
+  {
+    "species": "Mega Metagross",
+    "smogon": "Metagross-Mega",
+    "base_stats": {
+      "hp": 80,
+      "atk": 145,
+      "def": 150,
+      "spa": 105,
+      "spd": 110,
+      "spe": 110
+    },
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "weight": 942.9
+  },
+  {
+    "species": "Milotic",
+    "smogon": "Milotic",
+    "base_stats": {
+      "hp": 95,
+      "atk": 60,
+      "def": 79,
+      "spa": 100,
+      "spd": 125,
+      "spe": 81
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 162
+  },
+  {
+    "species": "Mimikyu",
+    "smogon": "Mimikyu",
+    "base_stats": {
+      "hp": 55,
+      "atk": 90,
+      "def": 80,
+      "spa": 50,
+      "spd": 105,
+      "spe": 96
+    },
+    "types": [
+      "ghost",
+      "fairy"
+    ],
+    "weight": 0.7
+  },
+  {
+    "species": "Morpeko",
+    "smogon": "Morpeko",
+    "base_stats": {
+      "hp": 58,
+      "atk": 95,
+      "def": 58,
+      "spa": 70,
+      "spd": 58,
+      "spe": 97
+    },
+    "types": [
+      "electric",
+      "dark"
+    ],
+    "weight": 3
+  },
+  {
+    "species": "Mr. Mime",
+    "smogon": "Mr. Mime",
+    "base_stats": {
+      "hp": 40,
+      "atk": 45,
+      "def": 65,
+      "spa": 100,
+      "spd": 120,
+      "spe": 90
+    },
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "weight": 54.5
+  },
+  {
+    "species": "Mr. Rime",
+    "smogon": "Mr. Rime",
+    "base_stats": {
+      "hp": 80,
+      "atk": 85,
+      "def": 75,
+      "spa": 110,
+      "spd": 100,
+      "spe": 70
+    },
+    "types": [
+      "ice",
+      "psychic"
+    ],
+    "weight": 58.2
+  },
+  {
+    "species": "Mudsdale",
+    "smogon": "Mudsdale",
+    "base_stats": {
+      "hp": 100,
+      "atk": 125,
+      "def": 100,
+      "spa": 55,
+      "spd": 85,
+      "spe": 35
+    },
+    "types": [
+      "ground"
+    ],
+    "weight": 920
+  },
+  {
+    "species": "Musharna",
+    "smogon": "Musharna",
+    "base_stats": {
+      "hp": 116,
+      "atk": 55,
+      "def": 85,
+      "spa": 107,
+      "spd": 95,
+      "spe": 29
+    },
+    "types": [
+      "psychic"
+    ],
+    "weight": 60.5
+  },
+  {
+    "species": "Ninetales",
+    "smogon": "Ninetales",
+    "base_stats": {
+      "hp": 73,
+      "atk": 76,
+      "def": 75,
+      "spa": 81,
+      "spd": 100,
+      "spe": 100
+    },
+    "types": [
+      "fire"
+    ],
+    "weight": 19.9
+  },
+  {
+    "species": "Alolan Ninetales",
+    "smogon": "Ninetales-Alola",
+    "base_stats": {
+      "hp": 73,
+      "atk": 67,
+      "def": 75,
+      "spa": 81,
+      "spd": 100,
+      "spe": 109
+    },
+    "types": [
+      "ice",
+      "fairy"
+    ],
+    "weight": 19.9
+  },
+  {
+    "species": "Noivern",
+    "smogon": "Noivern",
+    "base_stats": {
+      "hp": 85,
+      "atk": 70,
+      "def": 80,
+      "spa": 97,
+      "spd": 80,
+      "spe": 123
+    },
+    "types": [
+      "flying",
+      "dragon"
+    ],
+    "weight": 85
+  },
+  {
+    "species": "Oranguru",
+    "smogon": "Oranguru",
+    "base_stats": {
+      "hp": 90,
+      "atk": 60,
+      "def": 80,
+      "spa": 90,
+      "spd": 110,
+      "spe": 60
+    },
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "weight": 76
+  },
+  {
+    "species": "Orthworm",
+    "smogon": "Orthworm",
+    "base_stats": {
+      "hp": 70,
+      "atk": 85,
+      "def": 145,
+      "spa": 60,
+      "spd": 55,
+      "spe": 65
+    },
+    "types": [
+      "steel"
+    ],
+    "weight": 310
+  },
+  {
+    "species": "Overqwil",
+    "smogon": "Overqwil",
+    "base_stats": {
+      "hp": 85,
+      "atk": 115,
+      "def": 95,
+      "spa": 65,
+      "spd": 65,
+      "spe": 85
+    },
+    "types": [
+      "dark",
+      "poison"
+    ],
+    "weight": 60.5
+  },
+  {
+    "species": "Palafin",
+    "smogon": "Palafin",
+    "base_stats": {
+      "hp": 100,
+      "atk": 70,
+      "def": 72,
+      "spa": 53,
+      "spd": 62,
+      "spe": 100
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 60.2
+  },
+  {
+    "species": "Palafin (Hero Form)",
+    "smogon": "Palafin-Hero",
+    "base_stats": {
+      "hp": 100,
+      "atk": 160,
+      "def": 97,
+      "spa": 106,
+      "spd": 87,
+      "spe": 100
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 97.4
+  },
+  {
+    "species": "Pangoro",
+    "smogon": "Pangoro",
+    "base_stats": {
+      "hp": 95,
+      "atk": 124,
+      "def": 78,
+      "spa": 69,
+      "spd": 71,
+      "spe": 58
+    },
+    "types": [
+      "fighting",
+      "dark"
+    ],
+    "weight": 136
+  },
+  {
+    "species": "Passimian",
+    "smogon": "Passimian",
+    "base_stats": {
+      "hp": 100,
+      "atk": 120,
+      "def": 90,
+      "spa": 40,
+      "spd": 60,
+      "spe": 80
+    },
+    "types": [
+      "fighting"
+    ],
+    "weight": 82.8
+  },
+  {
+    "species": "Pawmot",
+    "smogon": "Pawmot",
+    "base_stats": {
+      "hp": 70,
+      "atk": 115,
+      "def": 70,
+      "spa": 70,
+      "spd": 60,
+      "spe": 105
+    },
+    "types": [
+      "electric",
+      "fighting"
+    ],
+    "weight": 41
+  },
+  {
+    "species": "Pelipper",
+    "smogon": "Pelipper",
+    "base_stats": {
+      "hp": 60,
+      "atk": 50,
+      "def": 100,
+      "spa": 95,
+      "spd": 70,
+      "spe": 65
+    },
+    "types": [
+      "water",
+      "flying"
+    ],
+    "weight": 28
+  },
+  {
+    "species": "Perrserker",
+    "smogon": "Perrserker",
+    "base_stats": {
+      "hp": 70,
+      "atk": 110,
+      "def": 100,
+      "spa": 50,
+      "spd": 60,
+      "spe": 50
+    },
+    "types": [
+      "steel"
+    ],
+    "weight": 28
+  },
+  {
+    "species": "Persian",
+    "smogon": "Persian",
+    "base_stats": {
+      "hp": 65,
+      "atk": 70,
+      "def": 60,
+      "spa": 65,
+      "spd": 65,
+      "spe": 115
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 32
+  },
+  {
+    "species": "Alolan Persian",
+    "smogon": "Persian-Alola",
+    "base_stats": {
+      "hp": 65,
+      "atk": 60,
+      "def": 60,
+      "spa": 75,
+      "spd": 65,
+      "spe": 115
+    },
+    "types": [
+      "dark"
+    ],
+    "weight": 33
+  },
+  {
+    "species": "Pidgeot",
+    "smogon": "Pidgeot",
+    "base_stats": {
+      "hp": 83,
+      "atk": 80,
+      "def": 75,
+      "spa": 70,
+      "spd": 70,
+      "spe": 101
+    },
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "weight": 39.5
+  },
+  {
+    "species": "Mega Pidgeot",
+    "smogon": "Pidgeot-Mega",
+    "base_stats": {
+      "hp": 83,
+      "atk": 80,
+      "def": 80,
+      "spa": 135,
+      "spd": 80,
+      "spe": 121
+    },
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "weight": 50.5
+  },
+  {
+    "species": "Pikachu",
+    "smogon": "Pikachu",
+    "base_stats": {
+      "hp": 35,
+      "atk": 55,
+      "def": 40,
+      "spa": 50,
+      "spd": 50,
+      "spe": 90
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 6
+  },
+  {
+    "species": "Pincurchin",
+    "smogon": "Pincurchin",
+    "base_stats": {
+      "hp": 48,
+      "atk": 101,
+      "def": 95,
+      "spa": 91,
+      "spd": 85,
+      "spe": 15
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 1
+  },
+  {
+    "species": "Pinsir",
+    "smogon": "Pinsir",
+    "base_stats": {
+      "hp": 65,
+      "atk": 125,
+      "def": 100,
+      "spa": 55,
+      "spd": 70,
+      "spe": 85
+    },
+    "types": [
+      "bug"
+    ],
+    "weight": 55
+  },
+  {
+    "species": "Mega Pinsir",
+    "smogon": "Pinsir-Mega",
+    "base_stats": {
+      "hp": 65,
+      "atk": 155,
+      "def": 120,
+      "spa": 65,
+      "spd": 90,
+      "spe": 105
+    },
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "weight": 59
+  },
+  {
+    "species": "Politoed",
+    "smogon": "Politoed",
+    "base_stats": {
+      "hp": 90,
+      "atk": 75,
+      "def": 75,
+      "spa": 90,
+      "spd": 100,
+      "spe": 70
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 33.9
+  },
+  {
+    "species": "Polteageist",
+    "smogon": "Polteageist",
+    "base_stats": {
+      "hp": 60,
+      "atk": 65,
+      "def": 65,
+      "spa": 134,
+      "spd": 114,
+      "spe": 70
+    },
+    "types": [
+      "ghost"
+    ],
+    "weight": 0.4
+  },
+  {
+    "species": "Primarina",
+    "smogon": "Primarina",
+    "base_stats": {
+      "hp": 80,
+      "atk": 74,
+      "def": 74,
+      "spa": 126,
+      "spd": 116,
+      "spe": 60
+    },
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "weight": 44
+  },
+  {
+    "species": "Pyroar",
+    "smogon": "Pyroar",
+    "base_stats": {
+      "hp": 86,
+      "atk": 68,
+      "def": 72,
+      "spa": 109,
+      "spd": 66,
+      "spe": 106
+    },
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "weight": 81.5
+  },
+  {
+    "species": "Mega Pyroar",
+    "smogon": "Pyroar-Mega",
+    "base_stats": {
+      "hp": 86,
+      "atk": 88,
+      "def": 92,
+      "spa": 129,
+      "spd": 86,
+      "spe": 126
+    },
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "weight": 93.3
+  },
+  {
+    "species": "Quaquaval",
+    "smogon": "Quaquaval",
+    "base_stats": {
+      "hp": 85,
+      "atk": 120,
+      "def": 80,
+      "spa": 85,
+      "spd": 75,
+      "spe": 85
+    },
+    "types": [
+      "water",
+      "fighting"
+    ],
+    "weight": 61.9
+  },
+  {
+    "species": "Qwilfish",
+    "smogon": "Qwilfish",
+    "base_stats": {
+      "hp": 65,
+      "atk": 95,
+      "def": 85,
+      "spa": 55,
+      "spd": 55,
+      "spe": 85
+    },
+    "types": [
+      "water",
+      "poison"
+    ],
+    "weight": 3.9
+  },
+  {
+    "species": "Raichu",
+    "smogon": "Raichu",
+    "base_stats": {
+      "hp": 60,
+      "atk": 90,
+      "def": 55,
+      "spa": 90,
+      "spd": 80,
+      "spe": 110
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 30
+  },
+  {
+    "species": "Alolan Raichu",
+    "smogon": "Raichu-Alola",
+    "base_stats": {
+      "hp": 60,
+      "atk": 85,
+      "def": 50,
+      "spa": 95,
+      "spd": 85,
+      "spe": 110
+    },
+    "types": [
+      "electric",
+      "psychic"
+    ],
+    "weight": 21
+  },
+  {
+    "species": "Mega Raichu X",
+    "smogon": "Raichu-Mega-X",
+    "base_stats": {
+      "hp": 60,
+      "atk": 135,
+      "def": 95,
+      "spa": 90,
+      "spd": 95,
+      "spe": 110
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 38
+  },
+  {
+    "species": "Mega Raichu Y",
+    "smogon": "Raichu-Mega-Y",
+    "base_stats": {
+      "hp": 60,
+      "atk": 100,
+      "def": 55,
+      "spa": 160,
+      "spd": 80,
+      "spe": 130
+    },
+    "types": [
+      "electric"
+    ],
+    "weight": 26
+  },
+  {
+    "species": "Rampardos",
+    "smogon": "Rampardos",
+    "base_stats": {
+      "hp": 97,
+      "atk": 165,
+      "def": 60,
+      "spa": 65,
+      "spd": 50,
+      "spe": 58
+    },
+    "types": [
+      "rock"
+    ],
+    "weight": 102.5
+  },
+  {
+    "species": "Reuniclus",
+    "smogon": "Reuniclus",
+    "base_stats": {
+      "hp": 110,
+      "atk": 65,
+      "def": 75,
+      "spa": 125,
+      "spd": 85,
+      "spe": 30
+    },
+    "types": [
+      "psychic"
+    ],
+    "weight": 20.1
+  },
+  {
+    "species": "Rhyperior",
+    "smogon": "Rhyperior",
+    "base_stats": {
+      "hp": 115,
+      "atk": 140,
+      "def": 130,
+      "spa": 55,
+      "spd": 55,
+      "spe": 40
+    },
+    "types": [
+      "ground",
+      "rock"
+    ],
+    "weight": 282.8
+  },
+  {
+    "species": "Rillaboom",
+    "smogon": "Rillaboom",
+    "base_stats": {
+      "hp": 100,
+      "atk": 125,
+      "def": 90,
+      "spa": 60,
+      "spd": 70,
+      "spe": 85
+    },
+    "types": [
+      "grass"
+    ],
+    "weight": 90
+  },
+  {
+    "species": "Roserade",
+    "smogon": "Roserade",
+    "base_stats": {
+      "hp": 60,
+      "atk": 70,
+      "def": 65,
+      "spa": 125,
+      "spd": 105,
+      "spe": 90
+    },
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "weight": 14.5
+  },
+  {
+    "species": "Rotom",
+    "smogon": "Rotom",
+    "base_stats": {
+      "hp": 50,
+      "atk": 50,
+      "def": 77,
+      "spa": 95,
+      "spd": 77,
+      "spe": 91
+    },
+    "types": [
+      "electric",
+      "ghost"
+    ],
+    "weight": 0.3
+  },
+  {
+    "species": "Frost Rotom",
+    "smogon": "Rotom-Frost",
+    "base_stats": {
+      "hp": 50,
+      "atk": 65,
+      "def": 107,
+      "spa": 105,
+      "spd": 107,
+      "spe": 86
+    },
+    "types": [
+      "electric",
+      "ice"
+    ],
+    "weight": 0.3
+  },
+  {
+    "species": "Heat Rotom",
+    "smogon": "Rotom-Heat",
+    "base_stats": {
+      "hp": 50,
+      "atk": 65,
+      "def": 107,
+      "spa": 105,
+      "spd": 107,
+      "spe": 86
+    },
+    "types": [
+      "electric",
+      "fire"
+    ],
+    "weight": 0.3
+  },
+  {
+    "species": "Mow Rotom",
+    "smogon": "Rotom-Mow",
+    "base_stats": {
+      "hp": 50,
+      "atk": 65,
+      "def": 107,
+      "spa": 105,
+      "spd": 107,
+      "spe": 86
+    },
+    "types": [
+      "electric",
+      "grass"
+    ],
+    "weight": 0.3
+  },
+  {
+    "species": "Fan Rotom",
+    "smogon": "Rotom-Fan",
+    "base_stats": {
+      "hp": 50,
+      "atk": 65,
+      "def": 107,
+      "spa": 105,
+      "spd": 107,
+      "spe": 86
+    },
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "weight": 0.3
+  },
+  {
+    "species": "Wash Rotom",
+    "smogon": "Rotom-Wash",
+    "base_stats": {
+      "hp": 50,
+      "atk": 65,
+      "def": 107,
+      "spa": 105,
+      "spd": 107,
+      "spe": 86
+    },
+    "types": [
+      "electric",
+      "water"
+    ],
+    "weight": 0.3
+  },
+  {
+    "species": "Runerigus",
+    "smogon": "Runerigus",
+    "base_stats": {
+      "hp": 58,
+      "atk": 95,
+      "def": 145,
+      "spa": 50,
+      "spd": 105,
+      "spe": 30
+    },
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "weight": 66.6
+  },
+  {
+    "species": "Sableye",
+    "smogon": "Sableye",
+    "base_stats": {
+      "hp": 50,
+      "atk": 75,
+      "def": 75,
+      "spa": 65,
+      "spd": 65,
+      "spe": 50
+    },
+    "types": [
+      "dark",
+      "ghost"
+    ],
+    "weight": 11
+  },
+  {
+    "species": "Mega Sableye",
+    "smogon": "Sableye-Mega",
+    "base_stats": {
+      "hp": 50,
+      "atk": 85,
+      "def": 125,
+      "spa": 85,
+      "spd": 115,
+      "spe": 20
+    },
+    "types": [
+      "dark",
+      "ghost"
+    ],
+    "weight": 161
+  },
+  {
+    "species": "Salamence",
+    "smogon": "Salamence",
+    "base_stats": {
+      "hp": 95,
+      "atk": 135,
+      "def": 80,
+      "spa": 110,
+      "spd": 80,
+      "spe": 100
+    },
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "weight": 102.6
+  },
+  {
+    "species": "Mega Salamence",
+    "smogon": "Salamence-Mega",
+    "base_stats": {
+      "hp": 95,
+      "atk": 145,
+      "def": 130,
+      "spa": 120,
+      "spd": 90,
+      "spe": 120
+    },
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "weight": 112.6
+  },
+  {
+    "species": "Salazzle",
+    "smogon": "Salazzle",
+    "base_stats": {
+      "hp": 68,
+      "atk": 64,
+      "def": 60,
+      "spa": 111,
+      "spd": 60,
+      "spe": 117
+    },
+    "types": [
+      "poison",
+      "fire"
+    ],
+    "weight": 22.2
+  },
+  {
+    "species": "Samurott",
+    "smogon": "Samurott",
+    "base_stats": {
+      "hp": 95,
+      "atk": 100,
+      "def": 85,
+      "spa": 108,
+      "spd": 70,
+      "spe": 70
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 94.6
+  },
+  {
+    "species": "Hisuian Samurott",
+    "smogon": "Samurott-Hisui",
+    "base_stats": {
+      "hp": 90,
+      "atk": 108,
+      "def": 80,
+      "spa": 100,
+      "spd": 65,
+      "spe": 85
+    },
+    "types": [
+      "water",
+      "dark"
+    ],
+    "weight": 58.2
+  },
+  {
+    "species": "Sandaconda",
+    "smogon": "Sandaconda",
+    "base_stats": {
+      "hp": 72,
+      "atk": 107,
+      "def": 125,
+      "spa": 65,
+      "spd": 70,
+      "spe": 71
+    },
+    "types": [
+      "ground"
+    ],
+    "weight": 65.5
+  },
+  {
+    "species": "Sceptile",
+    "smogon": "Sceptile",
+    "base_stats": {
+      "hp": 70,
+      "atk": 85,
+      "def": 65,
+      "spa": 105,
+      "spd": 85,
+      "spe": 120
+    },
+    "types": [
+      "grass"
+    ],
+    "weight": 52.2
+  },
+  {
+    "species": "Mega Sceptile",
+    "smogon": "Sceptile-Mega",
+    "base_stats": {
+      "hp": 70,
+      "atk": 110,
+      "def": 75,
+      "spa": 145,
+      "spd": 85,
+      "spe": 145
+    },
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "weight": 55.2
+  },
+  {
+    "species": "Scizor",
+    "smogon": "Scizor",
+    "base_stats": {
+      "hp": 70,
+      "atk": 130,
+      "def": 100,
+      "spa": 55,
+      "spd": 80,
+      "spe": 65
+    },
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "weight": 118
+  },
+  {
+    "species": "Mega Scizor",
+    "smogon": "Scizor-Mega",
+    "base_stats": {
+      "hp": 70,
+      "atk": 150,
+      "def": 140,
+      "spa": 65,
+      "spd": 100,
+      "spe": 75
+    },
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "weight": 125
+  },
+  {
+    "species": "Scolipede",
+    "smogon": "Scolipede",
+    "base_stats": {
+      "hp": 60,
+      "atk": 100,
+      "def": 89,
+      "spa": 55,
+      "spd": 69,
+      "spe": 112
+    },
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "weight": 200.5
+  },
+  {
+    "species": "Mega Scolipede",
+    "smogon": "Scolipede-Mega",
+    "base_stats": {
+      "hp": 60,
+      "atk": 140,
+      "def": 149,
+      "spa": 75,
+      "spd": 99,
+      "spe": 62
+    },
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "weight": 230.5
+  },
+  {
+    "species": "Scovillain",
+    "smogon": "Scovillain",
+    "base_stats": {
+      "hp": 65,
+      "atk": 108,
+      "def": 65,
+      "spa": 108,
+      "spd": 65,
+      "spe": 75
+    },
+    "types": [
+      "grass",
+      "fire"
+    ],
+    "weight": 15
+  },
+  {
+    "species": "Mega Scovillain",
+    "smogon": "Scovillain-Mega",
+    "base_stats": {
+      "hp": 65,
+      "atk": 138,
+      "def": 85,
+      "spa": 138,
+      "spd": 85,
+      "spe": 75
+    },
+    "types": [
+      "grass",
+      "fire"
+    ],
+    "weight": 22
+  },
+  {
+    "species": "Scrafty",
+    "smogon": "Scrafty",
+    "base_stats": {
+      "hp": 65,
+      "atk": 90,
+      "def": 115,
+      "spa": 45,
+      "spd": 115,
+      "spe": 58
+    },
+    "types": [
+      "dark",
+      "fighting"
+    ],
+    "weight": 30
+  },
+  {
+    "species": "Mega Scrafty",
+    "smogon": "Scrafty-Mega",
+    "base_stats": {
+      "hp": 65,
+      "atk": 130,
+      "def": 135,
+      "spa": 55,
+      "spd": 135,
+      "spe": 68
+    },
+    "types": [
+      "dark",
+      "fighting"
+    ],
+    "weight": 31
+  },
+  {
+    "species": "Serperior",
+    "smogon": "Serperior",
+    "base_stats": {
+      "hp": 75,
+      "atk": 75,
+      "def": 95,
+      "spa": 75,
+      "spd": 95,
+      "spe": 113
+    },
+    "types": [
+      "grass"
+    ],
+    "weight": 63
+  },
+  {
+    "species": "Sharpedo",
+    "smogon": "Sharpedo",
+    "base_stats": {
+      "hp": 70,
+      "atk": 120,
+      "def": 40,
+      "spa": 95,
+      "spd": 40,
+      "spe": 95
+    },
+    "types": [
+      "water",
+      "dark"
+    ],
+    "weight": 88.8
+  },
+  {
+    "species": "Mega Sharpedo",
+    "smogon": "Sharpedo-Mega",
+    "base_stats": {
+      "hp": 70,
+      "atk": 140,
+      "def": 70,
+      "spa": 110,
+      "spd": 65,
+      "spe": 105
+    },
+    "types": [
+      "water",
+      "dark"
+    ],
+    "weight": 130.3
+  },
+  {
+    "species": "Simipour",
+    "smogon": "Simipour",
+    "base_stats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 63,
+      "spa": 98,
+      "spd": 63,
+      "spe": 101
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 29
+  },
+  {
+    "species": "Simisage",
+    "smogon": "Simisage",
+    "base_stats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 63,
+      "spa": 98,
+      "spd": 63,
+      "spe": 101
+    },
+    "types": [
+      "grass"
+    ],
+    "weight": 30.5
+  },
+  {
+    "species": "Simisear",
+    "smogon": "Simisear",
+    "base_stats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 63,
+      "spa": 98,
+      "spd": 63,
+      "spe": 101
+    },
+    "types": [
+      "fire"
+    ],
+    "weight": 28
+  },
+  {
+    "species": "Sinistcha",
+    "smogon": "Sinistcha",
+    "base_stats": {
+      "hp": 71,
+      "atk": 60,
+      "def": 106,
+      "spa": 121,
+      "spd": 80,
+      "spe": 70
+    },
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "weight": 2.2
+  },
+  {
+    "species": "Sirfetch'd",
+    "smogon": "Sirfetch’d",
+    "base_stats": {
+      "hp": 62,
+      "atk": 135,
+      "def": 95,
+      "spa": 68,
+      "spd": 82,
+      "spe": 65
+    },
+    "types": [
+      "fighting"
+    ],
+    "weight": 117
+  },
+  {
+    "species": "Skarmory",
+    "smogon": "Skarmory",
+    "base_stats": {
+      "hp": 65,
+      "atk": 80,
+      "def": 140,
+      "spa": 40,
+      "spd": 70,
+      "spe": 70
+    },
+    "types": [
+      "steel",
+      "flying"
+    ],
+    "weight": 50.5
+  },
+  {
+    "species": "Mega Skarmory",
+    "smogon": "Skarmory-Mega",
+    "base_stats": {
+      "hp": 65,
+      "atk": 140,
+      "def": 110,
+      "spa": 40,
+      "spd": 100,
+      "spe": 110
+    },
+    "types": [
+      "steel",
+      "flying"
+    ],
+    "weight": 40.4
+  },
+  {
+    "species": "Skeledirge",
+    "smogon": "Skeledirge",
+    "base_stats": {
+      "hp": 104,
+      "atk": 75,
+      "def": 100,
+      "spa": 110,
+      "spd": 75,
+      "spe": 66
+    },
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "weight": 326.5
+  },
+  {
+    "species": "Slowbro",
+    "smogon": "Slowbro",
+    "base_stats": {
+      "hp": 95,
+      "atk": 75,
+      "def": 110,
+      "spa": 100,
+      "spd": 80,
+      "spe": 30
+    },
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "weight": 78.5
+  },
+  {
+    "species": "Galarian Slowbro",
+    "smogon": "Slowbro-Galar",
+    "base_stats": {
+      "hp": 95,
+      "atk": 100,
+      "def": 95,
+      "spa": 100,
+      "spd": 70,
+      "spe": 30
+    },
+    "types": [
+      "poison",
+      "psychic"
+    ],
+    "weight": 70.5
+  },
+  {
+    "species": "Mega Slowbro",
+    "smogon": "Slowbro-Mega",
+    "base_stats": {
+      "hp": 95,
+      "atk": 75,
+      "def": 180,
+      "spa": 130,
+      "spd": 80,
+      "spe": 30
+    },
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "weight": 120
+  },
+  {
+    "species": "Slowking",
+    "smogon": "Slowking",
+    "base_stats": {
+      "hp": 95,
+      "atk": 75,
+      "def": 80,
+      "spa": 100,
+      "spd": 110,
+      "spe": 30
+    },
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "weight": 79.5
+  },
+  {
+    "species": "Galarian Slowking",
+    "smogon": "Slowking-Galar",
+    "base_stats": {
+      "hp": 95,
+      "atk": 65,
+      "def": 80,
+      "spa": 110,
+      "spd": 110,
+      "spe": 30
+    },
+    "types": [
+      "poison",
+      "psychic"
+    ],
+    "weight": 79.5
+  },
+  {
+    "species": "Slurpuff",
+    "smogon": "Slurpuff",
+    "base_stats": {
+      "hp": 82,
+      "atk": 80,
+      "def": 86,
+      "spa": 85,
+      "spd": 75,
+      "spe": 72
+    },
+    "types": [
+      "fairy"
+    ],
+    "weight": 5
+  },
+  {
+    "species": "Sneasler",
+    "smogon": "Sneasler",
+    "base_stats": {
+      "hp": 80,
+      "atk": 130,
+      "def": 60,
+      "spa": 40,
+      "spd": 80,
+      "spe": 120
+    },
+    "types": [
+      "fighting",
+      "poison"
+    ],
+    "weight": 43
+  },
+  {
+    "species": "Snorlax",
+    "smogon": "Snorlax",
+    "base_stats": {
+      "hp": 160,
+      "atk": 110,
+      "def": 65,
+      "spa": 65,
+      "spd": 110,
+      "spe": 30
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 460
+  },
+  {
+    "species": "Spiritomb",
+    "smogon": "Spiritomb",
+    "base_stats": {
+      "hp": 50,
+      "atk": 92,
+      "def": 108,
+      "spa": 92,
+      "spd": 108,
+      "spe": 35
+    },
+    "types": [
+      "ghost",
+      "dark"
+    ],
+    "weight": 108
+  },
+  {
+    "species": "Squawkabilly",
+    "smogon": "Squawkabilly",
+    "base_stats": {
+      "hp": 82,
+      "atk": 96,
+      "def": 51,
+      "spa": 45,
+      "spd": 51,
+      "spe": 92
+    },
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "weight": 2.4
+  },
+  {
+    "species": "Staraptor",
+    "smogon": "Staraptor",
+    "base_stats": {
+      "hp": 85,
+      "atk": 120,
+      "def": 70,
+      "spa": 50,
+      "spd": 60,
+      "spe": 100
+    },
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "weight": 24.9
+  },
+  {
+    "species": "Mega Staraptor",
+    "smogon": "Staraptor-Mega",
+    "base_stats": {
+      "hp": 85,
+      "atk": 140,
+      "def": 100,
+      "spa": 60,
+      "spd": 90,
+      "spe": 110
+    },
+    "types": [
+      "fighting",
+      "flying"
+    ],
+    "weight": 50
+  },
+  {
+    "species": "Starmie",
+    "smogon": "Starmie",
+    "base_stats": {
+      "hp": 60,
+      "atk": 75,
+      "def": 85,
+      "spa": 100,
+      "spd": 85,
+      "spe": 115
+    },
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "weight": 80
+  },
+  {
+    "species": "Mega Starmie",
+    "smogon": "Starmie-Mega",
+    "base_stats": {
+      "hp": 60,
+      "atk": 140,
+      "def": 105,
+      "spa": 130,
+      "spd": 105,
+      "spe": 120
+    },
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "weight": 80
+  },
+  {
+    "species": "Steelix",
+    "smogon": "Steelix",
+    "base_stats": {
+      "hp": 75,
+      "atk": 85,
+      "def": 200,
+      "spa": 55,
+      "spd": 65,
+      "spe": 30
+    },
+    "types": [
+      "steel",
+      "ground"
+    ],
+    "weight": 400
+  },
+  {
+    "species": "Mega Steelix",
+    "smogon": "Steelix-Mega",
+    "base_stats": {
+      "hp": 75,
+      "atk": 125,
+      "def": 230,
+      "spa": 55,
+      "spd": 95,
+      "spe": 30
+    },
+    "types": [
+      "steel",
+      "ground"
+    ],
+    "weight": 740
+  },
+  {
+    "species": "Stunfisk",
+    "smogon": "Stunfisk",
+    "base_stats": {
+      "hp": 109,
+      "atk": 66,
+      "def": 84,
+      "spa": 81,
+      "spd": 99,
+      "spe": 32
+    },
+    "types": [
+      "ground",
+      "electric"
+    ],
+    "weight": 11
+  },
+  {
+    "species": "Galarian Stunfisk",
+    "smogon": "Stunfisk-Galar",
+    "base_stats": {
+      "hp": 109,
+      "atk": 81,
+      "def": 99,
+      "spa": 66,
+      "spd": 84,
+      "spe": 32
+    },
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "weight": 20.5
+  },
+  {
+    "species": "Swalot",
+    "smogon": "Swalot",
+    "base_stats": {
+      "hp": 100,
+      "atk": 73,
+      "def": 83,
+      "spa": 73,
+      "spd": 83,
+      "spe": 55
+    },
+    "types": [
+      "poison"
+    ],
+    "weight": 80
+  },
+  {
+    "species": "Swampert",
+    "smogon": "Swampert",
+    "base_stats": {
+      "hp": 100,
+      "atk": 110,
+      "def": 90,
+      "spa": 85,
+      "spd": 90,
+      "spe": 60
+    },
+    "types": [
+      "water",
+      "ground"
+    ],
+    "weight": 81.9
+  },
+  {
+    "species": "Mega Swampert",
+    "smogon": "Swampert-Mega",
+    "base_stats": {
+      "hp": 100,
+      "atk": 150,
+      "def": 110,
+      "spa": 95,
+      "spd": 110,
+      "spe": 70
+    },
+    "types": [
+      "water",
+      "ground"
+    ],
+    "weight": 102
+  },
+  {
+    "species": "Sylveon",
+    "smogon": "Sylveon",
+    "base_stats": {
+      "hp": 95,
+      "atk": 65,
+      "def": 65,
+      "spa": 110,
+      "spd": 130,
+      "spe": 60
+    },
+    "types": [
+      "fairy"
+    ],
+    "weight": 23.5
+  },
+  {
+    "species": "Talonflame",
+    "smogon": "Talonflame",
+    "base_stats": {
+      "hp": 78,
+      "atk": 81,
+      "def": 71,
+      "spa": 74,
+      "spd": 69,
+      "spe": 126
+    },
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "weight": 24.5
+  },
+  {
+    "species": "Tauros",
+    "smogon": "Tauros",
+    "base_stats": {
+      "hp": 75,
+      "atk": 100,
+      "def": 95,
+      "spa": 40,
+      "spd": 70,
+      "spe": 110
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 88.4
+  },
+  {
+    "species": "Paldean Tauros",
+    "smogon": "Tauros-Paldea-Combat",
+    "base_stats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 105,
+      "spa": 30,
+      "spd": 70,
+      "spe": 100
+    },
+    "types": [
+      "fighting"
+    ],
+    "weight": 115
+  },
+  {
+    "species": "Paldean Tauros (Blaze Breed)",
+    "smogon": "Tauros-Paldea-Blaze",
+    "base_stats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 105,
+      "spa": 30,
+      "spd": 70,
+      "spe": 100
+    },
+    "types": [
+      "fighting",
+      "fire"
+    ],
+    "weight": 85
+  },
+  {
+    "species": "Paldean Tauros (Aqua Breed)",
+    "smogon": "Tauros-Paldea-Aqua",
+    "base_stats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 105,
+      "spa": 30,
+      "spd": 70,
+      "spe": 100
+    },
+    "types": [
+      "fighting",
+      "water"
+    ],
+    "weight": 110
+  },
+  {
+    "species": "Thievul",
+    "smogon": "Thievul",
+    "base_stats": {
+      "hp": 70,
+      "atk": 58,
+      "def": 58,
+      "spa": 87,
+      "spd": 92,
+      "spe": 90
+    },
+    "types": [
+      "dark"
+    ],
+    "weight": 19.9
+  },
+  {
+    "species": "Tinkaton",
+    "smogon": "Tinkaton",
+    "base_stats": {
+      "hp": 85,
+      "atk": 75,
+      "def": 77,
+      "spa": 70,
+      "spd": 105,
+      "spe": 94
+    },
+    "types": [
+      "fairy",
+      "steel"
+    ],
+    "weight": 112.8
+  },
+  {
+    "species": "Torkoal",
+    "smogon": "Torkoal",
+    "base_stats": {
+      "hp": 70,
+      "atk": 85,
+      "def": 140,
+      "spa": 85,
+      "spd": 70,
+      "spe": 20
+    },
+    "types": [
+      "fire"
+    ],
+    "weight": 80.4
+  },
+  {
+    "species": "Torterra",
+    "smogon": "Torterra",
+    "base_stats": {
+      "hp": 95,
+      "atk": 109,
+      "def": 105,
+      "spa": 75,
+      "spd": 85,
+      "spe": 56
+    },
+    "types": [
+      "grass",
+      "ground"
+    ],
+    "weight": 310
+  },
+  {
+    "species": "Toucannon",
+    "smogon": "Toucannon",
+    "base_stats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 75,
+      "spa": 75,
+      "spd": 75,
+      "spe": 60
+    },
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "weight": 26
+  },
+  {
+    "species": "Toxapex",
+    "smogon": "Toxapex",
+    "base_stats": {
+      "hp": 50,
+      "atk": 63,
+      "def": 152,
+      "spa": 53,
+      "spd": 142,
+      "spe": 35
+    },
+    "types": [
+      "poison",
+      "water"
+    ],
+    "weight": 14.5
+  },
+  {
+    "species": "Toxicroak",
+    "smogon": "Toxicroak",
+    "base_stats": {
+      "hp": 83,
+      "atk": 106,
+      "def": 65,
+      "spa": 86,
+      "spd": 65,
+      "spe": 85
+    },
+    "types": [
+      "poison",
+      "fighting"
+    ],
+    "weight": 44.4
+  },
+  {
+    "species": "Toxtricity",
+    "smogon": "Toxtricity",
+    "base_stats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 70,
+      "spa": 114,
+      "spd": 70,
+      "spe": 75
+    },
+    "types": [
+      "electric",
+      "poison"
+    ],
+    "weight": 40
+  },
+  {
+    "species": "Trevenant",
+    "smogon": "Trevenant",
+    "base_stats": {
+      "hp": 85,
+      "atk": 110,
+      "def": 76,
+      "spa": 65,
+      "spd": 82,
+      "spe": 56
+    },
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "weight": 71
+  },
+  {
+    "species": "Tsareena",
+    "smogon": "Tsareena",
+    "base_stats": {
+      "hp": 72,
+      "atk": 120,
+      "def": 98,
+      "spa": 50,
+      "spd": 98,
+      "spe": 72
+    },
+    "types": [
+      "grass"
+    ],
+    "weight": 21.4
+  },
+  {
+    "species": "Typhlosion",
+    "smogon": "Typhlosion",
+    "base_stats": {
+      "hp": 78,
+      "atk": 84,
+      "def": 78,
+      "spa": 109,
+      "spd": 85,
+      "spe": 100
+    },
+    "types": [
+      "fire"
+    ],
+    "weight": 79.5
+  },
+  {
+    "species": "Hisuian Typhlosion",
+    "smogon": "Typhlosion-Hisui",
+    "base_stats": {
+      "hp": 73,
+      "atk": 84,
+      "def": 78,
+      "spa": 119,
+      "spd": 85,
+      "spe": 95
+    },
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "weight": 69.8
+  },
+  {
+    "species": "Tyranitar",
+    "smogon": "Tyranitar",
+    "base_stats": {
+      "hp": 100,
+      "atk": 134,
+      "def": 110,
+      "spa": 95,
+      "spd": 100,
+      "spe": 61
+    },
+    "types": [
+      "rock",
+      "dark"
+    ],
+    "weight": 202
+  },
+  {
+    "species": "Mega Tyranitar",
+    "smogon": "Tyranitar-Mega",
+    "base_stats": {
+      "hp": 100,
+      "atk": 164,
+      "def": 150,
+      "spa": 95,
+      "spd": 120,
+      "spe": 71
+    },
+    "types": [
+      "rock",
+      "dark"
+    ],
+    "weight": 255
+  },
+  {
+    "species": "Tyrantrum",
+    "smogon": "Tyrantrum",
+    "base_stats": {
+      "hp": 82,
+      "atk": 121,
+      "def": 119,
+      "spa": 69,
+      "spd": 59,
+      "spe": 71
+    },
+    "types": [
+      "rock",
+      "dragon"
+    ],
+    "weight": 270
+  },
+  {
+    "species": "Umbreon",
+    "smogon": "Umbreon",
+    "base_stats": {
+      "hp": 95,
+      "atk": 65,
+      "def": 110,
+      "spa": 60,
+      "spd": 130,
+      "spe": 65
+    },
+    "types": [
+      "dark"
+    ],
+    "weight": 27
+  },
+  {
+    "species": "Vanilluxe",
+    "smogon": "Vanilluxe",
+    "base_stats": {
+      "hp": 71,
+      "atk": 95,
+      "def": 85,
+      "spa": 110,
+      "spd": 95,
+      "spe": 79
+    },
+    "types": [
+      "ice"
+    ],
+    "weight": 57.5
+  },
+  {
+    "species": "Vaporeon",
+    "smogon": "Vaporeon",
+    "base_stats": {
+      "hp": 130,
+      "atk": 65,
+      "def": 60,
+      "spa": 110,
+      "spd": 95,
+      "spe": 65
+    },
+    "types": [
+      "water"
+    ],
+    "weight": 29
+  },
+  {
+    "species": "Venusaur",
+    "smogon": "Venusaur",
+    "base_stats": {
+      "hp": 80,
+      "atk": 82,
+      "def": 83,
+      "spa": 100,
+      "spd": 100,
+      "spe": 80
+    },
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "weight": 100
+  },
+  {
+    "species": "Mega Venusaur",
+    "smogon": "Venusaur-Mega",
+    "base_stats": {
+      "hp": 80,
+      "atk": 100,
+      "def": 123,
+      "spa": 122,
+      "spd": 120,
+      "spe": 80
+    },
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "weight": 155.5
+  },
+  {
+    "species": "Victreebel",
+    "smogon": "Victreebel",
+    "base_stats": {
+      "hp": 80,
+      "atk": 105,
+      "def": 65,
+      "spa": 100,
+      "spd": 70,
+      "spe": 70
+    },
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "weight": 15.5
+  },
+  {
+    "species": "Mega Victreebel",
+    "smogon": "Victreebel-Mega",
+    "base_stats": {
+      "hp": 80,
+      "atk": 125,
+      "def": 85,
+      "spa": 135,
+      "spd": 95,
+      "spe": 70
+    },
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "weight": 125.5
+  },
+  {
+    "species": "Vileplume",
+    "smogon": "Vileplume",
+    "base_stats": {
+      "hp": 75,
+      "atk": 80,
+      "def": 85,
+      "spa": 110,
+      "spd": 90,
+      "spe": 50
+    },
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "weight": 18.6
+  },
+  {
+    "species": "Vivillon",
+    "smogon": "Vivillon",
+    "base_stats": {
+      "hp": 80,
+      "atk": 52,
+      "def": 50,
+      "spa": 90,
+      "spd": 50,
+      "spe": 89
+    },
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "weight": 17
+  },
+  {
+    "species": "Volcarona",
+    "smogon": "Volcarona",
+    "base_stats": {
+      "hp": 85,
+      "atk": 60,
+      "def": 65,
+      "spa": 135,
+      "spd": 105,
+      "spe": 100
+    },
+    "types": [
+      "bug",
+      "fire"
+    ],
+    "weight": 46
+  },
+  {
+    "species": "Watchog",
+    "smogon": "Watchog",
+    "base_stats": {
+      "hp": 60,
+      "atk": 85,
+      "def": 69,
+      "spa": 60,
+      "spd": 69,
+      "spe": 77
+    },
+    "types": [
+      "normal"
+    ],
+    "weight": 27
+  },
+  {
+    "species": "Weavile",
+    "smogon": "Weavile",
+    "base_stats": {
+      "hp": 70,
+      "atk": 120,
+      "def": 65,
+      "spa": 45,
+      "spd": 85,
+      "spe": 125
+    },
+    "types": [
+      "dark",
+      "ice"
+    ],
+    "weight": 34
+  },
+  {
+    "species": "Whimsicott",
+    "smogon": "Whimsicott",
+    "base_stats": {
+      "hp": 60,
+      "atk": 67,
+      "def": 85,
+      "spa": 77,
+      "spd": 75,
+      "spe": 116
+    },
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "weight": 6.6
+  },
+  {
+    "species": "Wigglytuff",
+    "smogon": "Wigglytuff",
+    "base_stats": {
+      "hp": 140,
+      "atk": 70,
+      "def": 45,
+      "spa": 85,
+      "spd": 50,
+      "spe": 45
+    },
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "weight": 12
+  },
+  {
+    "species": "Wyrdeer",
+    "smogon": "Wyrdeer",
+    "base_stats": {
+      "hp": 103,
+      "atk": 105,
+      "def": 72,
+      "spa": 105,
+      "spd": 75,
+      "spe": 65
+    },
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "weight": 95.1
+  },
+  {
+    "species": "Zoroark",
+    "smogon": "Zoroark",
+    "base_stats": {
+      "hp": 60,
+      "atk": 105,
+      "def": 60,
+      "spa": 120,
+      "spd": 60,
+      "spe": 105
+    },
+    "types": [
+      "dark"
+    ],
+    "weight": 81.1
+  },
+  {
+    "species": "Hisuian Zoroark",
+    "smogon": "Zoroark-Hisui",
+    "base_stats": {
+      "hp": 55,
+      "atk": 100,
+      "def": 60,
+      "spa": 125,
+      "spd": 60,
+      "spe": 110
+    },
+    "types": [
+      "normal",
+      "ghost"
+    ],
+    "weight": 73
+  }
+]
