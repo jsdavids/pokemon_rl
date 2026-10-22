@@ -98,9 +98,12 @@ FIXTURES: list[tuple[str, str, str]] = [
 def first_tool_choice(
     completer: Completer, query: str, context: str, tools: list[dict]
 ) -> str | None:
+    # one merged system message: chat templates differ in how they render
+    # a second system message (harmony remaps system prompts entirely),
+    # and that would be a per-model confound in the numbers
     messages = [
-        {"role": "system", "content": ROUTING_PROMPT},
-        {"role": "system", "content": CONTEXT_NOTES[context]},
+        {"role": "system",
+         "content": f"{ROUTING_PROMPT}\n{CONTEXT_NOTES[context]}"},
         {"role": "user", "content": query},
     ]
     message = completer(messages, tools)
@@ -142,7 +145,71 @@ def evaluate_routing(
     }
 
 
+def preflight(completer, base_url: str) -> dict:  # pragma: no cover — live
+    """Warm the model up and verify where it landed, so run 1 fixture 1
+    doesn't eat the cold load and a silent partial CPU offload doesn't
+    quietly corrupt a bake-off. Returns what it learned for the report."""
+    import time
+
+    import httpx
+
+    root = base_url.rstrip("/")
+    root = root[: -len("/v1")] if root.endswith("/v1") else root
+    info: dict = {}
+    try:
+        info["ollama_version"] = httpx.get(
+            f"{root}/api/version", timeout=5.0
+        ).json().get("version")
+        print(f"ollama {info['ollama_version']} at {root}")
+    except Exception:
+        print(f"note: {root}/api/version unreachable — not Ollama? "
+              "skipping GPU checks")
+    t0 = time.perf_counter()
+    try:
+        completer(
+            [{"role": "user", "content": "Reply with the word: ready"}],
+            tool_schemas(),
+        )
+    except Exception as e:  # noqa: BLE001 — fail the run loudly up front
+        raise SystemExit(
+            f"warmup call failed ({type(e).__name__}: {e}) — is the "
+            f"endpoint up and the model pulled? "
+            f"(ollama pull {completer.model})"
+        ) from e
+    info["warmup_s"] = round(time.perf_counter() - t0, 1)
+    print(f"warmup (model load + one completion): {info['warmup_s']}s")
+    if "ollama_version" not in info:
+        return info
+    try:
+        loaded = httpx.get(f"{root}/api/ps", timeout=5.0).json()["models"]
+    except Exception:
+        return info
+    for m in loaded:
+        if completer.model not in (m.get("name"), m.get("model")):
+            continue
+        vram, size = m.get("size_vram", 0), m.get("size") or 1
+        info["gpu_offload"] = round(vram / size, 3)
+        ctx = m.get("context_length")
+        if ctx:
+            info["context_length"] = ctx
+        where = (
+            "100% GPU" if vram >= size
+            else f"{vram / size:.0%} GPU — split/CPU; latency and even "
+                 "accuracy comparisons are not like-for-like"
+        )
+        print(f"{completer.model}: {where}"
+              + (f", context {ctx}" if ctx else ""))
+        if ctx and ctx < 8192:
+            print(f"  WARNING: context {ctx} < 8192 — the tool schemas + "
+                  "system prompt risk silent front-truncation. Set "
+                  "OLLAMA_CONTEXT_LENGTH=16384 and restart Ollama.")
+    return info
+
+
 def main() -> None:  # pragma: no cover — needs a live endpoint
+    import json
+    from datetime import datetime, timezone
+
     from pokechamp.llm.assistant import OllamaCompleter
 
     ap = argparse.ArgumentParser(description="routing accuracy eval")
@@ -153,9 +220,30 @@ def main() -> None:  # pragma: no cover — needs a live endpoint
                     help="resume an interrupted run at fixture N")
     ap.add_argument("--timeout", type=float, default=120.0,
                     help="per-call seconds; raise for CPU inference")
+    ap.add_argument("--temperature", type=float, default=None,
+                    help="override the model family's sampling preset")
+    ap.add_argument("--top-p", type=float, default=None,
+                    help="override the model family's sampling preset")
+    ap.add_argument("--seed", type=int, default=None,
+                    help="fix sampling for reproducible runs")
+    ap.add_argument("--max-tokens", type=int, default=4096,
+                    help="generation cap incl. thinking tokens (chat "
+                         "defaults to 2048; the eval allows longer "
+                         "thinking so the cap doesn't score as routing)")
+    ap.add_argument("--json", dest="json_out", default=None,
+                    help="append the full run report to this file as one "
+                         "JSON line (misses included) for bake-off "
+                         "comparisons")
     args = ap.parse_args()
-    completer = OllamaCompleter(model=args.model, base_url=args.url,
-                                timeout=args.timeout)
+    completer = OllamaCompleter(
+        model=args.model, base_url=args.url, timeout=args.timeout,
+        temperature=args.temperature, top_p=args.top_p, seed=args.seed,
+        max_tokens=args.max_tokens,
+    )
+    print(f"sampling: temperature={completer.temperature} "
+          f"top_p={completer.top_p} seed={completer.seed} "
+          f"max_tokens={completer.max_tokens}")
+    env = preflight(completer, args.url)
     fixtures = FIXTURES[args.skip:]
     if args.limit:
         fixtures = fixtures[: args.limit]
@@ -164,6 +252,32 @@ def main() -> None:  # pragma: no cover — needs a live endpoint
           f"({report['n'] - len(report['misses'])}/{report['n']})")
     for tool, r in sorted(report["per_tool"].items()):
         print(f"  {tool:>16}: {r['correct']}/{r['total']}")
+    if report["misses"]:
+        print("misses:")
+        for m in report["misses"]:
+            print(f"  [{m['expected']:>16}] got={m['got']}: "
+                  f"{m['query'][:60]}")
+    if args.json_out:
+        record = {
+            "timestamp": datetime.now(timezone.utc).isoformat(
+                timespec="seconds"
+            ),
+            "model": args.model,
+            "url": args.url,
+            "sampling": {
+                "temperature": completer.temperature,
+                "top_p": completer.top_p,
+                "seed": completer.seed,
+                "max_tokens": completer.max_tokens,
+            },
+            "env": env,
+            "skip": args.skip,
+            "limit": args.limit,
+            **report,
+        }
+        with open(args.json_out, "a", encoding="utf-8") as f:
+            f.write(json.dumps(record) + "\n")
+        print(f"report appended to {args.json_out}")
 
 
 if __name__ == "__main__":  # pragma: no cover

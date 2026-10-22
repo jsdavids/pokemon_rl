@@ -128,6 +128,92 @@ def test_on_tool_hook_reports_activity(app):
     assert seen == [("list_teams", {}, "[]")]
 
 
+def test_strip_think():
+    from pokechamp.llm.assistant import strip_think
+
+    assert strip_think("<think>hmm, EQ is SE...</think>Use Earthquake.") \
+        == "Use Earthquake."
+    # generation cap landed mid-think: the whole tail is reasoning
+    assert strip_think("<think>truncated mid-thought") == ""
+    assert strip_think("plain answer") == "plain answer"
+
+
+def test_assistant_strips_leaked_thinking(app):
+    completer = scripted(
+        {"role": "assistant",
+         "content": "<think>lots of reasoning</think>Click Earthquake."},
+    )
+    a = Assistant(completer=completer)
+    assert a.ask("best move?") == "Click Earthquake."
+    # and the reasoning is not kept in history to be re-sent every turn
+    assert a.history[-1]["content"] == "Click Earthquake."
+
+
+def test_assistant_recovers_from_malformed_arguments(app):
+    completer = scripted(
+        {"role": "assistant", "content": None,
+         "tool_calls": [{"id": "c1", "type": "function",
+                         "function": {"name": "list_teams",
+                                      "arguments": '{"broken'}}]},
+        {"role": "assistant", "content": "Let me try that again."},
+    )
+    a = Assistant(completer=completer)
+    assert a.ask("teams?") == "Let me try that again."
+    # the bad call got a tool-role error response — no dangling
+    # tool_calls in history (some servers 400 on that)
+    tool_msg = next(m for m in a.history if m["role"] == "tool")
+    assert "not valid JSON" in tool_msg["content"]
+    assert tool_msg["tool_call_id"] == "c1"
+
+
+def test_history_trimming_preserves_structure(app):
+    def completer(history, tools):
+        # every other turn calls a tool, so history holds mixed
+        # user / assistant+tool_calls / tool / assistant exchanges
+        n_user = sum(1 for m in history if m["role"] == "user")
+        if history[-1]["role"] == "user" and n_user % 2 == 0:
+            return dict(tool_call("list_teams", {}))
+        return {"role": "assistant", "content": f"answer {n_user}"}
+
+    a = Assistant(completer=completer, max_history=10)
+    for i in range(12):
+        a.ask(f"question {i}")
+    # bounded: at most max_history at turn start + this turn's messages
+    assert len(a.history) <= 10 + 4
+    # the system prompt survives, and the cut lands on a user message
+    assert a.history[0]["role"] == "system"
+    assert a.history[1]["role"] == "user"
+    # no orphaned tool responses: every tool message directly follows
+    # an assistant message that made tool calls
+    for prev, m in zip(a.history, a.history[1:]):
+        if m["role"] == "tool":
+            assert prev["role"] in ("assistant", "tool")
+            assert any(x.get("tool_calls")
+                       for x in a.history[:a.history.index(m)]
+                       if x["role"] == "assistant")
+    # the latest turn is intact
+    assert a.history[-1]["content"].startswith("answer")
+
+
+def test_eval_sends_one_merged_system_message():
+    from pokechamp.llm.routing import first_tool_choice
+
+    seen = {}
+
+    def completer(messages, tools):
+        seen["messages"] = messages
+        return tool_call("damage", {})
+
+    got = first_tool_choice(
+        completer, "How much damage?", "battle", tools=[]
+    )
+    assert got == "damage"
+    system = [m for m in seen["messages"] if m["role"] == "system"]
+    assert len(system) == 1
+    assert "battle against PlayerX" in system[0]["content"]
+    assert "battle assistant" in system[0]["content"]
+
+
 # --------------------------------------------------------------- terminal ---
 
 def test_slash_commands(app):
@@ -152,6 +238,57 @@ def test_slash_commands(app):
     assert "unknown command" in handle_command("/bogus", style)
     with pytest.raises(EOFError):
         handle_command("/quit", style)
+
+
+# ---------------------------------------------------------------- sampling ---
+
+def test_sampling_presets_by_model_family():
+    from pokechamp.llm.assistant import OllamaCompleter, sampling_preset
+
+    assert sampling_preset("qwen3:14b-q5_K_M") == {
+        "temperature": 0.6, "top_p": 0.95,
+    }
+    assert sampling_preset("gpt-oss:20b") == {
+        "temperature": 1.0, "top_p": 1.0,
+    }
+    assert sampling_preset("llama3.3:70b")["temperature"] == 0.2
+    # qwen3.8 is not qwen3: first match wins
+    assert sampling_preset("qwen3.8:27b-q4_K_M")["temperature"] == 1.0
+    assert sampling_preset("bonsai-2-27b")["temperature"] == 1.0
+
+    c = OllamaCompleter(model="qwen3:30b-a3b")
+    assert (c.temperature, c.top_p) == (0.6, 0.95)
+    # explicit arguments beat the family preset
+    c = OllamaCompleter(model="qwen3:14b", temperature=0.0, top_p=1.0,
+                        seed=7)
+    assert (c.temperature, c.top_p, c.seed) == (0.0, 1.0, 7)
+
+
+def test_completer_request_body_carries_sampling(monkeypatch):
+    from pokechamp.llm import assistant as mod
+
+    captured = {}
+
+    class FakeResp:
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return {"choices": [{"message": {
+                "role": "assistant", "content": "ok",
+            }}]}
+
+    def fake_post(url, json=None, timeout=None):
+        captured["body"] = json
+        return FakeResp()
+
+    monkeypatch.setattr(mod.httpx, "post", fake_post)
+    c = mod.OllamaCompleter(model="gpt-oss:20b", seed=42, max_tokens=4096)
+    msg = c([{"role": "user", "content": "hi"}], [])
+    assert msg["content"] == "ok"
+    body = captured["body"]
+    assert body["temperature"] == 1.0 and body["top_p"] == 1.0
+    assert body["seed"] == 42 and body["max_tokens"] == 4096
 
 
 # ------------------------------------------------------------ routing eval ---
