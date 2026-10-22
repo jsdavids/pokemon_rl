@@ -8,3 +8,4 @@ build/
 node_modules/
 .env
 scripts/serebii_cache/
+scripts/usage_cache/

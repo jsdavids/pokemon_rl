@@ -19,9 +19,10 @@ from dataclasses import replace
 from pathlib import Path
 
 from pokechamp.data import load_ruleset
-from pokechamp.data.loader import norm
+from pokechamp.data.loader import canonical_species, norm
 from pokechamp.estimator import StatEstimator
 from pokechamp.estimator.candidates import default_candidates
+from pokechamp.estimator.usage import usage_for
 from pokechamp.session.serialize import (
     field_from_dict,
     field_to_dict,
@@ -51,10 +52,18 @@ class OpponentScout:
         ruleset: str = "champions",
         regulation: str | None = None,
         level: int = 50,
+        use_usage: bool = True,
+        spreads=None,
     ):
         self.path = Path(path) if path else DEFAULT_DIR / "scouting.json"
         self.ruleset = ruleset
         self.regulation = regulation
+        # usage priors need a regulation with fetched usage data
+        # (scripts/fetch_usage.py); without one the estimator stays uniform
+        self.use_usage = use_usage
+        # SpreadCandidates (estimator/spreads.py): ladder-grounded spread
+        # hypotheses + their prior instead of the hand-written EV templates
+        self.spreads = spreads
         self.level = level
         self._data = (
             json.loads(self.path.read_text(encoding="utf-8"))
@@ -68,6 +77,7 @@ class OpponentScout:
         self.path.write_text(json.dumps(self._data, indent=1), encoding="utf-8")
 
     def _mon(self, opponent: str, species: str) -> dict:
+        species = canonical_species(species, self.ruleset)
         team = self._data["opponents"].setdefault(opponent, {"pokemon": {}})
         return team["pokemon"].setdefault(species, {
             "revealed_moves": [], "item": None, "ability": None,
@@ -78,7 +88,7 @@ class OpponentScout:
 
     def add_pokemon(self, opponent: str, species: str) -> None:
         """Register a species on the opponent's team (validates the name)."""
-        load_ruleset(self.ruleset).get_species(species)
+        load_ruleset(self.ruleset).get_species(species)  # validates the name
         self._mon(opponent, species)
         self._write()
 
@@ -93,6 +103,7 @@ class OpponentScout:
         self._write()
 
     def reveal_item(self, opponent: str, species: str, item: str) -> None:
+        species = canonical_species(species, self.ruleset)
         rs = load_ruleset(self.ruleset)
         if item not in rs.items:
             raise ValueError(f"unknown item {item!r}")
@@ -101,6 +112,7 @@ class OpponentScout:
         self._write()
 
     def reveal_ability(self, opponent: str, species: str, ability: str) -> None:
+        species = canonical_species(species, self.ruleset)
         rs = load_ruleset(self.ruleset)
         if norm(ability) not in {
             norm(a) for a in rs.get_species(species).abilities
@@ -135,9 +147,13 @@ class OpponentScout:
         """Default candidate grid, cut down by revealed hard facts. A
         revealed item outside the usual archetypes replaces the item on
         every survivor instead (deduplicated)."""
+        usage = self._usage(species)
         cands = default_candidates(
             species, self.level, ruleset=self.ruleset,
             regulation=self.regulation,
+            extra_natures=usage.extra_natures() if usage else (),
+            extra_items=usage.extra_items() if usage else (),
+            spreads=self.spreads,
         )
         if rec["item"] is not None:
             match = [c for c in cands if norm(c.item or "") == norm(rec["item"])]
@@ -158,9 +174,18 @@ class OpponentScout:
             ]
         return cands
 
+    def _usage(self, species: str):
+        if not self.use_usage:
+            return None
+        return usage_for(
+            canonical_species(species, self.ruleset), self.ruleset,
+            self.regulation,
+        )
+
     def estimator(self, opponent: str, species: str) -> StatEstimator:
         """The live posterior for one opposing Pokemon: candidates filtered
         by revealed facts, every stored observation replayed."""
+        species = canonical_species(species, self.ruleset)
         key = (opponent, species)
         if key not in self._cache:
             rec = self._mon(opponent, species)
@@ -168,6 +193,13 @@ class OpponentScout:
                 species, level=self.level, ruleset=self.ruleset,
                 candidates=self._candidates(rec, species),
             )
+            usage = self._usage(species)
+            if usage is not None:  # priors first, then the evidence
+                est.usage = usage
+                est.apply_prior(usage.prior(est.candidates), usage.description)
+            if self.spreads is not None:
+                est.apply_prior(self.spreads.prior(load_ruleset(self.ruleset)),
+                                "ladder spread prior")
             for ob in rec["observations"]:
                 kwargs = dict(ob["kwargs"])
                 for k in _SET_KEYS:
@@ -197,13 +229,14 @@ class OpponentScout:
         rec = self._mon(opponent, species)
         est = self.estimator(opponent, species)
         return {
-            "species": species,
+            "species": canonical_species(species, self.ruleset),
             "revealed_moves": list(rec["revealed_moves"]),
             "revealed_item": rec["item"],
             "revealed_ability": rec["ability"],
             "observations": len(rec["observations"]),
             "hp_percent": est.hp_percent,
             **est.stat_summary(),
+            **({"meta": est.usage.summary()} if est.usage is not None else {}),
         }
 
     def for_recommend(

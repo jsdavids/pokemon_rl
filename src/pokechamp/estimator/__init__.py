@@ -6,9 +6,9 @@ builds for an opponent Pokemon. The recommender samples opponent sets from
 this posterior before simulating (determinization).
 
 Working: exact damage-roll likelihoods, speed constraints, archetype-grid
-candidates, posterior/marginal/stat-summary queries.
-Remaining (Phase 2 completion): usage-stats priors, ability hypotheses,
-current-HP tracking; see estimator.py's TODO list.
+candidates extended by usage data, ability hypotheses, current-HP tracking,
+usage-based priors (estimator/usage.py), posterior/marginal/stat-summary
+queries.
 """
 
 from pokechamp.estimator.candidates import default_candidates
